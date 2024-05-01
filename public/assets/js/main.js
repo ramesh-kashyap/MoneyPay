@@ -1,336 +1,430 @@
 "use strict";
 document.addEventListener("DOMContentLoaded", function () {
 
-    $(function ($) {
+// active menu
+const path = location.pathname;
+const menuList = document.querySelectorAll(".menu");
+const subMenuList = document.querySelectorAll(".subMenuItem");
 
-       // pre_loader
-       $(".preloader").delay(300).animate({
-        "opacity": "0"
-    }, 500, function () {
-        $(".preloader").css("display", "none");
-    });
-
-        // Click to Scroll Top
-        var ScrollTop = $(".scrollToTop");
-        $('.scrollToTop').on('click', function () {
-            $('html, body').animate({
-                scrollTop: 0
-            }, 600);
-            return false;
-        });
-
-        // window on scroll function
-        $(window).on("scroll", function () {
-
-            // Sticky Header
-            var fixed_top = $(".header-section");
-            $(window).on("scroll", function () {
-                if ($(window).scrollTop() > 50) {
-                    fixed_top.addClass("animated fadeInDown header-fixed");
-                }
-                else {
-                    fixed_top.removeClass("animated fadeInDown header-fixed");
-                }
-            });
-
-            // Check Scroll 
-            if ($(this).scrollTop() < 600) {
-                ScrollTop.removeClass("active");
-            } else {
-                ScrollTop.addClass("active");
-            }
-
-            // Odometer Init 
-            let windowHeight = $(window).height();
-            $('.odometer').children().each(function () {
-                if ($(this).isInViewport({ "tolerance": windowHeight, "toleranceForLast": windowHeight, "debug": false })) {
-                    var section = $(this).closest(".counters");
-                    section.find(".odometer").each(function () {
-                        $(this).html($(this).attr("data-odometer-final"));
-                    });
-                }
-            });
-
-            // circle img rotation
-            var images = document.querySelectorAll(".circle-area img");
-            images.forEach(function (image) {
-                var rotation = window.scrollY / 4;
-                image.style.transform = "rotate(" + rotation + "deg)";
-            });
-
-
-            // // profile-top-nav
-            // $(".navbar_menu i").on("click", function () {
-            //     $(this).toggleClass("active");
-            //     $(".navbar-collapse").slideToggle();
-            //     // $(this).parent().next(".navbar-collapse").slideToggle();
-            // });
-            // $(document).click(function(event) {
-            //     if (!$(event.target).closest('.navbar-collapse').length && !$(event.target).is('.navbar_menu i')) {
-            //     $('.navbar-collapse').slideUp();
-            //     }
-            // });
-
-
-        });
-        
-
-        // mobile menubar
-        const mobileSize = window.matchMedia("(max-width: 991px)");
-        function handleMediaScreen(e) {
-            if (e.matches) {
-                $(".navbar-nav .sub").addClass("dropdown-menu");
-                // $(".navbar-nav .dropdown").removeClass("show-dropdown");
-                // $(".navbar-nav .sub").removeClass("sub-menu");
-
-                $(".navbar-nav .dropdown-menu").parent("li").on('click', function (e) {
-                    if (e.target.className !== "dropdown-item") {
-                        $(this).find(">.dropdown-menu").toggle(300);
-                        e.stopPropagation();
-                    }
-                });
-            } else {
-                $(".navbar-nav .dropdown-menu").parent("li").off("click");
-                $("sub-dropdown").off("click");
-
-                $(".navbar-nav .dropdown-menu").show();
-                $(".navbar-nav .dropdown").addClass("show-dropdown");
-                $(".navbar-nav .sub").addClass("sub-menu");
-                $(".navbar-nav .sub").removeClass("dropdown-menu");
-            }
-        }
-        handleMediaScreen(mobileSize);
-        mobileSize.addEventListener("change", handleMediaScreen);
-
-        // Navbar Custom Menu Button 
-        $('.navbar-toggler').on('click', function () {
-            $(this).toggleClass('open');
-        });
-
-        // Box Style 
-        const targetBtn = document.querySelectorAll('.box-style')
-        if (targetBtn) {
-            targetBtn.forEach((element) => {
-                element.addEventListener('mousemove', (e) => {
-                    const x = e.offsetX + 'px';
-                    const y = e.offsetY + 'px';
-                    element.style.setProperty('--x', x);
-                    element.style.setProperty('--y', y);
-                })
-            })
-        }
-
-
-    // cmn-btn effect
-    $(function () {
-        $('.cmn-btn')
-            .on('mousemove', function (e) {
-                var parentOffset = $(this).offset(),
-                    relX = e.pageX - parentOffset.left,
-                    relY = e.pageY - parentOffset.top;
-                $(this).css({ '--top': relY + 'px', '--left': relX + 'px' });
-            });
-    });
-    $(function () {
-        $('.btn_box')
-            .on('mousemove', function (e) {
-                var parentOffset = $(this).offset(),
-                    relX = e.pageX - parentOffset.left,
-                    relY = e.pageY - parentOffset.top;
-                $(this).css({ '--top': relY + 'px', '--left': relX + 'px' });
-            });
-    });
-
-
-        // Circle Text
-        const text = document.querySelector(".circle-text p");
-        function applyCircleText(textElement, rotationStep) {
-            if (textElement) {
-                textElement.innerHTML = textElement.innerText.split('').map(
-                    (char, i) =>
-                        `<span style="transform:rotate(${i * rotationStep}deg)">${char}</span>`
-                ).join('');
-            }
-        }
-        const totalCharacters = 30; // Replace with the actual number of characters
-        const rotationStep = 360 / totalCharacters;
-        applyCircleText(text, rotationStep);
-
-        // faq
-        $(".header-area").on("click", function () {
-            $('.accordion-single').removeClass("accordion_bg");
-            $(this).parent().closest('.accordion-single').toggleClass("accordion_bg");
-        });
-
-        // Password Show Hide
-        $('.password-eye-icon').on('click', function () {
-            var passwordInput = $($(this).siblings(".input-pass input"));
-            
-            if (passwordInput.attr("type") == "password") {
-                passwordInput.attr("type", "text");
-            } else {
-                passwordInput.attr("type", "password");
-            }
-            $(this).toggleClass('visible');
-        });
-
-
-
-
-        // progress bar
-        $('.progress-done').each(function () {
-            var $progress = $(this);
-            var donePercentage = $progress.data('done') + '%';
-            $progress.css('width', donePercentage);
-            $progress.css('opacity', 1);
-        });
-
-        // // read-more-toggler
-        // var readMoreBtn = $('.read-more-btn');
-        // var readMoreContent = $('.read-more-content');
-        // $(readMoreBtn).on('click', function () {
-        //     $(readMoreContent).toggleClass('active');
-        //     $(this).parent().toggleClass('btn-overlay');
-        //     if ($(this).parent().hasClass("btn-overlay")) {
-        //         $(this).text("Read More");
-        //     } else {
-        //         $(this).text("Okay, I get the point");
-        //     }
-        // });
-
-        // sidebar-toggler
-        $('.sidebar_toggler_btn').on('click', function (event) {
-            var $sidebarSection = $(this).closest('.sidebar-section');
-            $sidebarSection.css('position', 'relative');
-            $sidebarSection.find('.sidebar-xxl-section, .sidebar-xl-section, .sidebar-lg-section, .sidebar-md-section').toggleClass('show');
-            event.stopPropagation();
-        });
-        $(document).on('click', function (event) {
-            if (!$(event.target).closest('.sidebar_toggler_btn, .sidebar-xxl-section, .sidebar-xl-section, .sidebar-lg-section, .sidebar-md-section').length) {
-                $('.sidebar-xxl-section, .sidebar-xl-section, .sidebar-lg-section, .sidebar-md-section').removeClass('show');
-            }
-        });
-
-
-        // comments-area
-        $('.reply-btn').on('click', function () {
-            $(this).closest(".author__content").find(".reply-form").slideToggle();
-        });
-
-        //    // reply
-        //   $(".reply").on("click", function () {
-        //     $(this).toggleClass("reply-active");
-        //     $(this).parent().next(".reply__content").slideToggle();
-        // });
-
-        // fill strok text 
-        $('.fill-stroke-text').on('mouseenter mouseleave', function () {
-            $(this).toggleClass('dataContent');
-            const strokeData = $('.fill-stroke-text.dataContent')[0].innerText;
-            $(this).attr('data-content', strokeData);
-        });
-
-        // Current Year
-        $(".currentYear").text(new Date().getFullYear());
-
-        // Mouse Follower
-        const follower = document.querySelector(".mouse-follower .cursor-outline");
-        const dot = document.querySelector(".mouse-follower .cursor-dot");
-        window.addEventListener("mousemove", (e) => {
-            follower.animate(
-                [
-                    {
-                        opacity: 1,
-                        left: `${e.clientX}px`,
-                        top: `${e.clientY}px`,
-                        easing: "ease-in-out"
-                    }
-                ],
-                {
-                    duration: 3000,
-                    fill: "forwards"
-                }
-            );
-            dot.animate(
-                [
-                    {
-                        opacity: 1,
-                        left: `${e.clientX}px`,
-                        top: `${e.clientY}px`,
-                        easing: "ease-in-out"
-                    }
-                ],
-                {
-                    duration: 1500,
-                    fill: "forwards"
-                }
-            );
-        });
-
-
-
-        // Custom Tabs
-        $(".tablinks .nav-links").each(function () {
-            var targetTab = $(this).closest(".singletab");
-            targetTab.find(".tablinks .nav-links").each(function () {
-                var navBtn = targetTab.find(".tablinks .nav-links");
-                navBtn.click(function () {
-                    navBtn.removeClass('active');
-                    $(this).addClass('active');
-                    var indexNum = $(this).closest("li").index();
-                    var tabcontent = targetTab.find(".tabcontents .tabitem");
-                    $(tabcontent).removeClass('active');
-                    $(tabcontent).eq(indexNum).addClass('active');
-                });
-            });
-        });
-
-        // tabLinks add active 
-        $('.tabLinks .nav-links').on('mouseenter', function () {
-            $(this).addClass('active');
-            $('.tabLinks .nav-links').not(this).removeClass('active');
-        }
-        );
-
-        // custom Accordion
-        $('.accordion-single .header-area').on('click', function () {
-            if ($(this).closest(".accordion-single").hasClass("active")) {
-                $(this).closest(".accordion-single").removeClass("active");
-                $(this).next(".content-area").slideUp();
-            } else {
-                $(".accordion-single").removeClass("active");
-                $(this).closest(".accordion-single").addClass("active");
-                $(".content-area").not($(this).next(".content-area")).slideUp();
-                $(this).next(".content-area").slideToggle();
-            }
-        });
-
-
-    
-
+menuList && menuList.forEach((menu) => {
+  const href = menu.getAttribute("href");
   
+  // Extract base URL from href by removing './' and everything after the last '/'
+  const newBaseUrl = href.replace("./", "").replace(/\/[^\/]*$/, "");
 
-        // Navbar Active Class Only for HTML
-        var curUrl = $(location).attr('href');
-        var terSegments = curUrl.split("/");
-        var desired_segment = terSegments[terSegments.length - 1];
-        var removeGarbage = desired_segment.split(".html")[0] + ".html";
-        var checkLink = $('.navbar-nav a[href="' + removeGarbage + '"]');
-        var targetClass = checkLink.addClass('active');
-        targetClass.parents(".sub-dropdown").find("button").first().addClass('active');
-        targetClass.parents(".show-dropdown").find("button").first().addClass('active');
+  // Check if the current page's pathname ends with the newBaseUrl
+  if (path.endsWith(newBaseUrl)) {
+    menu.classList.add("activeHeaderMenu");
+  }
+});
 
-        // Dropdown Active Remove
-        // $("section, .close-btn").on('click', function () {
-        //     $('.single-item').removeClass('active');
-        // });
+subMenuList && subMenuList.forEach((subMenu) => {
+  const href = subMenu.getAttribute("href");
+  
+  // Extract base URL from href by removing './' and everything after the last '/'
+  const newBaseUrl = href.replace("./", "").replace(/\/[^\/]*$/, "");
 
-       
+  // Check if the current page's pathname ends with the newBaseUrl
+  if (path.endsWith(newBaseUrl)) {
+    subMenu.classList.add("activeMenuText");
 
-    });
+    const parentDiv = subMenu.closest("div")
 
+    parentDiv.querySelector(".subMenuTitle").classList.add("activeHeaderMenu")
+    
+  }
 });
 
 
 
+// header position set
+  window.addEventListener('scroll', function() {
+    const mainHeader = document.querySelector(".header")
+    const scrollButton = document.querySelector(".scrollButton")
+    if(mainHeader){
+      if(window.scrollY > 100) {
 
+        mainHeader.classList.add("headerFixed")
+        mainHeader.classList.remove("headerAbsolute")
+      }else {
+        mainHeader.classList.add("headerAbsolute")
+        mainHeader.classList.remove("headerFixed")
+      }
+    }
+
+    if(scrollButton){
+      if(window.scrollY > 200) {
+        scrollButton.classList.remove("scrollButtonShow")
+        scrollButton.classList.add("scrollButtonShow")
+      }else {
+        scrollButton.classList.remove("scrollButtonShow")
+        scrollButton.classList.add("scrollButtonHide")
+      }
+    }
+    
+  });
+
+
+  // Mobile Menu Toggle
+
+  const mobileMenuOpenButton = document.querySelector(".mobileMenuOpenButton")
+
+  mobileMenuOpenButton && mobileMenuOpenButton.addEventListener("click", () => {
+    const mobileMenuBg = document.querySelector(".mobileMenuBg")
+    const mobileMenu = document.querySelector(".mobileMenu")
+
+    mobileMenuBg.classList.add("mobileMenuBgOpen")
+    mobileMenuBg.classList.remove("mobileMenuBgClose")
+
+    mobileMenu.classList.add("mobileMenuOpen")
+    mobileMenu.classList.remove("mobileMenuClose")
+
+  })
+
+  const mobileMenuCloseButton = document.querySelector(".mobileMenuCloseButton")
+
+  mobileMenuCloseButton && mobileMenuCloseButton.addEventListener("click", () => {
+    const mobileMenuBg = document.querySelector(".mobileMenuBg")
+    const mobileMenu = document.querySelector(".mobileMenu")
+
+    mobileMenuBg.classList.remove("mobileMenuBgOpen")
+    mobileMenuBg.classList.add("mobileMenuBgClose")
+
+    mobileMenu.classList.remove("mobileMenuOpen")
+    mobileMenu.classList.add("mobileMenuClose")
+
+  })
+
+  const mobileSubMenu = document.querySelectorAll(".subMenuToggle")
+
+  mobileSubMenu &&  mobileSubMenu.forEach((el)=> el.addEventListener("click", () => {
+    const activeSubMenu = document.querySelector(".subMenuOpen")
+    const toggleClass = el.querySelector(".subMenu")
+
+    if(toggleClass.classList.contains("subMenuOpen")){
+      toggleClass.classList.add("subMenuClose")
+    toggleClass.classList.remove("subMenuOpen")
+    }else{
+      activeSubMenu?.classList.remove("subMenuOpen")
+      activeSubMenu?.classList.add("subMenuClose")
+      toggleClass.classList.remove("subMenuClose")
+      toggleClass.classList.add("subMenuOpen")
+    }
+
+   
+  }))
+  
+
+ // pricing button switch animation
+const priceButton = document.querySelectorAll(".pricingTabLinks");
+// Add onclick event listener to each element
+priceButton && priceButton.forEach(el => el.addEventListener("click", function(){
+  document.querySelector(".pricingButtonActive")?.classList.remove("pricingButtonActive")
+
+  //pricing change
+const mValue = document.querySelectorAll(".monthlyPrice")
+
+const monthlyPrice = [10,20,40]
+const yearlyPrice = [120,240,480]
+
+if(el.innerHTML.toLowerCase() === "yearly") {
+  mValue.forEach((e,idx)=> {
+    let price= yearlyPrice[idx]
+  e.innerHTML = price.toString()
+  })
+}else(
+  mValue.forEach((e,idx)=> {
+    let price = monthlyPrice[idx]
+  e.innerHTML = price.toString()
+  })
+)
+
+
+
+
+  if(el.classList.contains("pricingButtonActive")){
+    el.classList.remove("pricingButtonActive")
+  }else{
+    el.classList.add("pricingButtonActive")
+  }
+}));
+
+ // Get all elements with class "favorite"
+ const priceButtonBg = document.querySelector(".pricingBg")
+
+ priceButtonBg && priceButtonBg.addEventListener("click", function() {
+
+   if(priceButtonBg.querySelector(".pricingButtonActive").textContent === "Yearly"){
+    priceButtonBg.classList.add("pricingButtonAfterRight")
+   } else {
+    priceButtonBg.classList.remove("pricingButtonAfterRight")
+   }
+
+   if(priceButtonBg.querySelector(".pricingButtonActive").textContent.trim() === "Monthly"){
+    priceButtonBg.classList.add("pricingButtonAfterLeft")
+   } else {
+
+    priceButtonBg.classList.remove("pricingButtonAfterLeft")
+   }
+})
+
+//odometer in view function
+let odometerElement = document.querySelectorAll(".odometer")
+
+odometerElement && odometerElement.forEach((el) => {
+  const odometerElementHeight = el.clientHeight
+  
+  document.addEventListener('scroll', odometerFunction)
+
+  function inView() {
+    // get window height
+    var windowHeight = window.innerHeight;
+    // get number of pixels that the document is scrolled
+    var scrollY = window.scrollY
+    
+    // get current scroll position (distance from the top of the page to the bottom of the current viewport)
+    var scrollPosition = scrollY + windowHeight;
+    // get element position (distance from the top of the page to the bottom of the element)
+    var elementPosition = el.getBoundingClientRect().top + scrollY + odometerElementHeight;
+    
+    // is scroll position greater than element position? (is element in view?)
+    if (scrollPosition > elementPosition) {
+      return true;
+    }
+    
+    return false;
+  }
+  
+  function odometerFunction() {
+    // is element in view?
+    if (inView()) {
+      el.textContent = el.getAttribute("data-odometer-final");
+    }
+  }
+})
+
+
+//faq Toggle
+
+const faqItems = document.querySelectorAll(".faqItem")
+
+
+faqItems && faqItems.forEach((el)=> el.addEventListener("click",()=> {
+  const faqAnswer = el.querySelector(".faqAnswer")
+  const faqIcon = el.querySelector(".faqIcon")
+
+  //active faq item
+  const activeFaqItem = document.querySelector(".faqItemOpen")
+  const activeAnswer = document.querySelector(".faqOpen")
+  const activeFaqIcon = document.querySelector(".faqInvisible")
+
+  if(el.classList.contains("faqItemOpen")){
+    faqAnswer.classList.remove("faqOpen")
+    faqAnswer.classList.add("faqClose")
+
+    faqIcon.classList.add("rotate45deg")
+    faqIcon.classList.remove("faqInvisible")
+
+    el.classList.remove("faqItemOpen")
+    el.classList.add("faqItemClose")
+  }else {
+    activeFaqItem?.classList.remove("faqItemOpen")
+    activeFaqItem?.classList.add("faqItemClose")
+    activeAnswer?.classList.remove("faqOpen")
+    activeAnswer?.classList.add("faqClose")
+    activeFaqIcon?.classList.remove("faqInvisible")
+    activeFaqIcon?.classList.add("rotate45deg")
+
+    faqAnswer.classList.remove("faqClose")
+    faqAnswer.classList.add("faqOpen")
+
+    faqIcon.classList.remove("rotate45deg")
+    faqIcon.classList.add("faqInvisible")
+
+    el.classList.remove("faqItemClose")
+    el.classList.add("faqItemOpen")
+  }
+}))
+
+
+
+//video modal
+
+const videoModalBg = document.querySelector(".videoModalBg")
+const videoModalButtonOpen = document.querySelector(".videoModalButtonOpen")
+const videoModalButtonClose = document.querySelector(".videoModalButtonClose")
+const videoModalItem = document.querySelector(".videoModal")
+
+videoModalButtonOpen && videoModalButtonOpen.addEventListener("click", ()=> {
+  videoModalItem.classList.remove("videoModalClose")
+  videoModalBg.classList.remove("videoModalBgClose")
+  videoModalBg.classList.add("videoModalBgOpen")
+  videoModalItem.classList.add("videoModalOpen")
+})
+
+videoModalButtonClose && videoModalButtonClose.addEventListener("click", ()=> {
+  videoModalItem.classList.remove("videoModalOpen")
+  videoModalBg.classList.remove("videoModalBgOpen")
+  videoModalBg.classList.add("videoModalBgClose")
+  videoModalItem.classList.add("videoModalClose")
+})
+
+//personal details in view line animation
+let experienctElement = document.querySelectorAll(".experience")
+if (experienctElement) {
+  const observer = new IntersectionObserver((bars) => {
+    bars.forEach((bar) => {
+      if (bar.isIntersecting) {
+        bar.target.classList.add("w75");
+      } else {
+        bar.target.classList.remove("w75");
+      }
+    });
+  });
+  experienctElement.forEach((bar) => observer.observe(bar));
+}
+
+
+// product description
+
+const productDescriptionTab = document.querySelectorAll(".productDescriptionTab")
+
+productDescriptionTab && productDescriptionTab.forEach( (e)=> e.addEventListener("click", () => {
+  const tabName = e.innerHTML.trim().toLowerCase()
+  const productDesc= document.querySelector(".productDescription")
+  const productReview= document.querySelector(".productReview")
+
+  productDescriptionTab.forEach((e)=> {
+    e?.classList.remove("borderPrimary")
+  })
+  
+  if( tabName === "description") {
+    e?.classList.remove("border-b-transparent")
+    e?.classList.add("borderPrimary")
+   productDesc.classList.remove("prouctDesctiptionInActive")
+   productDesc.classList.add("prouctDesctiptionActive")
+
+   productReview.classList.add("prouctReviewInActive")
+   productReview.classList.remove("prouctReviewActive")
+  }else{
+    productDesc.classList.add("prouctDesctiptionInActive")
+    productDesc.classList.remove("prouctDesctiptionActive")
+
+    productReview.classList.remove("prouctReviewInActive")
+      productReview.classList.add("prouctReviewActive")
+    e?.classList.remove("borderPrimary")
+  }
+
+
+  if(tabName === "reviews") {
+    e?.classList.remove("border-b-transparent")
+      e.classList.add("borderPrimary")
+      
+     }
+}))
+
+
+// appointment dropdown
+
+const appointmentDropDown = document.querySelector(".appointMentDropdown")
+
+appointmentDropDown && appointmentDropDown.addEventListener("click",()=> {
+
+  const modal = document.querySelector(".appointmentModal")
+  const modalItem = document.querySelectorAll(".modalItem")
+
+  if(modal?.classList.contains("modalActive")){
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }else{
+    modal.classList.add("modalActive")
+    modal.classList.remove("modalInActive")
+  }
+
+  modalItem.forEach((e)=> e.addEventListener("click",()=> {
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }))
+
+})
+
+// country dropdown
+
+const countryDropDown = document.querySelector(".countryDropDown")
+
+countryDropDown && countryDropDown.addEventListener("click",()=> {
+
+  const modal = document.querySelector(".countryModal")
+  const modalItem = document.querySelectorAll(".modalItem")
+
+  if(modal?.classList.contains("modalActive")){
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }else{
+    modal.classList.add("modalActive")
+    modal.classList.remove("modalInActive")
+  }
+
+  modalItem.forEach((e)=> e.addEventListener("click",()=> {
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }))
+
+})
+
+// state dropdown
+
+const stateDropDown = document.querySelector(".stateDropDown")
+
+stateDropDown && stateDropDown.addEventListener("click",()=> {
+
+  const modal = document.querySelector(".stateModal")
+  const modalItem = document.querySelectorAll(".modalItem")
+
+  if(modal?.classList.contains("modalActive")){
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }else{
+    modal.classList.add("modalActive")
+    modal.classList.remove("modalInActive")
+  }
+
+  modalItem.forEach((e)=> e.addEventListener("click",()=> {
+    modal.classList.remove("modalActive")
+    modal.classList.add("modalInActive")
+  }))
+
+})
+
+
+// add remove functionality
+
+const addButton = document.querySelector(".add")
+const removeButton = document.querySelector(".remove")
+const count = document.querySelector(".count")
+
+let value = count ? parseInt(count.innerHTML.trim()) : 0;
+addButton && addButton.addEventListener("click", () => {
+
+  value++;
+
+  count.innerHTML = value.toString();
+});
+
+
+removeButton && removeButton.addEventListener("click", () => {
+
+  if(value > 1) --value
+
+  count.innerHTML = value.toString();
+});
+
+
+ const scrollButton = document.querySelector(".scrollButton")
+
+scrollButton && scrollButton.addEventListener("click",()=> {
+  window.scrollTo({ top: 0, behavior: "smooth" });
+})
+
+
+});
