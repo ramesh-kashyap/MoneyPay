@@ -66,9 +66,11 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method="POST"
-                action="{{ route('user.fundActivation') }}">
+            <form  class="form mt-0" name="frmmain" id="kt_form" method="POST"
+                action="{{ route('user.bank-update') }}">
                 {{ csrf_field() }}
+
+                
 
                 <div class="col-12">
                 </div>
@@ -76,13 +78,17 @@
                 <!-- investment-head::begin -->
 
                 <div class="row">
+                    
                     <div class="col-xl-6 offset-xl-3">
-
+ 
+                    
                         <div class="invest-main-wrap transaction-card-wrap">
-                            <div class="row">
+                            <div  class="row">
+                            <div class="col-xl-6 offset-xl-3 text-center">
+    <h3 style="color:black;">Bank Details</h3>
+</div>
 
-
-
+            
                                 <!-- ==================================== -->
                              
 
@@ -121,7 +127,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Account No</label>
-                                        <input type="text" name="account_holder" class="form-control check_sponsor_exist"
+                                        <input type="text" name="account_number" class="form-control check_sponsor_exist"
                                              
                                             value="" >
                                         
@@ -130,7 +136,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">IFSC Code</label>
-                                        <input type="text" name="account_holder" class="form-control check_sponsor_exist"
+                                        <input type="text" name="ifsc_code" class="form-control check_sponsor_exist"
                                              
                                             value="" >
                                         
@@ -208,46 +214,7 @@
     </div>
 </div>
 <!--end::Content-->
-<script src="https://code.jquery.com//jquery-3.3.1.min.js"></script>
-<script>
-    // function amtValue() {
-    //     var amt = document.getElementById('PACKAGE_AMT').value;
-    //     if (amt % 1000 == 0) {
-    //         return true;
-    //     } else {
-    //         alert('Please enter valid amount Multiple of $. 1000  ');
-    //         return false;
-    //     }
-    // }
 
 
 
-    $('.check_sponsor_exist').keyup(function(e) {
-        var ths = $(this);
-        var res_area = $(ths).attr('data-response');
-        var sponsor = $(this).val();
-        // alert(sponsor); 
-        $.ajax({
-            type: "POST",
-            url: "{{ route('getUserName') }}",
-            data: {
-                "user_id": sponsor,
-                "_token": "{{ csrf_token() }}",
-            },
-            success: function(response) {
-                // alert(response);      
-                if (response != 1) {
-                    // alert("hh");
-                    $(".submit-btn").prop("disabled", false);
-                    $('#' + res_area).html(response).css('color', '#fff').css('font-weight', '800')
-                        .css('margin-buttom', '10px');
-                } else {
-                    // alert("hi");
-                    $(".submit-btn").prop("disabled", true);
-                    $('#' + res_area).html("User Not exists!").css('color', 'red').css(
-                        'margin-buttom', '10px');
-                }
-            }
-        });
-    });
-</script>
+   
