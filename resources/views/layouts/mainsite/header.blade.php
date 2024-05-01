@@ -26,7 +26,7 @@
           <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px"/>
         </a>
       </div>
-      <!-- Desktop Menu Start -->
+      <!-- Desktop menu Start -->
       <nav class="max-lg:hidden">
         <ul class="flex justify-center items-center gap-3">
           <li class="">
