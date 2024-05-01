@@ -14,7 +14,7 @@
     <title>Accupay Html Website</title>
   <script defer src="{{asset('')}}assets/js/index.js"></script><link href="{{asset('')}}assets/css/style.css" rel="stylesheet"></head>
   <body>
-    <!-- Header Section Start -->
+    <!-- Header Start -->
     <header class="">
   <div class="top-0 left-0 right-0 z-50 header headerAbsolute 2">
     <div class="flex justify-between items-center container text-s1 py-6">
