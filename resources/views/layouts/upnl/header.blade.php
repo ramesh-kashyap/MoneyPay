@@ -85,7 +85,7 @@
 }
 .fas
 {
-    color: #ffffff;
+    color: #02938af5;
 }
 .btn-primary {
     background: #29c7e0 !important;
