@@ -23,7 +23,7 @@
           <i class="ph ph-list"></i>
         </button>
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/moneyl.png" alt="accupay logo" />
+          <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px"/>
         </a>
       </div>
       <!-- Desktop Menu Start -->
@@ -108,7 +108,7 @@
     >
       <div class="flex justify-between items-center w-full p-4 sm:p-8">
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/moneyl.png" alt="logo" />
+          <img src="{{asset('')}}assets/images/newlogo.png" alt="logo" style="width:200px,"/>
         </a>
         <i class="ri-close-line !text-3xl cursor-pointer mobileMenuCloseButton">
           <i class="ph ph-x"></i>
