@@ -73,7 +73,7 @@ Route::post('/register', [App\Http\Controllers\UserPanel\Dashboard::class, 'regi
 Route::get('/courses', [App\Http\Controllers\UserPanel\Dashboard::class, 'courses'])->name('user.courses');
 
 // profile
-Route::get('/bankdetail', [App\Http\Controllers\UserPanel\Profile::class, 'bankdetail'])->name('user.bankdetail');
+
 Route::get('/profile', [App\Http\Controllers\UserPanel\Profile::class, 'index'])->name('user.profile');
 Route::post('/update-profile', [App\Http\Controllers\UserPanel\Profile::class, 'profile_update'])->name('user.update-profile');
 Route::get('/ChangePass', [App\Http\Controllers\UserPanel\Profile::class, 'change_password'])->name('user.ChangePass');

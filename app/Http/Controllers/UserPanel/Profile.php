@@ -24,15 +24,7 @@ class Profile extends Controller
     return $this->dashboard_layout();
 
     }
-    public function bankdetail()
-    {
-    $user=Auth::user();
-    $profile_data = User::where('id',$user->id)->orderBy('id','desc')->first();
-    $this->data['profile_data'] =$profile_data;
-    $this->data['page'] = 'user.profile.bank-details';
-    return $this->dashboard_layout();
-
-    }
+   
 
 
     public function change_password()
