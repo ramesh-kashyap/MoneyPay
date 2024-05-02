@@ -26,8 +26,7 @@
                                 </svg> Course</li>
                         </ul>
                         <h1 class="display-3 pt-4">Connect With Us</h1>
-                        <p class="text-bodyText pt-6">Connect with us for expert accounting and payroll services. Reach
-                            out via the form or contact information below.</p>
+                        <p class="text-bodyText pt-6">Connect with Us Today for Personalized Support, Quick Resolutions, and Friendly Assistance—We're Here to Ensure Your Experience with Us is Exceptional.</p>
                     </div>
                     <div class="col-span-12 md:col-span-6 flex justify-center items-center"><img
                             src="{{asset('')}}assets\images\breadcrumb_img_21.png" alt="" class="object-fit max-sm:max-h-[300px]"></div>
