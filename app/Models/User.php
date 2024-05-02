@@ -88,6 +88,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Level Income');
     } 
+    public function direct_bonus()
+    {
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Direct Income');
+    } 
 
     public function payout()
     {

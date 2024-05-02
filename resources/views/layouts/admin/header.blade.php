@@ -95,7 +95,7 @@ display: none;
         ***********************************-->
         <div class="nav-header">
             <a href="{{asset('')}}" class="brand-logo">
-                <img src="{{asset('')}}assets/images/newlogo.png" style="width: 215px;" alt=""/>
+                <img src="{{asset('')}}admin\images\logo-white.png" style="width: 215px;" alt=""/>
      
             </a>
             <div class="nav-control">
@@ -255,8 +255,8 @@ display: none;
                         <ul aria-expanded="false">
                             
                            
-                            <li><a href="{{ route('admin.direct-bonus') }}">Level Bonus</a></li>
-                            <li><a href="">Direct Bonus</a></li>
+                            <li><a href="{{ route('admin.level-bonus') }}">Level Income</a></li>
+                            <li><a href="{{ route('admin.direct-bonus') }}">Direct Income</a></li>
                            
                         </ul>
                     </li>

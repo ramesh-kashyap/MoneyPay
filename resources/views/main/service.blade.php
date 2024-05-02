@@ -21,7 +21,7 @@
                                         d="M181.66,133.66l-80,80a8,8,0,0,1-11.32-11.32L164.69,128,90.34,53.66a8,8,0,0,1,11.32-11.32l80,80A8,8,0,0,1,181.66,133.66Z">
                                     </path>
                                 </g>
-                            </svg> Services</li>
+                            </svg> Service</li>
                     </ul>
                     <h1 class="display-3 pt-4">Our All Services</h1>
                     <p class="text-bodyText pt-6">Welcome to AccuPay, your trusted partner for comprehensive financial

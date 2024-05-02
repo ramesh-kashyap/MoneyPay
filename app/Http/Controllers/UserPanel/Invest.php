@@ -101,7 +101,8 @@ try{
 
             ];
             $payment =  Investment::insert($data);
-       
+            add_direct_income($user_detail->id,$request->amount);
+            add_level_income($user_detail->id,$request->amount);
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -114,8 +115,7 @@ try{
               User::where('id',$user_detail->id)->update($user_update);
             }
      
-            add_direct_income($user_detail->id,$request->amount);
-            add_level_income($user_detail->id,$request->amount);
+         
 
 
 

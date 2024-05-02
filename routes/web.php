@@ -199,8 +199,8 @@ Route::get('user-activation', [App\Http\Controllers\Admin\UserController::class,
 
 //bonusController
 Route::get('roi-bonus', [App\Http\Controllers\Admin\BonusController::class, 'roi_bonus'])->name('admin.roi-bonus');
-Route::get('level-bonus', [App\Http\Controllers\Admin\BonusController::class, 'level_bonus'])->name('admin.level-bonus');
-Route::get('direct-bonus', [App\Http\Controllers\Admin\BonusController::class, 'direct_bonus'])->name('admin.direct-bonus');
+Route::get('level-income', [App\Http\Controllers\Admin\BonusController::class, 'level_bonus'])->name('admin.level-bonus');
+Route::get('Referral-income', [App\Http\Controllers\Admin\BonusController::class, 'direct_bonus'])->name('admin.direct-bonus');
 Route::get('sponsor-bonus', [App\Http\Controllers\Admin\BonusController::class, 'sponsor_bonus'])->name('admin.sponsor-bonus');
 Route::get('reward-bonus', [App\Http\Controllers\Admin\BonusController::class, 'reward_bonus'])->name('admin.reward-bonus');
 

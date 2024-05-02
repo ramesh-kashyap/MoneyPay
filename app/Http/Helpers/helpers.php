@@ -358,7 +358,7 @@ $user_mid = $data->id;
             ];
             $user_data =  Income::Create($data);
            
-            add_level_income($user_mid,$pp);
+            // add_level_income($user_mid,$pp);
        }
 
 
