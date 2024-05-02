@@ -214,56 +214,14 @@ function verificationCode($length)
                           $pp = $amount*2;
   
                         }
-                        if($cnt==6)
+                        if($cnt==5)
                         {
                           $pp = $amount*1;
                         }
-                        if($cnt==7)
+                        if($cnt>=6 && $cnt<=16)
                         {
                           $pp = $amount*0.5;
                         }
-                        if($cnt==8)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==9)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==10)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==10)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==11)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==12)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==13)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==14)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==15)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                        if($cnt==16)
-                        {
-                          $pp = $amount*0.5;
-                        }
-                       
-                        
 
                         }
                         
@@ -285,7 +243,7 @@ function verificationCode($length)
                         
                       $idate = date("Y-m-d");             
                       $user_id_fk=$sponsor;
-                      if($spid>0 && $cnt<=5){
+                      if($spid>0 && $cnt<=16){
                         if($pp>0){
                          
                          $data = [
@@ -382,14 +340,7 @@ $user_mid = $data->id;
              $max_income=$total_get;
              $n_m_t = $max_income - $total_profit;
              // dd($total_received);
-               if($pp >= $n_m_t)
-               {
-                   $pp = $n_m_t;
-                   
-                  User::where('id',$Sposnor_status->id)->update(['active_status' => "Inactive"]);      
-                  Investment::where('user_id',$Sposnor_status->id)->update(['roiCandition' => 1]);  
-              
-               }  
+             
 
 
               if($spid>0 && $pp>0){               
@@ -407,7 +358,7 @@ $user_mid = $data->id;
             ];
             $user_data =  Income::Create($data);
            
-           
+            add_level_income($user_mid,$pp);
        }
 
 

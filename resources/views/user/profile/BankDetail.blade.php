@@ -53,7 +53,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Buy Package <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Bank Kyc <span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -66,11 +66,11 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form  class="form mt-0" name="frmmain" id="kt_form" method="POST"
+            <form class="form mt-0" name="frmmain" id="kt_form" method="POST"
                 action="{{ route('user.bank-update') }}">
                 {{ csrf_field() }}
 
-                
+
 
                 <div class="col-12">
                 </div>
@@ -78,38 +78,27 @@
                 <!-- investment-head::begin -->
 
                 <div class="row">
-                    
+
                     <div class="col-xl-6 offset-xl-3">
- 
-                    
+
+
                         <div class="invest-main-wrap transaction-card-wrap">
-                            <div  class="row">
-                            <div class="col-xl-6 offset-xl-3 text-center">
-    <h3 style="color:black;">Bank Details</h3>
-</div>
-
-            
-                                <!-- ==================================== -->
-                             
-
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Acc Holder</label>
-                                        <input type="text" name="account_holder" class="form-control check_sponsor_exist"
-                                             
-                                            value="" >
-                                        
-                                    </div>
+                            <div class="row">
+                                <div class="col-xl-6 offset-xl-3 text-center">
+                                    <h3 style="color:black;">Bank Details</h3>
                                 </div>
 
 
+                                <!-- ==================================== -->
+
+
+                              
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Bank Name</label>
-                                        <input type="text" name="bank_name" class="form-control check_sponsor_exist"
-                                             
-                                            value="" >
-                                        
+                                        <input class="form-control" type="text" <?=(@$bank_value->bank_name)?"readonly":""?>  onkeyup="this.value=this.value.toUpperCase()"  name="bank_name" value="{{ @$bank_value->bank_name }}"
+                                        placeholder="Enter Bank Name">
+
                                     </div>
                                 </div>
 
@@ -117,31 +106,36 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Branch Name</label>
-                                        <input type="text" name="branch_name" class="form-control check_sponsor_exist"
-                                             
-                                            value="" >
-                                        
+                                        <input class="form-control" type="text" name="branch_name" onkeyup="this.value=this.value.toUpperCase()" <?=(@$bank_value->branch_name)?"readonly":""?>   value="{{ @$bank_value->branch_name }}"
+                                        placeholder="Enter Branch Name">
                                     </div>
                                 </div>
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Account No</label>
-                                        <input type="text" name="account_number" class="form-control check_sponsor_exist"
-                                             
-                                            value="" >
-                                        
+                                        <label for="investfromwallet">A/C Holder First Name</label>
+                                        <input class="form-control" type="text" <?=(@$bank_value->account_holder)?"readonly":""?>  name="account_holder" value="{{ @$bank_value->account_holder }}"
+                                        placeholder="Enter a/c holder first name">
                                     </div>
                                 </div>
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">IFSC Code</label>
-                                        <input type="text" name="ifsc_code" class="form-control check_sponsor_exist"
-                                             
-                                            value="" >
-                                        
+                                        <label for="investfromwallet">Bank IFSC</label>
+                                        <input class="form-control" type="text" <?=(@$bank_value->ifsc_code)?"readonly":""?> onkeyup="this.value=this.value.toUpperCase()"  name="ifsc_code" value="{{ @$bank_value->ifsc_code }}"
+                                        placeholder="Enter IFS Code " required>
+
                                     </div>
                                 </div>
+
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Bank A/c Number </label>
+                                        <input class="form-control" type="text" onkeyup="this.value=this.value.toUpperCase()"  <?=(@$bank_value->account_no)?"readonly":""?>  name="account_number" value="{{ @$bank_value->account_no }}"
+                                        placeholder="Enter Account Number" required>
+                                    </div>
+                                </div>
+
+
 
 
                             </div>
@@ -149,7 +143,7 @@
 
 
                             <div class="al-center">
-                                <button type="submit" class="btn btn-primary report-btn submit-btn">Make Investment
+                                <button type="submit" class="btn btn-primary report-btn submit-btn">Update
                                     <span class="thin-arrow">→</span></button>
                             </div>
                         </div>
@@ -214,7 +208,3 @@
     </div>
 </div>
 <!--end::Content-->
-
-
-
-   

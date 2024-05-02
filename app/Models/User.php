@@ -75,23 +75,26 @@ class User extends Authenticatable
 
     public function binary_bonus()
     {
-        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Binary Income');
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Passive Income');
     } 
 
     
     public function sponsor_bonus()
     {
-        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Direct Bonus');
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
     } 
         
     public function level_bonus()
     {
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Level Income');
+<<<<<<< HEAD
     } 
 
     public function direct_bonus()
     {
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
+=======
+>>>>>>> 0459eac1c7e31e02576c30d10dd8b26d8a04c3ba
     } 
 
     public function payout()

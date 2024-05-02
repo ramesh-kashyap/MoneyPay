@@ -76,13 +76,13 @@
     fill:#0b2741!important
 }
 .aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading .menu-icon.svg-icon svg g [fill],.aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link .menu-icon.svg-icon svg g [fill]{
-    fill:#fff !important
+    fill:#000 !important
 }
 /* .aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading .menu-text,.aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link .menu-text{
     color: #29c7e0!important
 } */
 .aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading .menu-arrow,.aside-menu .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link .menu-arrow{
-    color:#fff !important
+    color:#000 !important
 }
 .aside-menu .menu-nav > .menu-item.menu-item-active > .menu-heading .menu-icon.svg-icon svg g [fill],.aside-menu .menu-nav > .menu-item.menu-item-active > .menu-link .menu-icon.svg-icon svg g [fill]{
     fill:#0b2741!important
@@ -94,7 +94,7 @@
     fill:#0b2741!important
 }
 .aside-menu .menu-nav > .menu-item.menu-item-open > .menu-heading .menu-text,.aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link .menu-text{
-    color:rgb(255, 255, 255)!important
+    color: rgb(30 31 41) !important;
 }
 .aside-menu .menu-nav > .menu-item.menu-item-open > .menu-heading .menu-arrow,.aside-menu .menu-nav > .menu-item.menu-item-open > .menu-link .menu-arrow{
     color:#0b2741!important
@@ -103,10 +103,10 @@
     color: #c09a46 !important
 }
 .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading .menu-bullet.menu-bullet-line > span,.aside-menu .menu-nav > .menu-item .menu-submenu .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link .menu-bullet.menu-bullet-line > span{
-    color:#fff!important
+    color:#000!important
 }
 .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-heading .menu-arrow,.aside-menu .menu-nav > .menu-item .menu-submenu .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link .menu-arrow{
-    color:#fff!important
+    color:#000!important
 }
 .levels{
     background-color:#fff;
@@ -964,7 +964,7 @@ span.crpt-s img{
     margin-bottom: 0px !important;
 }
 .header-fixed.subheader-fixed .subheader{
-    background: #02938AF5;
+    background: #e0e0e0f5;
     /* background: linear-gradient(90deg, rgba(253,213,81,1) 0%, rgba(228,167,62,1) 10%, rgba(253,213,81,1) 20%, rgba(253,213,81,1) 40%, rgba(248,244,171,1) 50%, rgba(253,213,81,1) 60%, rgba(253,213,81,1) 80%, rgba(228,167,62,1) 90%, rgba(253,213,81,1) 100%); */
     z-index:1;
     border: none !important;
@@ -2472,7 +2472,7 @@ span.noti-limit-text{
     border-bottom:1px solid #ECF0F3
 }
 .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item > .menu-heading .menu-text,.aside-menu .menu-nav > .menu-item .menu-submenu .menu-item > .menu-link .menu-text{
-    color: #ffffff;
+    color: #000000;
 }
 .aside-menu .menu-nav > .menu-item .menu-submenu .menu-item > .menu-heading .menu-icon,.aside-menu .menu-nav > .menu-item .menu-submenu .menu-item > .menu-link .menu-icon{
     color:#B5B5C3
@@ -9992,10 +9992,10 @@ span.fis {
     font-weight: 600;
     }
 .gradient-yellow {
-    background: linear-gradient(90deg, rgba(253,213,81,1) 0%, rgba(228,167,62,1) 10%, rgba(253,213,81,1) 20%, rgba(253,213,81,1) 40%, rgba(248,244,171,1) 50%, rgba(253,213,81,1) 60%, rgba(253,213,81,1) 80%, rgba(228,167,62,1) 90%, rgba(253,213,81,1) 100%);
+    /* background: linear-gradient(90deg, rgba(253,213,81,1) 0%, rgba(228,167,62,1) 10%, rgba(253,213,81,1) 20%, rgba(253,213,81,1) 40%, rgba(248,244,171,1) 50%, rgba(253,213,81,1) 60%, rgba(253,213,81,1) 80%, rgba(228,167,62,1) 90%, rgba(253,213,81,1) 100%); */
 }
 .table-head-wrap th {
-    color: #111218 !important;
+    color: #ffffff !important;
 }
 .add-fund-main-tab .form-control input::placeholder {
     color: #ffffff !important;
@@ -10306,8 +10306,7 @@ span.fis {
 }
 
 .aside-menu .menu-nav>.menu-item .menu-submenu .menu-subnav {
-  background: #1e1f29 !important;
-
+  background: #e5eaee !important;
 }
 .fund-card-body{
   position: relative;

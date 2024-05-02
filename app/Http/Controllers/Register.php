@@ -89,7 +89,7 @@ class Register extends Controller
                 //  
           
             $data['name'] = $post_array['name'];
-            // $data['phone'] = $post_array['phone'];
+            $data['phone'] = $post_array['phone'];
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
             $data['password'] =   Hash::make($post_array['password']);
