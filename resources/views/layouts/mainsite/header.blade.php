@@ -7,8 +7,8 @@
     <link rel="icon" type="image/svg+xml" href="{{asset('')}}assets/images/fav.png" />
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="{{asset('')}}assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css" />
+    <link rel="stylesheet" href="{{asset('')}}assets/css/swiper.min.css"/>
+    <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css"/>
     <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
 
     <title>{{sitename()}}</title>
