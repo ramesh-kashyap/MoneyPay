@@ -24,8 +24,7 @@
                                 <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
                                     style="width: 486px; margin-right: 40px;">
                                     <div class="relative">
-                                        <p class="text-lg sm:text-xl">"AccuPay's payroll solutions have transformed HR
-                                            processes at Retail Innovations Ltd. The user-friendly platform"</p>
+                                        <p class="text-lg sm:text-xl">Join Our Community Today to Unlock Exclusive Benefits, Seamless Transactions, and Personalized Support—Your Journey Towards Effortless Convenience Starts Here.</p>
                                         <div class="flex gap-3 pt-3 justify-between">
                                             <div class="">
                                                 <p class="text-lg sm:text-2xl font-medium">Evelyn Alexander</p>

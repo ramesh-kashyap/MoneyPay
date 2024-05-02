@@ -95,7 +95,7 @@ display: none;
         ***********************************-->
         <div class="nav-header">
             <a href="{{asset('')}}" class="brand-logo">
-                <img src="{{asset('')}}upnl/images/logo-icon.png" style="width: 215px;" alt=""/>
+                <img src="{{asset('')}}assets/images/newlogo.png" style="width: 215px;" alt=""/>
      
             </a>
             <div class="nav-control">

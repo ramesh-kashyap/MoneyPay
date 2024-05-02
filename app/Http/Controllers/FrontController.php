@@ -49,5 +49,11 @@ class FrontController extends Controller
     
         return view('main.pricing');
     }
+    public function bank()
+    {
+
+    
+        return view('main.bank');
+    }
 
 }

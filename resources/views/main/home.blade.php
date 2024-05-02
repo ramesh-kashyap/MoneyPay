@@ -29,26 +29,25 @@
           <p
             class="uppercase text-base lg:text-xl font-semibold animate__animated animate__fadeInUp"
           >
-            Efficiency Payroll and workforce mastery
+          Effortless mobile recharging with just a few clicks!
           </p>
           <div class="display-2">
-            We Make
-            <div class="text-s3 inline-flex">Payroll</div>
+          QuickCharge:
+            <div class="text-s3 inline-flex">Power Up</div>
             <br />
-            Painless.
+            in Seconds
           </div>
           <p class="max-w-[550px]">
-            We get your employees paid while providing online access to
-            paystubs, tax reports & payroll tax filings.
+          Recharge your mobile, TV, and pay your utility bills—all in one place, effortlessly
           </p>
           <div class="flex justify-start items-center gap-4 pt-6 lg:pt-8 pb-15">
             <a
-              href="contact.html"
+              href="{{route('register')}}"
               class="font-medium bg-s2 py-2 lg:py-3 px-4 lg:px-6 rounded-full text-mainTextColor"
             >
               Get Started
             </a>
-            <a href="faq.html" class="underline font-medium"> Learn More </a>
+            <a href="{{route('register')}}" class="underline font-medium"> Learn More </a>
           </div>
         </div>
         <div class="col-span-12 lg:col-span-6 lg:col-start-7">
@@ -62,77 +61,48 @@
     <section
       class="stp-15 sbp-15 container grid grid-cols-12 gap-6 border-b border-strokeColor"
     >
-      <div class="col-span-12 sm:col-span-6 xl:col-span-4">
+      <!-- <div class="col-span-12 sm:col-span-6 xl:col-span-4">
         <p
           class="text-xl lg:text-2xl text-bodyText relative after:absolute after:top-[55%] after:right-0 after:w-[50px] after:h-[2px] after:bg-bodyText max-xxl:after:content-none"
         >
           <span class="font-bold text-mainTextColor">15,000+</span>
           businesses from small startups to household names
         </p>
-      </div>
-      <div class="col-span-12 sm:col-span-6 xl:col-span-8 flex pt-4">
+      </div> -->
+      <div class="col-span-12 sm:col-span-12 xl:col-span-12 flex pt-4">
         <div class="swiper company-images-carousel sponsors">
           <div
             class="swiper-wrapper !flex !justify-center !items-center sponsors"
           >
             <div class="swiper-slide">
               <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo1.png" alt="image" />
+                <img src="assets/images/elebill.png" alt="image" />
+              </a>
+              
+            </div>
+            <div class="swiper-slide">
+              <a href="" class="flex justify-center items-center">
+                <img src="assets/images/dishbill.png" alt="image" />
               </a>
             </div>
             <div class="swiper-slide">
               <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo2.png" alt="image" />
+                <img src="assets/images/mobbill.png" alt="image" />
               </a>
             </div>
             <div class="swiper-slide">
               <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo3.png" alt="image" />
+                <img src="assets/images/elebill.png" alt="image" />
               </a>
             </div>
             <div class="swiper-slide">
               <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo2.png" alt="image" />
+                <img src="assets/images/phone.png" alt="image" />
               </a>
-            </div>
+            </div>           
             <div class="swiper-slide">
               <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo3.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo1.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo2.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo3.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo3.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo2.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo3.png" alt="image" />
-              </a>
-            </div>
-            <div class="swiper-slide">
-              <a href="" class="flex justify-center items-center">
-                <img src="assets/images/logo1.png" alt="image" />
+                <img src="assets/images/train.png" alt="image" />
               </a>
             </div>
           </div>
@@ -168,14 +138,13 @@
               <h1
                 class="display-4 pt-4 pb-4 lg:pb-6 wow animate__animated animate__fadeInDown"
               >
-                The global payroll solution
+              Your Multi-Service Recharge Platform
               </h1>
 
               <p
                 class="text-bodyText wow animate__animated animate__fadeInDown"
               >
-                When it comes to payroll solutions, we have a variety of options
-                that benefit both your company and your contractor.
+              From mobile and TV recharges to utility payments, we've got you covered.
               </p>
             </div>
           </div>
@@ -195,10 +164,9 @@
           <div
             class="col-span-12 lg:col-start-8 lg:col-span-5 flex justify-center items-start flex-col"
           >
-            <h1 class="heading-1 pb-5">Consolidate Payroll Processing</h1>
+            <h1 class="heading-1 pb-5">Effortless Recharging & Payments</h1>
             <p class="text-bodyText">
-              We have designed a fast and effective payroll system that
-              streamlines your payment process.
+            Simplify Your Life with One Click: Quick, Secure, and Hassle-Free Payments for All Your Needs
             </p>
             <div class="grid grid-cols-2 gap-4 lg:gap-6 py-6 lg:py-10 w-full">
               <div
@@ -208,7 +176,7 @@
                   class="ph-fill ph-file-text rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
                 ></i>
                 <p class="text-lg font-medium group-hover:text-s1 duration-500">
-                  Tax Preparation
+                Mobile
                 </p>
               </div>
               <div
@@ -218,7 +186,7 @@
                   class="ph-fill ph-hand-heart rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
                 ></i>
                 <p class="text-lg font-medium group-hover:text-s1 duration-500">
-                  Payroll Processing
+                Television
                 </p>
               </div>
               <div
@@ -228,7 +196,7 @@
                   class="ph-fill ph-lightbulb-filament rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
                 ></i>
                 <p class="text-lg font-medium group-hover:text-s1 duration-500">
-                  Cost Effective
+                Electricity
                 </p>
               </div>
               <div
@@ -238,13 +206,13 @@
                   class="ph-fill ph-rocket-launch rounded-full border border-strokeColor bg-softBg w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] text-4xl text-s1 group-hover:text-mainTextColor group-hover:bg-s2 group-hover:border-mainTextColor duration-500 !leading-[0] flex justify-center items-center"
                 ></i>
                 <p class="text-lg font-medium group-hover:text-s1 duration-500">
-                  Scale Rapidly
+                Water
                 </p>
               </div>
             </div>
             <div class="flex justify-start items-start">
               <a
-                href="contact.html"
+                href="{{route('contact')}}"
                 class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
               >
                 Contact Us
@@ -276,13 +244,11 @@
             <h1
               class="display-4 pt-4 wow animate__animated animate__fadeInDown"
             >
-              Perfect solutions for your business
+            Advanced Features for Modern Needs
             </h1>
           </div>
           <p class="text-bodyText max-w-[500px]">
-            We’re simplifying every aspect of managing a world-wide team, from
-            benefits and equity to working visas and equipment. It’s one
-            platform made to get you set up.
+          Experience the Next Level of Convenience, Security, and Reliability with Our State-of-the-Art Payment Platform Designed to Meet All Your Recharging and Billing Needs.
           </p>
         </div>
         <div class="grid grid-cols-12 gap-6 stp-15">
@@ -298,13 +264,12 @@
               >
                 <i class="ph-fill ph-users-three"></i>
               </div>
-              <h4 class="heading-4 pb-5">EOR employees</h4>
+              <h4 class="heading-4 pb-5">Real-Time Processing</h4>
               <p class="text-bodyText pb-6">
-                Easily hire and pay employees where you don’t have entities with
-                Jonny’s world-wide infrastructure.
+              Enjoy instant recharges and bill payments with our cutting-edge technology that ensures your transactions are completed in seconds.
               </p>
               <a
-                href="contact.html"
+                href="{{route('contact')}}"
                 class="flex justify-start items-center gap-2 font-medium"
               >
                 Learn more <i class="ph ph-arrow-right"></i>
@@ -324,13 +289,12 @@
               >
                 <i class="ph-fill ph-hand-coins"></i>
               </div>
-              <h4 class="heading-4 pb-5">Global Payroll</h4>
+              <h4 class="heading-4 pb-5">Wide Coverage</h4>
               <p class="text-bodyText pb-6">
-                Streamline your global payroll with precision and compliance.
-                Our expert services ensure accurate and timely.
+              Our platform supports a vast network of service providers, covering mobile, TV, electricity, and water, making us your go-to for all your payment needs.
               </p>
               <a
-                href="contact.html"
+                href="{{route('contact')}}"
                 class="flex justify-start items-center gap-2 font-medium"
               >
                 Learn more <i class="ph ph-arrow-right"></i>
@@ -350,13 +314,12 @@
               >
                 <i class="ph-fill ph-user-gear"></i>
               </div>
-              <h4 class="heading-4 pb-5">Contractors</h4>
+              <h4 class="heading-4 pb-5">Secure Transactions</h4>
               <p class="text-bodyText pb-6">
-                Reliable contractors delivering quality craftsmanship and
-                exceptional service. Your perfect project,
+              Security is paramount. Our encrypted transactions protect your personal and financial information, giving you peace of mind with every payment.
               </p>
               <a
-                href="contact.html"
+                href="{{route('contact')}}"
                 class="flex justify-start items-center gap-2 font-medium"
               >
                 Learn more <i class="ph ph-arrow-right"></i>
@@ -376,13 +339,12 @@
               >
                 <i class="ph-fill ph-user-plus"></i>
               </div>
-              <h4 class="heading-4 pb-5">Direct employees</h4>
+              <h4 class="heading-4 pb-5">24/7 Support</h4>
               <p class="text-bodyText pb-6">
-                Maximize workforce efficiency with our Direct Employees
-                services. Streamline hiring, payroll,
+              We are here for you around the clock. Our dedicated support team is always available to help you with any queries or issues you may encounter.
               </p>
               <a
-                href="contact.html"
+                href="{{route('contact')}}"
                 class="flex justify-start items-center gap-2 font-medium"
               >
                 Learn more <i class="ph ph-arrow-right"></i>
@@ -415,12 +377,11 @@
           <h1
             class="display-4 pt-4 pb-4 lg:pb-6 wow animate__animated animate__fadeInDown"
           >
-            A Step-by-Step Guide to Our Platform
+          Quick Start Guide
           </h1>
 
           <p class="text-bodyText wow animate__animated animate__fadeInUp">
-            Explore our platform with ease! Sign up, select your industry, and
-            seamlessly integrate our tailored payment solutions.
+          Recharge Your Services and Pay Your Bills in Just Three Easy Steps: Quick, Secure, and Convenient
           </p>
         </div>
       </div>
@@ -448,10 +409,9 @@
         >
           <i class="ph-fill ph-file-plus"></i>
         </div>
-        <h4 class="heading-4 pt-8 pb-6">Create An Account</h4>
+        <h4 class="heading-4 pt-8 pb-6">Register and Log In</h4>
         <p class="text-bodyText">
-          Join our platform effortlessly! Streamlined user registration with
-          secure verification.
+        Create your account using your email or mobile number. Quick and easy registration gets you ready to access all features
         </p>
       </div>
       <div
@@ -462,10 +422,9 @@
         >
           <i class="ph-fill ph-user"></i>
         </div>
-        <h4 class="heading-4 pt-8 pb-6">Add Your Employees</h4>
+        <h4 class="heading-4 pt-8 pb-6">Select Your Service</h4>
         <p class="text-bodyText">
-          Join our platform effortlessly! Streamlined user registration with
-          secure verification.
+        Choose from a variety of services including mobile, TV, and utility payments. Our platform supports all major providers for your convenience.
         </p>
       </div>
       <div
@@ -476,10 +435,9 @@
         >
           <i class="ph-fill ph-hand-coins"></i>
         </div>
-        <h4 class="heading-4 pt-8 pb-6">Run Your First Payroll</h4>
+        <h4 class="heading-4 pt-8 pb-6">Make a Payment</h4>
         <p class="text-bodyText">
-          Join our platform effortlessly! Streamlined user registration with
-          secure verification.
+        Enter your payment details, confirm the amount, and click 'Pay'. Your transaction is secure and you'll receive instant confirmation.
         </p>
       </div>
     </div>
@@ -495,13 +453,11 @@
       class="flex justify-between items-end gap-6 max-lg:flex-col max-lg:items-start"
     >
       <div class="max-w-[600px] flex justify-center items-start flex-col">
-        <p class="bg-p1 py-3 px-5 rounded-full text-white">Why Accupay</p>
-        <h1 class="display-4 pt-4">A platform for your global team</h1>
+        <p class="bg-p1 py-3 px-5 rounded-full text-white">Why Money Pay</p>
+        <h1 class="display-4 pt-4">The Benefits of Partnering with Us</h1>
       </div>
       <p class="text-bodyText max-w-[500px]">
-        Your dependable guide to achieving freedom from manual HR work and
-        building that perfect workplace you have always aspired to build. Your
-        dependable guide to achieving freedom.
+      Experience Superior Service, Exceptional Security, and Unparalleled Ease with Every Transaction.
       </p>
     </div>
     <div class="grid grid-cols-12 gap-6 stp-15">
@@ -509,10 +465,10 @@
         class="col-span-12 sm:col-span-6 lg:col-span-4 bg-white p-6 xl:py-10 xl:px-15 flex flex-col items-center border border-white group hover:border-mainTextColor duration-700 hover:bg-s2 wow animate__animated animate__fadeInUp"
       >
         <div class="">
-          <img src="assets/images/whyAccoupayCard_1.png" alt="image" />
+          <img src="assets/images/payicon.png" alt="image" />
         </div>
         <h4 class="pt-8 heading-4">
-          Hire or relocate team member with in house visa support
+        All-in-One Payment Solution with Comprehensive Service Coverage
         </h4>
       </div>
       <div
@@ -521,10 +477,10 @@
         data-wow-delay=".2s"
       >
         <div class="">
-          <img src="assets/images/whyAccoupayCard_2.png" alt="image" />
+          <img src="assets/images/transicon.png" alt="image" />
         </div>
         <h4 class="pt-8 heading-4">
-          Create complaint contracts with a single click
+        State-of-the-Art Security Measures for Every Transaction
         </h4>
       </div>
       <div
@@ -533,46 +489,13 @@
         data-wow-delay=".4s"
       >
         <div class="">
-          <img src="assets/images/whyAccoupayCard_3.png" alt="image" />
+          <img src="assets/images/usericon.png" alt="image" />
         </div>
         <h4 class="pt-8 heading-4">
-          Send equipment worldwide, without the hassle
+        Effortlessly Navigate Our User-Friendly Digital Platform
         </h4>
       </div>
-      <div
-        class="col-span-12 sm:col-span-6 lg:col-span-4 bg-white p-6 xl:py-10 xl:px-15 flex flex-col items-center border border-white group hover:border-mainTextColor duration-700 hover:bg-s2 wow animate__animated animate__fadeInUp"
-        data-wow-duration="1.3s"
-        data-wow-delay=".6s"
-      >
-        <div class="">
-          <img src="assets/images/whyAccoupayCard_4.png" alt="image" />
-        </div>
-        <h4 class="pt-8 heading-4">
-          Offer country- specific benefits at competitive rates
-        </h4>
-      </div>
-      <div
-        class="col-span-12 sm:col-span-6 lg:col-span-4 bg-white p-6 xl:py-10 xl:px-15 flex flex-col items-center border border-white group hover:border-mainTextColor duration-700 hover:bg-s2 wow animate__animated animate__fadeInUp"
-        data-wow-duration="1.3s"
-        data-wow-delay=".8s"
-      >
-        <div class="">
-          <img src="assets/images/whyAccoupayCard_5.png" alt="image" />
-        </div>
-        <h4 class="pt-8 heading-4">
-          Provide your team with co-working access via work
-        </h4>
-      </div>
-      <div
-        class="col-span-12 sm:col-span-6 lg:col-span-4 bg-white p-6 xl:py-10 xl:px-15 flex flex-col items-center border border-white group hover:border-mainTextColor duration-700 hover:bg-s2 wow animate__animated animate__fadeInUp"
-        data-wow-duration="1.3s"
-        data-wow-delay="1s"
-      >
-        <div class="">
-          <img src="assets/images/whyAccoupayCard_6.png" alt="image" />
-        </div>
-        <h4 class="pt-8 heading-4">Save time using advance integrations</h4>
-      </div>
+      
     </div>
   </div>
 </section>
@@ -580,122 +503,7 @@
     <!-- Why Accupay Section End -->
 
     <!-- Integrations Section Start -->
-    <section class="stp-30 sbp-30">
-      <div class="container grid grid-cols-12">
-        <div
-          class="flex justify-start items-start col-span-12 lg:col-span-5 max-lg:sbp-15"
-        >
-          <div class="max-w-[600px] flex justify-start items-start flex-col">
-            <p
-              class="bg-p1 py-3 px-5 rounded-full text-white wow animate__animated animate__fadeInUp"
-            >
-              Integrations
-            </p>
-            <h1
-              class="display-4 pt-4 pb-6 wow animate__animated animate__fadeInDown"
-            >
-              All in One Place All in Sync.
-            </h1>
-            <p class="text-bodyText wow animate__animated animate__fadeInUp">
-              Experience seamless coordination with our comprehensive services.
-              From accounting to payroll, we bring everything together in one
-              place,
-            </p>
-          </div>
-        </div>
-
-        <div
-          class="col-span-12 min-[500px]:col-span-6 lg:col-span-3 lg:col-start-7 hover:bg-s2 border hover:border-mainTextColor duration-500 min-h-[250px] lg:min-h-[300px] flex justify-start items-start flex-col p-8 bg-softBg1 border-softBg1"
-        >
-          <div class="text-4xl rounded-full text-s1 leading-[0] p-4 bg-white">
-            <i class="ph-fill ph-currency-circle-dollar"></i>
-          </div>
-          <h4 class="heading-4 pt-6 w-[200px]">Payment Gateways</h4>
-          <div
-            class="flex justify-end items-end w-full pt-10 lg:pt-15 text-xl font-medium"
-          >
-            <a
-              href="all-services.html"
-              class="bg-white p-2 rounded-full shadow2 leading-[0]"
-            >
-              <i class="ph ph-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div
-          class="col-span-12 min-[500px]:col-span-6 lg:col-span-3 hover:bg-s2 border hover:border-mainTextColor duration-500 min-h-[250px] lg:min-h-[300px] flex justify-start items-start flex-col p-8 border-white"
-        >
-          <div class="text-4xl rounded-full text-s1 leading-[0] p-4 bg-softBg1">
-            <i class="ph-fill ph-money"></i>
-          </div>
-          <h4 class="heading-4 pt-6 w-[200px]">Tax Software Integration</h4>
-          <div
-            class="flex justify-end items-end w-full pt-10 lg:pt-15 text-xl font-medium"
-          >
-            <a
-              href="all-services.html"
-              class="bg-white p-2 rounded-full shadow2 leading-[0]"
-            >
-              <i class="ph ph-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div
-          class="col-span-12 min-[500px]:col-span-6 lg:col-span-3 lg:col-start-4 min-[500px]:max-lg:order-2 hover:bg-s2 border hover:border-mainTextColor duration-500 min-h-[250px] lg:min-h-[300px] flex justify-start items-start flex-col p-8 bg-softBg1 border-softBg1"
-        >
-          <div class="text-4xl rounded-full text-s1 leading-[0] p-4 bg-white">
-            <i class="ph-fill ph-users-three"></i>
-          </div>
-          <h4 class="heading-4 pt-6 w-[200px]">Expense Management</h4>
-          <div
-            class="flex justify-end items-end w-full pt-10 lg:pt-15 text-xl font-medium"
-          >
-            <a
-              href="all-services.html"
-              class="bg-white p-2 rounded-full shadow2 leading-[0]"
-            >
-              <i class="ph ph-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div
-          class="col-span-12 min-[500px]:col-span-6 lg:col-span-3 hover:bg-s2 border hover:border-mainTextColor duration-500 min-h-[250px] lg:min-h-[300px] flex justify-start items-start flex-col p-8 border-white"
-        >
-          <div class="text-4xl rounded-full text-s1 leading-[0] p-4 bg-softBg1">
-            <i class="ph-fill ph-timer"></i>
-          </div>
-          <h4 class="heading-4 pt-6 w-[200px]">Time Tracking Systems</h4>
-          <div
-            class="flex justify-end items-end w-full pt-10 lg:pt-15 text-xl font-medium"
-          >
-            <a
-              href="all-services.html"
-              class="bg-white p-2 rounded-full shadow2 leading-[0]"
-            >
-              <i class="ph ph-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-        <div
-          class="col-span-12 min-[500px]:col-span-6 lg:col-span-3 hover:bg-s2 border hover:border-mainTextColor duration-500 min-h-[250px] lg:min-h-[300px] flex justify-start items-start flex-col p-8 bg-softBg1 border-softBg1"
-        >
-          <div class="text-4xl rounded-full text-s1 leading-[0] p-4 bg-white">
-            <i class="ph-fill ph-handshake"></i>
-          </div>
-          <h4 class="heading-4 pt-6 w-[200px]">Customer Relationship</h4>
-          <div
-            class="flex justify-end items-end w-full pt-10 lg:pt-15 text-xl font-medium"
-          >
-            <a
-              href="all-services.html"
-              class="bg-white p-2 rounded-full shadow2 leading-[0]"
-            >
-              <i class="ph ph-arrow-right"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    
     <!-- Integrations Section End -->
 
     <!-- Experience Accupay Section Start -->
@@ -709,22 +517,21 @@
           <p
             class="text-lg font-medium underline wow animate__animated animate__fadeInUp"
           >
-            Experience AccuPay
+            Experience Money Pay
           </p>
 
           <h1
             class="display-4 pb-6 pt-4 wow animate__animated animate__fadeInDown"
           >
-            We’ve got everything you need?
+          Your One-Stop Shop for All Essential Services!
           </h1>
 
           <p class="pb-8 wow animate__animated animate__fadeInUp">
-            We save you from all that boring paperwork! From global hiring, to
-            instant payments, and taxes, we’ve got your back.
+          Discover ultimate convenience with Money Pay. Recharge phones, pay bills, and manage essential services all in one place. Our secure platform ensures hassle-free transactions. Join now and experience seamless efficiency for your everyday needs!
           </p>
 
           <a
-            href="contact.html"
+            href="{{route('contact')}}"
             class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
           >
             Contact Us
@@ -749,777 +556,7 @@
     <!-- Experience Accupay Section End -->
 
     <!-- Testimonial Section Start -->
-    <section class="stp-30 sbp-30 relative sponsors">
-  <div class="overflow-hidden">
-    <img
-      src="assets/images/sliceIcon.png"
-      alt="image"
-      class="absolute top-0 right-2 -rotate-90 max-md:h-[80px]"
-    />
-  </div>
-  <div class="container">
-    <div
-      class="flex justify-between items-end gap-6 max-lg:flex-col max-lg:items-start"
-    >
-      <div class="max-w-[600px] flex justify-center items-start flex-col">
-        <p class="bg-p1 py-3 px-5 rounded-full text-white">Testimonial</p>
-        <h1 class="display-4 pt-4">Accupay Customer Stories</h1>
-      </div>
-      <p class="text-bodyText max-w-[500px]">
-        Startups thrive with AccuPay. Their flexible payroll solutions have been
-        instrumental in our journey, providing the support
-      </p>
-    </div>
-  </div>
-  <div class="stp-15">
-    <div class="swiper testimonial-carousel">
-      <div class="swiper-wrapper !flex !justify-center !items-center">
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial10.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Isabelle McKinney</p>
-                <p>Product Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial9.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Amy Gutierrez</p>
-                <p>CFO, Solutions</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial10.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Isabelle McKinney</p>
-                <p>Product Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial9.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Amy Gutierrez</p>
-                <p>CFO, Solutions</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial10.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Isabelle McKinney</p>
-                <p>Product Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial9.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Amy Gutierrez</p>
-                <p>CFO, Solutions</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="pt-6">
-    <div class="swiper testimonial-carousel2">
-      <div class="swiper-wrapper !flex !justify-center !items-center">
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial10.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Isabelle McKinney</p>
-                <p>Product Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial9.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Amy Gutierrez</p>
-                <p>CFO, Solutions</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing.
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial8.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">John D</p>
-                <p>Small Business Owner</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's personalized service has been a game-changer for my
-              small business. Efficient payroll processing."
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial7.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Hunter Romero</p>
-                <p>HR Manager</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="swiper-slide">
-          <div
-            class="border border-strokeColor p-12 flex flex-col justify-center items-center hover:bg-s2 hover:border-mainTextColor duration-700"
-          >
-            <p class="text-bodyText text-center">
-              "AccuPay's payroll solutions have transformed HR processes at
-              Retail Innovations Ltd. The user-friendly platform"
-            </p>
-            <div class="flex gap-3 pt-3">
-              <div class="">
-                <img
-                  src="assets/images/testimonial6.png"
-                  alt="image"
-                  class="rounded-full"
-                />
-              </div>
-              <div class="">
-                <p class="text-lg font-medium">Ora Wong</p>
-                <p>Finance Director</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    
 
     <!-- Testimonial Section End -->
 
@@ -1720,7 +757,7 @@
     <!-- Pricing Section End -->
 
     <!-- Blog Section Start -->
-    <section class="stp-30 sbp-30 overflow-hidden">
+    <!-- <section class="stp-30 sbp-30 overflow-hidden">
       <div class="container">
         <div class="flex justify-between items-end">
           <div class="max-w-[600px] flex justify-end items-start flex-col">
@@ -1877,7 +914,7 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> -->
     <!-- Blog Section End -->
 
     <!-- Got Questions Section Start -->
@@ -1897,12 +934,11 @@
           <h1
             class="display-4 pt-4 pb-4 lg:pb-6 wow animate__animated animate__fadeInUp"
           >
-            Questions? Meet Answer
+          FAQ: Your Queries, Our Solutions
           </h1>
 
           <p class="text-bodyText wow animate__animated animate__fadeInDown">
-            Startups thrive with AccuPay. Their flexible payroll solutions have
-            been instrumental in our journey, providing the support
+          Explore our comprehensive FAQ section for quick answers to common questions. Can't find what you're looking for? Reach out to our support team for personalized assistance!
           </p>
         </div>
       </div>
@@ -1917,9 +953,9 @@
           <div class="text-7xl text-s1">
             <i class="ph-fill ph-binoculars"></i>
           </div>
-          <h4 class="heading-4 pb-4 pt-3">Compare Accupay</h4>
+          <h4 class="heading-4 pb-4 pt-3">Instant Assistance</h4>
           <p class="pb-5 text-center">
-            Explore how AccuPay stands out. Check our comparison.
+          Find answers to common inquiries instantly, from account setup to payment queries, in our detailed FAQ section, accessible 24/7.
           </p>
           <a href="https://softivuspro.com/accupay/contact.html" class="text-s1 underline font-medium">
             Compare Accupay
@@ -1935,9 +971,9 @@
           <div class="text-7xl text-s1">
             <i class="ph-fill ph-desktop"></i>
           </div>
-          <h4 class="heading-4 pb-4 pt-3">Explore The Demo</h4>
+          <h4 class="heading-4 pb-4 pt-3">Personalized Support</h4>
           <p class="pb-5 text-center">
-            Curious about our services? Request a demo to experience firsthand
+          Can't find the answer you need? Contact our support team for tailored assistance and quick resolutions to your specific concerns.
           </p>
           <a href="https://softivuspro.com/accupay/contact.html" class="text-s1 underline font-medium">
             See Demo
@@ -1953,9 +989,9 @@
           <div class="text-7xl text-s1">
             <i class="ph-fill ph-headphones"></i>
           </div>
-          <h4 class="heading-4 pb-4 pt-3">Give Us a Ring</h4>
+          <h4 class="heading-4 pb-4 pt-3">Wide Range of Topics</h4>
           <p class="pb-5 text-center">
-            Monday through Friday from 6AM - 6PM MST
+          Our FAQ covers a wide array of topics, including billing, troubleshooting, and service inquiries, ensuring comprehensive support for all users.
           </p>
           <a href="https://softivuspro.com/accupay/contact.html" class="text-s1 underline font-medium">
             Contact
@@ -1971,9 +1007,9 @@
           <div class="text-7xl text-s1">
             <i class="ph-fill ph-chat-centered"></i>
           </div>
-          <h4 class="heading-4 pb-4 pt-3">Help Centre</h4>
+          <h4 class="heading-4 pb-4 pt-3">Continuous Updates</h4>
           <p class="pb-5 text-center">
-            Looking for answers? Visit our Help Center for detailed guides
+          We regularly update our FAQ section to include the latest information and address emerging queries, providing up-to-date solutions for our users.
           </p>
           <a href="https://softivuspro.com/accupay/contact.html" class="text-s1 underline font-medium">
             Help Center

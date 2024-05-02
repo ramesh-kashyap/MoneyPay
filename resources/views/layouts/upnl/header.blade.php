@@ -102,7 +102,11 @@
     <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
         <!--begin::Logo-->
         <a href="/">
+<<<<<<< HEAD
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png" />
+=======
+            <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png"/>
+>>>>>>> f070a869b886fa12af40c119017380fe2b6c705d
         </a>
         <!--end::Logo-->
         <!--begin::Toolbar-->

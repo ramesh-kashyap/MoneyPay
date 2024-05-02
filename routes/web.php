@@ -58,7 +58,7 @@ Route::get('/games', [App\Http\Controllers\FrontController::class, 'games'])->na
 Route::get('/support', [App\Http\Controllers\FrontController::class, 'support'])->name('support');
 Route::get('/contact', [App\Http\Controllers\FrontController::class, 'contact'])->name('contact');
 Route::get('/pricing', [App\Http\Controllers\FrontController::class, 'pricing'])->name('pricing');
-
+Route::get('/bank', [App\Http\Controllers\FrontController::class, 'bank'])->name('bank');
 
 Route::get('/home', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])->name('main.home');
 
