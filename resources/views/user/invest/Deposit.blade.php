@@ -230,7 +230,7 @@
                 if (response != 1) {
                     // alert("hh");
                     $(".submit-btn").prop("disabled", false);
-                    $('#' + res_area).html(response).css('color', '#fff').css('font-weight', '800')
+                    $('#' + res_area).html(response).css('color', '#000').css('font-weight', '800')
                         .css('margin-buttom', '10px');
                 } else {
                     // alert("hi");

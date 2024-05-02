@@ -65,48 +65,6 @@
                  <!--begin::Container-->
                  <div class="container-fluid">
 
-                     <!-- TradingView Widget BEGIN -->
-                     <div class="tradingview-widget-container">
-                         <div class="tradingview-widget-container__widget"></div>
-                         <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/"
-                                 rel="noopener nofollow" target="_blank"></a></div>
-                         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-                             {
-                                 "symbols": [{
-                                         "description": "BTC",
-                                         "proName": "BITSTAMP:BTCUSD"
-                                     },
-                                     {
-                                         "description": "Gold",
-                                         "proName": "TVC:GOLD"
-                                     },
-                                     {
-                                         "description": "ETH",
-                                         "proName": "BITSTAMP:ETHUSD"
-                                     },
-                                     {
-                                         "description": "USDT",
-                                         "proName": "CRYPTOCAP:USDT"
-                                     },
-                                     {
-                                         "description": "LTC",
-                                         "proName": "CRYPTOCAP:LTC"
-                                     },
-                                     {
-                                         "description": "BAPE",
-                                         "proName": "BITMEX:BAPE"
-                                     }
-                                 ],
-                                 "showSymbolLogo": true,
-                                 "colorTheme": "dark",
-                                 "isTransparent": false,
-                                 "displayMode": "adaptive",
-                                 "locale": "en"
-                             }
-                         </script>
-                     </div>
-                     <!-- TradingView Widget END -->
-
 
                      <!-- Head Notification -->
 
@@ -351,7 +309,7 @@
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Buy Packages</span>
+                                                 <span>Total Packages</span>
                                                  <p>{{ currency() }}
                                                      {{ number_format(Auth::user()->investment->sum('amount'), 2) }}
                                                  </p>
@@ -362,22 +320,11 @@
                                              </div>
                                          </div>
                                      </div>
+                                    
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Roi Bonus</span>
-                                                 <p>{{ currency() }}
-                                                     {{ number_format(Auth::user()->roi_bonus->sum('comm'), 2) }}</p>
-                                             </div>
-                                             <div class="dc-right">
-                                                 <i class="bi bi-file-earmark-binary-fill"></i>
-                                             </div>
-                                         </div>
-                                     </div>
-                                     <div class="col-lg-4 mt-3 mb-3">
-                                         <div class="dark-card-one">
-                                             <div class="dc-left">
-                                                 <span>Total Level Bonus</span>
+                                                 <span>Total Referral Income</span>
                                                  <p>{{ currency() }}
                                                      {{ number_format(Auth::user()->binary_bonus->sum('comm'), 2) }}
                                                  </p>
@@ -394,7 +341,7 @@
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Direct Bonus</span>
+                                                 <span>Total Level Income</span>
                                                  <p>{{ currency() }}
                                                      {{ number_format(Auth::user()->sponsor_bonus->sum('comm'), 2) }}
                                                  </p>
@@ -408,7 +355,7 @@
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Reward Bonus</span>
+                                                 <span>Total Passive Income</span>
                                                  <p>
                                                  <p>{{ currency() }}
                                                      {{ number_format(Auth::user()->binary_bonus->sum('comm'), 2) }}
@@ -499,14 +446,14 @@
                                                                 <div class="input-group">
                                                                     <input class="form-control ref-bg" type="text"
                                                                         name="link" readonly="" id="clipboardleft"
-                                                                        value="{{ asset('') }}register?ref={{ Auth::user()->username }}&pos=Left">
+                                                                        value="{{ asset('') }}register?ref={{ Auth::user()->username }}">
                                                                     <span class="input-group-addon p-0"><button
                                                                             class="btn-copy copyclipbtn"
                                                                             onclick="copyclipboardleft('clipboardleft')"
                                                                             style="border-radius: 0;"><i
                                                                                 class="fas fa-copy"></i></button></span>
                                                                 </div>
-                                                                <small class="text-white">Copy and share <b>LEFT</b>
+                                                                <small class="text-white">Copy and share 
                                                                     affiliate link to get more income.</small>
                                                             </div>
                                                         </div>

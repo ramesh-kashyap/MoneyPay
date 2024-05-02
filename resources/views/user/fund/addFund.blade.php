@@ -100,15 +100,13 @@
 
     /* Style for the container */
     .user-card1 {
-            width: 417px;
+            /* width: 4/17px; */
             border: 1px solid #ccc;
             padding: 20px;
         }
 
         /* Style for the table */
-        .user-table {
-            width: 100%;
-        }
+       
 
         /* Style for table cells */
      
@@ -180,7 +178,7 @@
                                             <div class="py-c-left">
                                                 <div>
                                                     <h4>Fund Deposit</h4>
-                                                    <small>Deposit USDT</small>
+                                                    <small>Deposit INR</small>
                                                 </div>
                                             </div>
                                             <div class="py-c-right">
@@ -212,8 +210,8 @@
                                                                 </div>
                                                             </div>
                                                             <div class="cr-info-right">
-                                                                <h4>Send only  USDT (BEP20) to this deposit Details</h4>
-                                                                <small>Sending other the  USDT (BEP20) may result in the
+                                                                <h4>Send only  INR to this deposit Details</h4>
+                                                                <small>Sending other the  INR may result in the
                                                                     loss of your deposit</small>
                                                             </div>
                                                         </li>
@@ -234,25 +232,22 @@
             <div class="profile-details">
                 <table class="user-table">
                     <tr>
-                        <td style="width:200px;color:#fff;">Name:</td>
-                        <td style="color:#fff;" class="user-value">sagar</td>
+                        <td style="width:200px;color:#fff;">NAME: </td>
+                        <td style="color:#fff;" class="user-value"> MONEYPAY ENTERPRISES </td>
                     </tr>
                     <tr>
-                        <td style="color:#fff;">Bank:</td>
-                        <td  style="color:#fff;"class="user-value">HDFC</td>
+                        <td style="color:#fff;">BANK:</td>
+                        <td  style="color:#fff;"class="user-value"> HDFC BANK </td>
                     </tr>
                     <tr>
-                        <td style="color:#fff;">Acc No:</td>
-                        <td  style="color:#fff;"class="user-value">8754785875487</td>
+                        <td style="color:#fff;">ACC. NO:</td>
+                        <td  style="color:#fff;"class="user-value">50200092863785 </td>
                     </tr>
                     <tr>
-                        <td style="color:#fff;">IFSC Code:</td>
-                        <td style="color:#fff;" class="user-value">874575</td>
+                        <td style="color:#fff;">IFSC:</td>
+                        <td style="color:#fff;" class="user-value"> HDFC0004160 </td>
                     </tr>
-                    <tr>
-                        <td style="color:#fff;">Status:</td>
-                        <td style="color:#fff;" class="user-value">{{ Auth::user()->active_status }}</td>
-                    </tr>
+                    
                 </table>
             </div>
         </div>

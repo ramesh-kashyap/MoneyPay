@@ -11,39 +11,6 @@
     <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css" />
     <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
 
-<<<<<<< HEAD
-<body>
-    <div id="app" data-v-app="">
-        <header>
-            <div class="top-0 left-0 right-0 z-50 animationTwo absolute">
-                <div class="flex justify-between items-center container text-s1 py-6">
-                    <div class="pb-1 flex justify-start items-center gap-3"><button class="lg:hidden text-3xl"><svg
-                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="1em" height="1em"
-                                fill="currentColor">
-                                <g>
-                                    <path
-                                        d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z">
-                                    </path>
-                                </g>
-                            </svg></button><a href="/" class=""><img src="{{asset('')}}assets\images\logo.png" style="width: 200px" alt="accupay logo"></a>
-                    </div>
-                    <nav class="max-lg:hidden">
-                        <ul class="flex justify-center items-center gap-3">
-                        <li class="">
-                                <!----><a href="{{route('Index')}}"
-                                    class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg">Home</a></li>
-                                        <li class="">
-                                <!----><a href="{{route('services')}}"
-                                    class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg">Services</a></li>
-                         
-                           
-                          
-                              
-                                    <li class="">
-                                <!----><a href="{{route('pricing')}}"
-                                    class="hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg">Pricing</a></li>
-                                        <li class="">
-=======
     <title>Accupay Html Website</title>
   <script defer src="{{asset('')}}assets/js/index.js"></script><link href="{{asset('')}}assets/css/style.css" rel="stylesheet"></head>
   <body>
@@ -107,7 +74,6 @@
         </ul>
       </nav>
       <!-- Desktop Menu End -->
->>>>>>> b1b84af7a44bf6d7310292fe00888196dec7c3c3
 
       <div
         class="flex justify-end items-center gap-2 sm:gap-6 xl:gap-10 font-medium max-sm:hidden"

@@ -214,16 +214,7 @@
                                                                 value="{{($profile_data)?$profile_data->phone:''}}">
                                                         </div>
                                                     </div> 
-                                                    <div class="form-row">
-                                                        <div class="form-group col-md-12 mb-3">
-                                                            <label for="inputEmail">USDT ADDRESS</label>
-                                                            <input type="text" placeholder="USDT ADDRESS" name="usdtAdddress" id="inputEmail"
-                                                                class="form-control control-edit"
-                                                                value="{{($profile_data)?$profile_data->trx_addres:''}}">
-                                                        </div>
-
-                                                       
-                                                    </div>
+                                                    
                                                     
                                                      <div class="text-center">
                                                                             <button type="submit"
