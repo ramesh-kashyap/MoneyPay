@@ -1,7 +1,7 @@
 <footer class="bg-mainTextColor text-white/60">
             <div class="container grid grid-cols-12 stp-30 sbp-30 gap-6 max-xxl:pr-4">
                 <div class="col-span-12 min-[450px]:col-span-6 lg:col-span-3 flex flex-col gap-6 lg:gap-8">
-                    <div class=""><img src="{{asset('')}}assets\images\logo_white.png" alt=""></div>
+                    <div class=""><img src="{{asset('')}}assets\images\logo-white.png" alt=""></div>
                     <p class=""> Your trusted partner in accounting and payroll solutions. We deliver precision,
                         efficiency, and tailored services </p>
                     <ul class="flex justify-start items-center gap-2">
