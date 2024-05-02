@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css" />
     <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
 
-    <title>Accupay Html Website</title>
+    <title>{{sitename()}}</title>
   <script defer src="{{asset('')}}assets/js/index.js"></script><link href="{{asset('')}}assets/css/style.css" rel="stylesheet"></head>
   <body>
     <!-- Header Start -->
@@ -23,7 +23,7 @@
           <i class="ph ph-list"></i>
         </button>
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px"/>
+          <img src="{{asset('')}}assets/images/moneyl.png" alt="accupay logo" style="width:180px;"/>
         </a>
       </div>
       <!-- Desktop Menu Start -->
@@ -85,7 +85,7 @@
           <a href="tel:+123456789" class="max-xl:hidden"> + 1234 567 865 </a>
         </div>
         <a
-          href="contact.html"
+          href="{{route('login')}}"
           class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
         >
           Get Started
