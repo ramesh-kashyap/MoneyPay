@@ -87,7 +87,7 @@
                 </div>
             </div>
             <div class="max-xl:container xl:w-[650px] xl:pr-8 max-xl:stp-30">
-                <a href="index.html">
+                <a href="{{asset('')}}">
                     <img src="{{asset('')}}assets/images/newlogo.png" style="width: 200px" alt="image" />
                 </a>
                 <h2 class="display-4 py-5">Login</h2>
@@ -115,14 +115,14 @@
                         <span class="text-xl text-bodyText">
                             <i class="ph-fill ph-envelope"></i>
                         </span>
-                        <input type="text" placeholder="Username"
+                        <input type="text" name="username" placeholder="Username"
                             class="placeholder:text-bodyText w-full outline-none" />
                     </div>
                     <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
                         <span class="text-xl text-bodyText">
                             <i class="ph-fill ph-lock"></i>
                         </span>
-                        <input type="text" placeholder="Password"
+                        <input type="password" name="password" placeholder="Password"
                             class="placeholder:text-bodyText w-full outline-none" />
                     </div>
                     <div class="col-span-2 table-checkbox flex justify-between items-center">
@@ -158,9 +158,9 @@
     <!-- Scroll To top Button End -->
 
     <!--==================================================================-->
-
+@include('partials.notify')
     <!-- ==== js dependencies start ==== -->
-    <script src="index.js"></script>
+    <script src="{{asset('')}}assets/js/index.js"></script>
     <script src="{{asset('')}}assets/js/main.js"></script>
     <script src="{{asset('')}}assets/js/plugins/plugins.js"></script>
     <script src="{{asset('')}}assets/js/plugins/plugin-custom.js"></script>

@@ -23,7 +23,7 @@
           <i class="ph ph-list"></i>
         </button>
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/moneyl.png" alt="accupay logo" style="width:180px;"/>
+          <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px;"/>
         </a>
       </div>
       <!-- Desktop Menu Start -->
