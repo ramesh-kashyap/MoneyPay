@@ -48,7 +48,7 @@ class BonusController extends Controller
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('remarks','C.T.O Income')->orderBy('id', 'DESC');
+            $notes = Income::where('remarks','Level Income')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('rname', 'LIKE', '%' . $search . '%')
@@ -74,14 +74,14 @@ class BonusController extends Controller
 
 
 
-    public function sponsor_bonus(Request $request)
+    public function Direct_Bonus(Request $request)
     {
 
 
            $limit = $request->limit ? $request->limit :  paginationLimit();
             $status = $request->status ? $request->status : null;
             $search = $request->search ? $request->search : null;
-            $notes = Income::where('remarks','Sponsor Bonus')->orderBy('id', 'DESC');
+            $notes = Income::where('remarks','Referral Income')->orderBy('id', 'DESC');
            if($search <> null && $request->reset!="Reset"){
             $notes = $notes->where(function($q) use($search){
               $q->Where('rname', 'LIKE', '%' . $search . '%')
@@ -99,9 +99,9 @@ class BonusController extends Controller
                     'limit' => $limit
                 ]);
 
-                $this->data['level_incomes'] =  $notes;
+                $this->data['direct_incomes'] =  $notes;
                 $this->data['search'] = $search;
-                $this->data['page'] = 'admin.bonus.sponsor-bonus';
+                $this->data['page'] = 'admin.bonus.direct-bonus';
                 return $this->admin_dashboard();
     }
 

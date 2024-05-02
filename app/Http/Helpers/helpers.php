@@ -293,7 +293,7 @@ function verificationCode($length)
                         'user_id_fk' =>$Sposnor_status->username,
                         'amt' => $amt,
                         'comm' => $pp,
-                        'remarks' =>'Level Bonus',
+                        'remarks' =>'Level Income',
                         'level' => $cnt,
                         'rname' => $rname,
                         'fullname' => $fullname,
@@ -398,7 +398,7 @@ $user_mid = $data->id;
                 'user_id_fk' =>$Sposnor_status->username,
                 'amt' => $amt,
                 'comm' => $pp,
-                'remarks' => 'Direct Bonus',
+                'remarks' => 'Referral Income',
                 'level' => $cnt,
                 'rname' => $rname,
                 'fullname' => $fullname,
@@ -407,7 +407,7 @@ $user_mid = $data->id;
             ];
             $user_data =  Income::Create($data);
            
-            add_level_income($user_mid,$pp);
+           
        }
 
 

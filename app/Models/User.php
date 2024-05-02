@@ -86,7 +86,12 @@ class User extends Authenticatable
         
     public function level_bonus()
     {
-        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Level Bonus');
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Level Income');
+    } 
+
+    public function direct_bonus()
+    {
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
     } 
 
     public function payout()

@@ -85,10 +85,10 @@
           <a href="tel:+123456789" class="max-xl:hidden"> + 1234 567 865 </a>
         </div>
         <a
-          href="contact.html"
+          href="{{route('login')}}"
           class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
         >
-          Get Started
+          Login
           <i
             class="ph-bold ph-arrow-up-right group-hover:rotate-[45deg] duration-500 text-base sm:text-xl lg:text-2xl !leading-[0]"
           ></i>

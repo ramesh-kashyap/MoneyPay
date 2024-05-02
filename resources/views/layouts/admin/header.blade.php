@@ -255,7 +255,7 @@ display: none;
                         <ul aria-expanded="false">
                             
                            
-                            <li><a href="{{ route('admin.level-bonus') }}">Level Bonus</a></li>
+                            <li><a href="{{ route('admin.direct-bonus') }}">Level Bonus</a></li>
                             <li><a href="">Direct Bonus</a></li>
                            
                         </ul>
