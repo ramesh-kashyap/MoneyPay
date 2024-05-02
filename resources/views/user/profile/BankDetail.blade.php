@@ -1,5 +1,5 @@
 <script>
-    $("#settings").addClass("menu-item-active");
+    $("#Purchase Package").addClass("menu-item-active");
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
@@ -32,94 +32,9 @@
         icon.classList.add('bx-check'); // Change the class to the desired new icon
     });
 </script>
-<script>
-    $(document).ready(function() {
-        $('#theform').submit(function() {
-            $("#btnsubmit", this).attr('disabled', 'disabled');
-            $("#resendspinner").show();
-            return true;
-        });
-        $('#frmmain1').submit(function() {
-            $("#btnsubmit", this).attr('disabled', 'disabled');
-            $("#spinner").show();
-            return true;
-        });
+<!-- Main Body -->
 
-    });
-
-    $(function() {
-        setTimeout(function() {
-            $('#btnsubmit').show();
-        }, 60000);
-    });
-
-    function submitfrm(val) {
-        $('input[name="frmgateway"]').val(val);
-        document.forms["frmmain1"].submit();
-    }
-
-    function checksubmit() {
-        document.forms["formmain"].submit();
-    }
-</script>
-
-<style>
-    .tab-link-act .nav-link.active {
-        color: #fff !important;
-        background-color: #0b2941 !important;
-    }
-
-    .card.card-custom>.card-header.card-header-tabs-line .nav .nav-link {
-        padding-top: 0.7rem !important;
-        padding-bottom: 0.7rem !important;
-        padding-right: 1rem !important;
-        padding-left: 1rem !important;
-    }
-
-    .nav.nav-tabs.nav-tabs-line .nav-link.active,
-    .nav.nav-tabs.nav-tabs-line .nav-link:hover:not(.disabled),
-    .nav.nav-tabs.nav-tabs-line .show>.nav-link {
-        color: #fff !important;
-        background-color: #0b2941 !important;
-    }
-
-    .nav-tabs .nav-link {
-        border-bottom-right-radius: .42rem;
-        border-bottom-left-radius: .42rem;
-    }
-
-    .nav.nav-tabs.nav-tabs-line .nav-link {
-        margin: 0 7px !important;
-    }
-
-    .form-group {
-        padding: 10px;
-        margin-top: 8px;
-    }
-
-    .bg-dark {
-        background-color: #111218;
-    }
-
-    .success-message {
-        text-align: center;
-        color: #ffffff;
-        font-weight: bold;
-        margin: 0 auto;
-        max-width: 400px;
-    }
-
-    .success-message img {
-        height: 40px;
-    }
-</style>
-
-<head>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-</head>
 <!--begin::Content-->
-
 <div class="no-tp-gap content d-flex flex-column flex-column-fluid " id="kt_content">
     <div class="mobile-nav" id="kt_header_mobile">
         <div>
@@ -136,199 +51,170 @@
     <div class="subheader py-2 py-lg-4 subheader-solid" id="kt_subheader">
         <div class="container-fluid d-flex align-items-center justify-content-between flex-wrap flex-sm-nowrap">
             <!--begin::Info-->
-            <div class="d-flex align-items-center flex-wrap w-full justify-between">
-                <div>
-                    <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Bank Kyc</h5>
-                    <!--end::Page Title-->
-                </div>
+            <div class="d-flex align-items-center flex-wrap mr-2">
+                <!--begin::Page Title-->
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Buy Package <span
+                        style="text-transform:capitalize"></span></h5>
+                <!--end::Page Title-->
             </div>
             <!--end::Info-->
         </div>
     </div>
     <!--end::Subheader-->
-    <!--begin::Entry-->
-    <div class="d-flex flex-column-fluid section-top-50 section-bottom-50">
+
+    <div class="d-flex flex-column-fluid section-top-50">
         <!--begin::Container-->
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-12">
-                    <!--begin::Dashboard-->
-                    <!--begin::Row-->
-                    <script>
-                        function requestTransKey() {
-                            if (confirm("Are you sure, you want recover your Transaction Key ?")) {
-                                var logs = actionRequestAlertResponse("/recover-transaction-password", {}, '', '');
-                            } else
-                                return;
-                        }
-                    </script>
+            <!--begin::Dashboard-->
+            <form  class="form mt-0" name="frmmain" id="kt_form" method="POST"
+                action="{{ route('user.bank-update') }}">
+                {{ csrf_field() }}
 
+                
 
+                <div class="col-12">
+                </div>
 
-                    <!--begin::profile-->
-                    <div class="profile-main">
-                        <div class="row">
-                            <div class="col-xl-6 offset-lg-3 mt-3">
-                                <div
-                                    class="card card-custom card-stretch rounded-10 profile-details-wrap tdxf-bg-2 password transaction-card-wrap profile-password">
-                                    <div
-                                        class="card-header row row-marginless align-items-center flex-wrap py-5 h-auto reset-header">
-                                        <div class="d-flex justify-between w-full align-items-center">
-                                            <div class="card-title">
-                                                <h4 class="password-bordered-text text-color">Bank Kyc</h4>
-                                            </div>
+                <!-- investment-head::begin -->
 
-                                        </div>
+                <div class="row">
+                    
+                    <div class="col-xl-6 offset-xl-3">
+ 
+                    
+                        <div class="invest-main-wrap transaction-card-wrap">
+                            <div  class="row">
+                            <div class="col-xl-6 offset-xl-3 text-center">
+    <h3 style="color:black;">Bank Details</h3>
+</div>
+
+            
+                                <!-- ==================================== -->
+                             
+
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Acc Holder</label>
+                                        <input type="text" name="account_holder" class="form-control check_sponsor_exist"
+                                             
+                                            value="" >
+                                        
                                     </div>
-                                    <div class="card-body pb-0 pt-10">
-                                        <div class="bd-example bd-example-tabs">
-                                            <div class="update mt-5">
-                                                <div class="update-bdy">
-                                                    <div class="update-form">
-                                                        <form method="post" name="formmain"
-                                                            action="{{ route('user.bank-update') }}">
-                                                            {{ csrf_field() }}
-                                                            <div class="update">
+                                </div>
 
 
-                                                                <div class="update-bdy">
-                                                                    <div class="update-form">
-                                                                        <div class="form-group">
-                                                                            <label for="oldloginpassword">Account
-                                                                                Holder</label>
-                                                                            <div class="input-group">
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Bank Name</label>
+                                        <input type="text" name="bank_name" class="form-control check_sponsor_exist"
+                                             
+                                            value="" >
+                                        
+                                    </div>
+                                </div>
 
-                                                                                <input class="form-control"
-                                                                                    type="text"
-                                                                                    <?= @$bank_value->account_holder ? 'readonly' : '' ?>
-                                                                                    name="account_holder"
-                                                                                    value="{{ @$bank_value->account_holder }}"
-                                                                                    placeholder="Account holder ">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="newloginpassword">Bank
-                                                                                Name</label>
-                                                                            <div class="input-group">
 
-                                                                                <input class="form-control"
-                                                                                    type="text"
-                                                                                    <?= @$bank_value->bank_name ? 'readonly' : '' ?>
-                                                                                    onkeyup="this.value=this.value.toUpperCase()"
-                                                                                    name="bank_name"
-                                                                                    value="{{ @$bank_value->bank_name }}"
-                                                                                    placeholder="Enter Bank Name">
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="form-group">
-                                                                            <label for="confloginpassword">Branch
-                                                                                Name</label>
-                                                                            <div class="input-group">
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Branch Name</label>
+                                        <input type="text" name="branch_name" class="form-control check_sponsor_exist"
+                                             
+                                            value="" >
+                                        
+                                    </div>
+                                </div>
 
-                                                                                <input class="form-control"
-                                                                                    type="text" name="branch_name"
-                                                                                    onkeyup="this.value=this.value.toUpperCase()"
-                                                                                    <?= @$bank_value->branch_name ? 'readonly' : '' ?>
-                                                                                    value="{{ @$bank_value->branch_name }}"
-                                                                                    placeholder="Enter Branch Name">
-                                                                            </div>
-                                                                        </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Account No</label>
+                                        <input type="text" name="account_number" class="form-control check_sponsor_exist"
+                                             
+                                            value="" >
+                                        
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">IFSC Code</label>
+                                        <input type="text" name="ifsc_code" class="form-control check_sponsor_exist"
+                                             
+                                            value="" >
+                                        
+                                    </div>
+                                </div>
 
-																		<div class="form-group">
-                                                                            <label for="confloginpassword">Bank A/c Number</label>
-                                                                            <div class="input-group">
 
-                                                                                <input class="form-control" type="text"
-																				onkeyup="this.value=this.value.toUpperCase()"
-																				<?=(@$bank_value->account_no)?"readonly":""?> name="account_number"
-																				value="{{ @$bank_value->account_no }}"
-																				placeholder="Enter Account Number" required>
-                                                                            </div>
-                                                                        </div>
-
-																		<div class="form-group">
-                                                                            <label for="confloginpassword">IFSC</label>
-                                                                            <div class="input-group">
-
-                                                                                <input class="form-control" type="text"
-																				<?=(@$bank_value->ifsc_code)?"readonly":""?>
-																				onkeyup="this.value=this.value.toUpperCase()" name="ifsc_code"
-																				value="{{ @$bank_value->ifsc_code }}" placeholder="Enter IFSC Code "
-																				required>
-                                                                            </div>
-                                                                        </div>
-
-																		
+                            </div>
 
 
 
-                                                                        <div class="text-center">
-                                                                            <button type="submit"
-                                                                                class="btn btn-primary support-btn">Update
-                                                                                 <span
-                                                                                    class="thin-arrow">&rarr;</span></button>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </form>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                            <div class="al-center">
+                                <button type="submit" class="btn btn-primary report-btn submit-btn">Make Investment
+                                    <span class="thin-arrow">→</span></button>
+                            </div>
+                        </div>
+                        <div class="bronze-main-wrap mt-5 mb-4" style="display: none;">
+                            <div class="box-wrap">
+                                <h2 class="text-white">Your Investing</h2>
+                                <div class="box">
+                                    <h2 class="box-heading">Bronze</h2>
+                                    <div class="box-image">
+                                        <img src="{{ asset('') }}upnl/images/package1.png" alt="Box Image">
+                                        <i class="bx bx-check check-icon"></i>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
+                        <div class="silver-main-wrap mt-5" style="display: none;">
+                            <div class="box-wrap mx-auto">
+                                <h2 class="text-white">Your Investing</h2>
+                                <div class="box">
+                                    <h2 class="box-heading">Silver</h2>
+                                    <div class="box-image">
+                                        <img src="{{ asset('') }}upnl/images/package2.png" alt="Box Image">
+                                        <i class="bx bx-check check-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gold-main-wrap mt-5" style="display: none;">
+                            <div class="box-wrap">
+                                <h2 class="text-white">Your Investing</h2>
+                                <div class="box">
+                                    <h2 class="box-heading">Gold</h2>
+                                    <div class="box-image">
+                                        <img src="{{ asset('') }}upnl/images/package3.png" alt="Box Image">
+                                        <i class="bx bx-check check-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="platinum-main-wrap mt-5" style="display: none;">
+                            <div class="box-wrap">
+                                <h2 class="text-white">Your Investing</h2>
+                                <div class="box">
+                                    <h2 class="box-heading">Platinum</h2>
+                                    <div class="box-image">
+                                        <img src="{{ asset('') }}upnl/images/package4.png" alt="Box Image">
+                                        <i class="bx bx-check check-icon"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
-                    <!--end::profile-->
-                    <!--end::Dashboard-->
-
 
                 </div>
-                <div class="col-lg-4 d-flex justify-content-center">
 
-                </div>
-            </div>
 
-            <!--end::Container-->
+
+
+            </form>
         </div>
-        <!--end::Entry-->
     </div>
-    <!--end::Content-->
+</div>
+<!--end::Content-->
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js"></script>
-    <script>
-        var clipboard1 = new ClipboardJS('.affilatecopy');
 
-        clipboard1.on('success', function(e) {
-            alert("Details copied!");
-        });
-        clipboard1.on('error', function(e) {
-            alert("Sorry, something is wrong!");
-        });
-    </script>
-
-    <script>
-        var clipboard2 = new ClipboardJS('.copyafflink');
-
-        clipboard2.on('success', function(e) {
-            alert("Details copied!");
-        });
-        clipboard2.on('error', function(e) {
-            alert("Sorry, something is wrong!");
-        });
-    </script>
-    <script>
-        var clipboard3 = new ClipboardJS('.affilatecopy');
-
-        clipboard3.on('success', function(e) {
-            alert("Details copied!");
-        });
-        clipboard3.on('error', function(e) {
-            alert("Sorry, something is wrong!");
-        });
-    </script>
+   

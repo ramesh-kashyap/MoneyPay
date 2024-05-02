@@ -24,6 +24,7 @@ class Profile extends Controller
     return $this->dashboard_layout();
 
     }
+   
 
 
     public function change_password()

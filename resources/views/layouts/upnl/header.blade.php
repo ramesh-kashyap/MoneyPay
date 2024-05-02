@@ -85,7 +85,7 @@
 }
 .fas
 {
-    color: #ffffff;
+    color: #02938af5;
 }
 .btn-primary {
     background: #29c7e0 !important;
@@ -268,6 +268,15 @@
                                     <span class="menu-text">Fund Deposit</span>
                                 </a>
                             </li>
+
+                            <li class="menu-item" aria-haspopup="true">
+                                <a href="{{route('user.BankDetail')}}" class="menu-link">
+                                    <span class="svg-icon menu-icon sidemenu-icon">
+                                        <i class="bx bx-credit-card"></i>
+                                    </span>
+                                    <span class="menu-text">Bank Detail</span>
+                                </a>
+                            </li>
 {{-- 
                             <li class="menu-item" aria-haspopup="true" id="profile">
                                 <a href="{{route('user.Withdraw-History')}}" class="menu-link">
@@ -395,19 +404,9 @@
                                         </li>
                                         
                                         
-                                       <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                            data-menu-toggle="hover">
-                                            <a href="{{route('user.roi-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Roi Bonus</span>
-                                            </a>
-                                        </li>  
+                                   
                                         
-                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                            data-menu-toggle="hover">
-                                            <a href="{{route('user.matching-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Matching Bonus</span>
-                                            </a>
-                                        </li>
+                                    
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">

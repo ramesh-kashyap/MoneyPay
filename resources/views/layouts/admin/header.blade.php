@@ -182,11 +182,7 @@ display: none;
                     </li>
                     
                     
-                 <li><a href="{{route('admin.user-activation')}}" class="ai-icon" aria-expanded="false">
-                        <i class="flaticon-072-printer"></i>
-                        <span class="nav-text">Vartual power</span>
-                     </a>
-                    </li>
+              
 
                   
                   
@@ -257,10 +253,10 @@ display: none;
 							<span class="nav-text">Profit Summary</span>
 						</a>
                         <ul aria-expanded="false">
-                            <li><a href="{{ route('admin.roi-bonus') }}">Roi Bonus</a></li>
+                            
                            
                             <li><a href="{{ route('admin.level-bonus') }}">Level Bonus</a></li>
-                            <li><a href="{{route('admin.reward-bonus')}}">Reward Bonus</a></li>
+                            <li><a href="">Direct Bonus</a></li>
                            
                         </ul>
                     </li>
