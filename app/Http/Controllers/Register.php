@@ -96,7 +96,7 @@ class Register extends Controller
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
             // $data['password'] =   Hash::make($post_array['password']);
-            // $data['tpassword'] =   Hash::make($tpassword);
+            $data['tpassword'] =   Hash::make($tpassword);
             // $data['PSR'] =  $post_array['password'];
             $data['adhar'] =  $post_array['adhar'];
             $data['pan'] =  $post_array['pan'];
