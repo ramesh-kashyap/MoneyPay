@@ -52,6 +52,7 @@ class Register extends Controller
                 'name' => 'required',
                 // 'password' => 'required|confirmed|min:5',
                 'sponsor' => 'required|exists:users,username',
+                'nominee-name' => 'required|exists:users,name',
                 // 'telegram' => 'required'
               
             ]);
@@ -64,8 +65,7 @@ class Register extends Controller
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
             }
             //check if email exist
-          
-          
+        
             if (isset($request->captcha)) {
                 if (!captchaVerify($request->captcha, $request->captcha_secret)) {
                     $notify[] = ['error', "Invalid Captcha"];
