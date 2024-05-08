@@ -4,20 +4,21 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" type="image/svg+xml" href="{{asset('')}}assets/images/fav.png" />
-    <title>Login -{{siteName()}}</title>
+    <link rel="icon" type="image/svg+xml" href="{{ asset('') }}assets/images/fav.png" />
+    <title>Login -{{ siteName() }}</title>
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="{{asset('')}}assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
-    <script defer src="{{asset('')}}assets/js/index.js"></script>
-    <link href="{{asset('')}}assets/css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('') }}assets/css/swiper.min.css" />
+    <link rel="stylesheet" href="{{ asset('') }}assets/css/animate.min.css" />
+    <script defer src="{{ asset('') }}assets/js/index.js"></script>
+    <link href="{{ asset('') }}assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
     <main>
         <section class="flex justify-start items-center gap-8 xl:gap-20 xxl:gap-32 max-xl:flex-col">
             <div class="relative lg:max-h-screen lg:min-h-screen overflow-hidden max-xl:order-2">
-                <img src="{{asset('')}}assets/images/login_bg_img.png" alt="image" class="object-cover h-full" />
+                <img src="{{ asset('') }}assets/images/login_bg_img.png" alt="image"
+                    class="object-cover h-full" />
 
                 <div
                     class="absolute bottom-10 xl:bottom-20 left-4 xl:left-16 xxl:left-24 xxxl:left-32 testimonial-bg p-4 sm:p-8 max-xl:container lg:w-[550px] rounded-xl overflow-hidden">
@@ -87,18 +88,19 @@
                 </div>
             </div>
             <div class="max-xl:container xl:w-[650px] xl:pr-8 max-xl:stp-30">
-                <a href="{{asset('')}}">
-                    <img src="{{asset('')}}assets/images/newlogo.png" style="width: 200px" alt="image" />
+                <a href="{{ asset('') }}">
+                    <img src="{{ asset('') }}assets/images/newlogo.png" style="width: 200px" alt="image" />
                 </a>
                 <h2 class="display-4 py-5">Login</h2>
                 <p class="text-bodyText pb-6 lg:pb-10">
                     Grow with expert consulting support.
                 </p>
-                <a href="{{route('register')}}" class="flex justify-center items-center gap-2 font-semibold bg-softBg py-4 rounded-xl w-full">
+                <a href="{{ route('register') }}"
+                    class="flex justify-center items-center gap-2 font-semibold bg-softBg py-4 rounded-xl w-full">
                     <span>
-                        <img src="{{asset('')}}assets/images/google.png" alt="image" />
+                        <img src="{{ asset('') }}assets/images/google.png" alt="image" />
                     </span>
-                    Sign up 
+                    Sign up
                 </a>
 
                 <div class="py-6 lg:py-8 text-center">
@@ -107,41 +109,41 @@
                         Or Sign In With
                     </p>
                 </div>
-                <form  method="POST" action="{{route('login')}}">
+                <form method="POST" action="{{ route('login') }}">
                     {{ csrf_field() }}
-                <div class="grid grid-cols-2 gap-6">
-                  
-                    <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
-                        <span class="text-xl text-bodyText">
-                            <i class="ph-fill ph-envelope"></i>
-                        </span>
-                        <input type="text" name="username" placeholder="Username"
-                            class="placeholder:text-bodyText w-full outline-none" />
+                    <div class="grid grid-cols-2 gap-6">
+
+                        <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
+                            <span class="text-xl text-bodyText">
+                                <i class="ph-fill ph-envelope"></i>
+                            </span>
+                            <input type="text" name="username" placeholder="Username"
+                                class="placeholder:text-bodyText w-full outline-none" />
+                        </div>
+                        <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
+                            <span class="text-xl text-bodyText">
+                                <i class="ph-fill ph-lock"></i>
+                            </span>
+                            <input type="password" name="password" placeholder="Password"
+                                class="placeholder:text-bodyText w-full outline-none" />
+                        </div>
+                        <div class="col-span-2 table-checkbox flex justify-between items-center">
+                            <label class="flex justify-start items-center gap-2">
+                                <input type="checkbox" class=" " />
+                                <p>Remember me</p>
+                            </label>
+                            <a class="font-medium"> Forget Password? </a>
+                        </div>
+                        <div class="col-span-2">
+                            <button
+                                class="py-4 bg-p1 text-white block text-center border border-p1 hover:bg-s2 hover:border-mainTextColor hover:text-mainTextColor duration-500 w-full">
+                                Login
+                            </button>
+                        </div>
+
                     </div>
-                    <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
-                        <span class="text-xl text-bodyText">
-                            <i class="ph-fill ph-lock"></i>
-                        </span>
-                        <input type="password" name="password" placeholder="Password"
-                            class="placeholder:text-bodyText w-full outline-none" />
-                    </div>
-                    <div class="col-span-2 table-checkbox flex justify-between items-center">
-                        <label class="flex justify-start items-center gap-2">
-                            <input type="checkbox" class=" " />
-                            <p>Remember me</p>
-                        </label>
-                        <a class="font-medium"> Forget Password? </a>
-                    </div>
-                    <div class="col-span-2">
-                        <button
-                            class="py-4 bg-p1 text-white block text-center border border-p1 hover:bg-s2 hover:border-mainTextColor hover:text-mainTextColor duration-500 w-full">
-                            Login
-                        </button>
-                    </div>
-             
-                </div>
-            </form>
-                
+                </form>
+
             </div>
         </section>
     </main>
@@ -158,12 +160,12 @@
     <!-- Scroll To top Button End -->
 
     <!--==================================================================-->
-@include('partials.notify')
+    @include('partials.notify')
     <!-- ==== js dependencies start ==== -->
-    <script src="{{asset('')}}assets/js/index.js"></script>
-    <script src="{{asset('')}}assets/js/main.js"></script>
-    <script src="{{asset('')}}assets/js/plugins/plugins.js"></script>
-    <script src="{{asset('')}}assets/js/plugins/plugin-custom.js"></script>
+    <script src="{{ asset('') }}assets/js/index.js"></script>
+    <script src="{{ asset('') }}assets/js/main.js"></script>
+    <script src="{{ asset('') }}assets/js/plugins/plugins.js"></script>
+    <script src="{{ asset('') }}assets/js/plugins/plugin-custom.js"></script>
 </body>
 
 </html>
