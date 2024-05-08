@@ -52,7 +52,7 @@ class Register extends Controller
                 'name' => 'required',
                 // 'password' => 'required|confirmed|min:5',
                 'sponsor' => 'required|exists:users,username',
-                'nominee-name' => 'required|exists:users,name',
+                // 'nominee-name' => 'required|exists:users,name',
                 // 'telegram' => 'required'
               
             ]);
@@ -92,7 +92,7 @@ class Register extends Controller
           
             $data['name'] = $post_array['name'];
             $data['lastname'] = $post_array['lastname'];
-            // $data['phone'] = $post_array['phone'];
+            $data['phone'] = $post_array['phone'];
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
             // $data['password'] =   Hash::make($post_array['password']);
@@ -100,10 +100,10 @@ class Register extends Controller
             // $data['PSR'] =  $post_array['password'];
             $data['adhar'] =  $post_array['adhar'];
             $data['pan'] =  $post_array['pan'];
-            $data['nominee-name'] =  $post_array['nominee-name'];
-            $data['nominee-relation'] =  $post_array['nominee-relation'];
+            $data['nominee_name'] =  $post_array['nominee_name'];
+
+            $data['nominee_relation'] =  $post_array['nominee_relation'];
             // $data['telegram'] =  $post_array['telegram'];
-           
             $data['TPSR'] =  $tpassword;
             $data['sponsor'] = $user->id;
             $data['package'] = 0;
@@ -131,8 +131,9 @@ class Register extends Controller
             
             
 
-            return redirect()->route('user.dashboard');
-            //  return redirect()->route('register_sucess')->with('messages', $user);
+            // return redirect()->route('register_sucess');
+            // dd($user);
+             return redirect()->route('register_sucess')->with('messages', $user);
 
         }
         catch(\Exception $e){
