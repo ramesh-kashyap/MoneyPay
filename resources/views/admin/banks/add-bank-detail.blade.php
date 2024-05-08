@@ -54,10 +54,7 @@
                                                 <input class="form-control" onkeyup="this.value=this.value.toUpperCase()"  required id="inputEmail3" placeholder="Ifsc  Code" type="text" name="ifsc_code" value="" >
                                             </div>
 
-                                            <div class="mb-3 col-md-12">
-                                                <label class="form-label">Pancard  No.</label>
-                                                <input class="form-control" onkeyup="this.value=this.value.toUpperCase()"  required id="inputEmail3" placeholder="Pancard  No" type="text" name="pancard_no" value="" >
-                                            </div>
+                                       
                                          
      
                                         </div>

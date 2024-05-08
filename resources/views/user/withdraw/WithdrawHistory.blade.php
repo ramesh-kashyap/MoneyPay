@@ -188,7 +188,8 @@
                                     <th>Sr No</th>
                                     <th>User ID</th>
                                     <th>Amount</th>
-                                    <th>Charge 10%</th>
+                                    <th>Tds charge 5%</th>
+                                    <th>Admin Charge 10%</th>
                                     <th>Net Amount</th>
                                     <th>Withdraw At</th>
                                     <th>Payment Mode</th>
@@ -207,8 +208,9 @@
 
                                           <td>{{$value->user_id_fk}}</td>
                                           <td>{{$value->amount}}</td>
+                                          <td>{{$value->amount*5/100}}</td>
                                           <td>{{$value->amount*10/100}}</td>
-                                          <td>{{$value->amount-$value->amount*10/100}}</td>
+                                          <td>{{$value->amount-$value->amount*15/100}}</td>
 
                                           <td>{{$value->wdate}}</td>
                                           <td>{{$value->payment_mode}}</td>

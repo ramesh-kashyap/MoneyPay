@@ -136,27 +136,13 @@
 									</div>
 								</div>
 							</div>
+							
 							<div class="col-xl-4 col-sm-4">
 								<div class="card">
 									<div class="card-body d-flex align-items-center justify-content-between">
 										<div class="menu">
-											<span class="font-w500 fs-16 d-block mb-2">Total Roi Bonus</span>
-											<h2>{{currency()}}{{  number_format((\App\Models\Income::where('remarks','Binary Income')->sum('comm')),2)   }}</h2>
-										</div>	
-										<div class="d-inline-block position-relative donut-chart-sale">
-											
-                                                <img src="{{asset('admin/images/pool_comission.png')}}" style="width: 80px;" alt="">
-											
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="col-xl-4 col-sm-4">
-								<div class="card">
-									<div class="card-body d-flex align-items-center justify-content-between">
-										<div class="menu">
-											<span class="font-w500 fs-16 d-block mb-2">Total Level Bonus</span>
-											<h2>{{currency()}}{{  number_format((\App\Models\Income::where('remarks','C.T.O Income')->sum('comm')),2)   }}</h2>
+											<span class="font-w500 fs-16 d-block mb-2">Total Level Income</span>
+											<h2>{{currency()}}{{  number_format((\App\Models\Income::where('remarks','Level Income')->sum('comm')),2)   }}</h2>
 										</div>	
 										<div class="d-inline-block position-relative donut-chart-sale">
 										
@@ -172,8 +158,8 @@
 								<div class="card">
 									<div class="card-body d-flex align-items-center justify-content-between">
 										<div class="menu">
-											<span class="font-w500 fs-16 d-block mb-2">Total Reward Bonus</span>
-											<h2>{{currency()}}{{  number_format((\App\Models\Income::where('remarks','Rank Income')->sum('comm')),2)   }}</h2>
+											<span class="font-w500 fs-16 d-block mb-2">Referral Income</span>
+											<h2>{{currency()}}{{  number_format((\App\Models\Income::where('remarks','Referral Income')->sum('comm')),2)   }}</h2>
 										</div>	
 										<div class="d-inline-block position-relative donut-chart-sale">
 											
@@ -183,6 +169,9 @@
 									</div>
 								</div>
 							</div>
+
+
+						
 
                             <div class="col-xl-4 col-sm-4">
 								<div class="card">

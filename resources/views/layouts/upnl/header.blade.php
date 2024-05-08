@@ -17,14 +17,11 @@
         href="{{asset('')}}upnl/css/fullcalendar.bundle.css" />
     <!--end::Page Vendors Styles-->
     <!--begin::Global Theme Styles(used by all pages)-->
-     <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/plugins.bundle.css" />
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/prismjs.bundle.css" />
+    <meta name="csrf-token" id="csrf-token" content="{{ csrf_token() }}">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/plugins.bundle.css" />
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/prismjs.bundle.css" />
     <link rel="stylesheet" href="{{asset('')}}upnl/css/style.bundle.css" />
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/wizard-4.css" />
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/wizard-4.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/ion-rangeslider/2.3.1/css/ion.rangeSlider.min.css" />
     <!-- language -->
@@ -36,8 +33,7 @@
     <!--end::Global Theme Styles-->
     <!--begin::Layout Themes(used by all pages)-->
     <link rel="stylesheet" href="{{asset('')}}upnl/css/light.css" />
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/dark.css" />
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/dark.css" />
 
     <link rel="stylesheet" href="{{asset('')}}upnl/css/light.css" />
     <link rel="stylesheet" href="{{asset('')}}upnl/css/light2.css" />
@@ -48,10 +44,8 @@
 
     <!-- flaticon -->
     <link rel="stylesheet" type="text/css" href="{{asset('')}}upnl/css/flaticon.css" />
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/slick.css">
-    <link rel="preload" as="style" onload="this.rel = 'stylesheet'"
-        href="{{asset('')}}upnl/css/slick-theme.css">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/slick.css">
+    <link rel="preload" as="style" onload="this.rel = 'stylesheet'" href="{{asset('')}}upnl/css/slick-theme.css">
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="{{asset('')}}upnl/css/social-share.min.css" />
 
@@ -78,27 +72,29 @@
 <!--end::Head-->
 <!--begin::Body-->
 <style>
-    .menu-nav > .menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover > .menu-link {
-    background: #1e1f29!important;
-    border-left: 5px double #2dbddd !important;
-    border-radius: 0;
-}
-.fas
-{
-    color: #02938af5;
-}
-.btn-primary {
-    background: #29c7e0 !important;
-    color: #fff !important;
-    border: none !important;
-    height: 45px !important;
-    font-size: 14px !important;
-    border-radius: 10px !important;
-    padding: 1px 11px !important;
-    margin-bottom: 10px !important;
-    line-height: 45px;
-}
+    .menu-nav>.menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover>.menu-link {
+        background: #1e1f29 !important;
+        border-left: 5px double #2dbddd !important;
+        border-radius: 0;
+    }
+
+    .fas {
+        color: #02938af5;
+    }
+
+    .btn-primary {
+        background: #29c7e0 !important;
+        color: #fff !important;
+        border: none !important;
+        height: 45px !important;
+        font-size: 14px !important;
+        border-radius: 10px !important;
+        padding: 1px 11px !important;
+        margin-bottom: 10px !important;
+        line-height: 45px;
+    }
 </style>
+
 <body id="kt_body"
     class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed aside-enabled aside-fixed aside-minimize-hoverable page-loading">
     <!--begin::Main-->
@@ -183,7 +179,9 @@
                     <div class="sidebar">
                         <div class="profile">
                             <a href="#" class="hover-no-color">
-                                <h5 class="mb-0"><?php echo substr(Auth::user()->name, 0, 1)?></h5>
+                                <h5 class="mb-0">
+                                    <?php echo substr(Auth::user()->name, 0, 1)?>
+                                </h5>
                             </a>
                         </div>
                         <div class="side-user__right">
@@ -243,7 +241,7 @@
                                                 <span class="menu-text">Buy Package</span>
                                             </a>
                                         </li>
-                                       
+
 
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
@@ -260,7 +258,7 @@
 
 
 
-                     <li class="menu-item" aria-haspopup="true">
+                            <li class="menu-item" aria-haspopup="true">
                                 <a href="{{route('user.AddFund')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
                                         <i class="bx bx-credit-card"></i>
@@ -269,15 +267,15 @@
                                 </a>
                             </li>
 
-                            <li class="menu-item" aria-haspopup="true">
+                            {{-- <li class="menu-item" aria-haspopup="true">
                                 <a href="{{route('user.BankDetail')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
                                         <i class="bx bx-credit-card"></i>
                                     </span>
                                     <span class="menu-text">Bank Detail</span>
                                 </a>
-                            </li>
-{{-- 
+                            </li> --}}
+                            {{--
                             <li class="menu-item" aria-haspopup="true" id="profile">
                                 <a href="{{route('user.Withdraw-History')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
@@ -286,60 +284,60 @@
                                     <span class="menu-text">Withdrawal Accounts</span>
                                 </a>
                             </li> --}}
-                           {{-- <li class="menu-item" aria-haspopup="true">
+                            {{-- <li class="menu-item" aria-haspopup="true">
                                 <a href="{{route('user.transfer-fund')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
                                         <i class="bx bx-send"></i>
                                     </span>
                                     <span class="menu-text">Transfer Fund</span>
                                 </a>
-                            </li>  --}}
+                            </li> --}}
 
-                         
+
 
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"
-                            id="funds">
-                            <a href="javascript:;" class="menu-link menu-toggle">
-                                <span class="svg-icon menu-icon sidemenu-icon">
-                                    <i class='bx bx-share-alt'></i>
-                                </span>
-                                <span class="menu-text">My Network</span>
-                                <i class="fas fa-angle-right" id="arrow-icon"></i>
-                            </a>
-                            <div class="menu-submenu dropdown-menu-wrap">
-                                <i class="menu-arrow"></i>
-                                <ul class="menu-subnav">
+                                id="funds">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <span class="svg-icon menu-icon sidemenu-icon">
+                                        <i class='bx bx-share-alt'></i>
+                                    </span>
+                                    <span class="menu-text">My Network</span>
+                                    <i class="fas fa-angle-right" id="arrow-icon"></i>
+                                </a>
+                                <div class="menu-submenu dropdown-menu-wrap">
+                                    <i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
 
-                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                        data-menu-toggle="hover">
-                                        <a href="{{route('user.referral-team')}}" class="menu-link">
-                                            <span class="menu-text">Referral team</span>
-                                        </a>
-                                    </li>
-
-
-                                    {{-- <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                        data-menu-toggle="hover">
-                                        <a href="{{route('user.level-team')}}" class="menu-link">
-                                            <span class="menu-text">Level team</span>
-                                        </a>
-                                    </li>
-                                    --}}
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.referral-team')}}" class="menu-link">
+                                                <span class="menu-text">Referral team</span>
+                                            </a>
+                                        </li>
 
 
-                                   
-                               
-                                 
-                                    <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                        data-menu-toggle="hover">
-                                        <a href="{{route('user.new-register')}}" class="menu-link">
-                                            <span class="menu-text">New Register</span>
-                                        </a>
+                                      <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.level-team')}}" class="menu-link">
+                                                <span class="menu-text">Level team</span>
+                                            </a>
+                                        </li>
+                                        
+
+
+
+
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.new-register')}}" class="menu-link">
+                                                <span class="menu-text">New Register</span>
+                                            </a>
                                         </li>
                                     </ul>
                                 </div>
                             </li>
-    
+
 
 
 
@@ -356,12 +354,13 @@
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
 
-                                        <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover">
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
                                             <a href="{{route('user.withdraw-request')}}" class="menu-link">
                                                 <span class="menu-text">Withdrawal Request</span>
                                             </a>
                                         </li>
-                                        
+
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.Withdraw-History')}}" class="menu-link">
@@ -390,46 +389,38 @@
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
 
-                                      <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.fundHistory')}}" class="menu-link">
                                                 <span class="menu-text">Fund Reports</span>
                                             </a>
                                         </li>
-                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                            data-menu-toggle="hover">
-                                            <a href="{{route('user.transfer-reports')}}" class="menu-link">
-                                                <span class="menu-text">Transfer Reports</span>
-                                            </a>
-                                        </li>
-                                        
-                                        
-                                   
-                                        
-                                    
+                                       
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        data-menu-toggle="hover">
+                                        <a href="{{route('user.direct-income')}}" class="menu-link">
+                                            <span class="menu-text">Referral Income</span>
+                                        </a>
+                                    </li>
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.level-income')}}" class="menu-link">
-                                                <span class="menu-text">Level Bonus</span>
+                                                <span class="menu-text">Level Income</span>
                                             </a>
                                         </li>
+                                       
+
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
-                                            <a href="{{route('user.direct-income')}}" class="menu-link">
-                                                <span class="menu-text">Direct Bonus</span>
-                                            </a>
-                                        </li>
-                                      
-                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
-                                            data-menu-toggle="hover">
                                             <a href="{{route('user.reward-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Reward Bonus</span>
+                                                <span class="menu-text">Passive Income</span>
                                             </a>
                                         </li>
-                                      
 
-                                     
+
+
                                     </ul>
                                 </div>
                             </li>
@@ -441,9 +432,9 @@
                                     <span class="menu-text">Support</span>
                                 </a>
                             </li>
-                   
 
-                            
+
+
 
                             <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"
                                 id="profile">
@@ -457,12 +448,12 @@
                                 <div class="menu-submenu dropdown-menu-wrap">
                                     <i class="menu-arrow"></i>
                                     <ul class="menu-subnav">
-                                        <!--<li class="menu-item menu-item-submenu" aria-haspopup="true"-->
-                                        <!--    data-menu-toggle="hover">-->
-                                        <!--    <a href="{{route('user.BankDetail')}}" class="menu-link">-->
-                                        <!--        <span class="menu-text">Bank Kyc</span>-->
-                                        <!--    </a>-->
-                                        <!--</li>-->
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.BankDetail')}}" class="menu-link">
+                                                <span class="menu-text">Bank Kyc</span>
+                                            </a>
+                                        </li>
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.ChangePass')}}" class="menu-link">
@@ -481,8 +472,8 @@
                             </li>
 
                             <li class="menu-item" aria-haspopup="true" id="support">
-                                <a href="{{route('logout')}}"  onclick="event.preventDefault();
-                                document.getElementById('logout-form').submit();"   class="menu-link">
+                                <a href="{{route('logout')}}" onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
                                         <i class="fas fa-power-off mr-2"></i>
                                     </span>
@@ -596,8 +587,7 @@
                                         <div class="bg-primary  prof-wrap">
                                             <h5 class="mb-3">Profile Options</h5>
                                         </div>
-                                        <a href="{{route('user.profile')}}"
-                                            class="iq-sub-card iq-bg-primary-hover">
+                                        <a href="{{route('user.profile')}}" class="iq-sub-card iq-bg-primary-hover">
                                             <div class="media align-items-center">
                                                 <div class="rounded-10 iq-card-icon iq-bg-primary">
                                                     <i class="bx bx-user-circle"></i>
@@ -622,7 +612,8 @@
                                         </a>
                                         <div class="vwall-noti">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();"  role="button" class="iq-sign-btn">
+                                            document.getElementById('logout-form').submit();" role="button"
+                                                class="iq-sign-btn">
                                                 <i class="fas fa-power-off mr-2"></i> Logout
                                             </a>
                                         </div>
@@ -632,13 +623,12 @@
                             </div>
 
 
-                            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                            class="d-none">
-                            @csrf
-                        </form>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                @csrf
+                            </form>
 
 
-                   
+
                             <!--end::Languages-->
                             <!--begin::User-->
 
@@ -649,5 +639,3 @@
                     <!--end::Container-->
                 </div>
                 <!--end::Header-->
-
-       

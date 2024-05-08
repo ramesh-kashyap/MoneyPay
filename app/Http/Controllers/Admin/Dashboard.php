@@ -170,7 +170,7 @@ public function users_bank_kyc(Request $request)
             'branch_name' => 'required',
             'account_no' => 'required',
             'ifsc_code' => 'required',
-            'pancard_no' => 'required',
+            // 'pancard_no' => 'required',
           
           
         ]);
@@ -195,7 +195,7 @@ public function users_bank_kyc(Request $request)
        $bank_array['account_no']=$post_array['account_no'];
        $bank_array['user_id']=$user->id;
        $bank_array['ifsc_code']=$post_array['ifsc_code'];
-       $bank_array['pancard_no']=$post_array['pancard_no'];
+    //    $bank_array['pancard_no']=$post_array['pancard_no'];
         Bank::updateOrCreate(['user_id'=>$user->id],$bank_array);
 
 

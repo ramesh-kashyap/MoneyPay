@@ -1988,7 +1988,7 @@ pre code{
     width:100%;
     margin-bottom:1rem;
     color:#ededef;
-    background-color:transparent
+    background-color: #1c978e;
 }
 .table td,.table th{
     padding:.75rem;
@@ -68275,7 +68275,7 @@ body{
         z-index:2
     }
     .header-mobile-fixed .header-mobile{
-        background-color: #111218;
+        background-color: #16948b;
         position:fixed;
         top:0;
         right:0;

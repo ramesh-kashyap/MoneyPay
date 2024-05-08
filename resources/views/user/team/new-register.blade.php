@@ -330,19 +330,6 @@
                                 </div>
                                 
                                 
-                                  <div class="col-lg-12">
-                                    <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Position </label>
-                                       <select class="form-control" name="position">
-                                           <option value="Left">Left</option>
-                                           <option value="Right">Right</option>
-                                       </select>
-                                    </div> 
-                                </div>
-                                
-
-
-                             
                                          <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Password</label>

@@ -90,15 +90,15 @@
 
 
 
-                                        <h4 style="color: #fff">Congratulations! Your Account has been successfully
+                                        <h4 style="color: #000">Congratulations! Your Account has been successfully
                                             Created.</h4>
                                         <br>
 
-                                        <h4 style="color: #fff">Dear <span class="main-color"
+                                        <h4 style="color: #000">Dear <span class="main-color"
                                                 style="color: #ffc70d;font-weight: 700;">{{$user_details->name }}</span>,
                                         </h4>
                                         <br>
-                                        <h4 style="color: #fff"> You have been successfully registered. <br> Your
+                                        <h4 style="color: #000"> You have been successfully registered. <br> Your
                                             user id is <span class="main-color"
                                                 style="    color: #1885c1;font-weight: 700;">{{$user_details->username  }}</span>
                                             Password is: <span class="main-color"
@@ -213,7 +213,7 @@
                 if (response != 1) {
                     // alert("hh");
                     $(".submit-btn").prop("disabled", false);
-                    $('#' + res_area).html(response).css('color', '#fff').css('font-weight', '800')
+                    $('#' + res_area).html(response).css('color', '#000').css('font-weight', '800')
                         .css('margin-buttom', '10px');
                 } else {
                     // alert("hi");

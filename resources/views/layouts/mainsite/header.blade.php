@@ -23,7 +23,7 @@
           <i class="ph ph-list"></i>
         </button>
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/moneyl.png" alt="accupay logo" style="width:180px;"/>
+          <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px;"/>
         </a>
       </div>
       <!-- Desktop Menu Start -->
@@ -102,7 +102,7 @@
           href="{{route('login')}}"
           class="flex justify-center max-sm:text-sm items-center gap-3 py-2 md:py-3 px-3 md:px-6 rounded-full bg-s2 border border-mainTextColor text-mainTextColor group font-medium"
         >
-          Get Started
+          Login
           <i
             class="ph-bold ph-arrow-up-right group-hover:rotate-[45deg] duration-500 text-base sm:text-xl lg:text-2xl !leading-[0]"
           ></i>
