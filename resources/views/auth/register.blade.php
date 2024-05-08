@@ -5,8 +5,8 @@
     <link rel="icon" type="image/svg+xml" href="/images/fav.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register - Accupay Vue App</title>
-    <script type="module" crossorigin="" src="{{asset('')}}assets/js/index-DgNCsKGi.js"></script>
-    <link rel="stylesheet" crossorigin="" href="{{asset('')}}assets/css/index-bV4azvuR.css">
+    <script type="module" crossorigin="" src="{{ asset('') }}assets/js/index-DgNCsKGi.js"></script>
+    <link rel="stylesheet" crossorigin="" href="{{ asset('') }}assets/css/index-bV4azvuR.css">
 </head>
 
 <body>
@@ -15,7 +15,8 @@
 
             <section class="flex justify-start items-center gap-8 xl:gap-20 xxl:gap-32 max-xl:flex-col">
                 <div class="relative lg:max-h-screen lg:min-h-screen overflow-hidden max-xl:order-2"><img
-                        src="{{asset('')}}assets/images/register_bg_img.png" alt="" class="object-cover h-full">
+                        src="{{ asset('') }}assets/images/register_bg_img.png" alt=""
+                        class="object-cover h-full">
                     <div
                         class="absolute bottom-10 xl:bottom-20 left-4 xl:left-16 xxl:left-24 xxxl:left-32 testimonial-bg p-4 sm:p-8 max-xl:container lg:w-[550px] rounded-xl overflow-hidden">
                         <div
@@ -24,7 +25,9 @@
                                 <div class="swiper-slide swiper-slide-active" data-swiper-slide-index="0"
                                     style="width: 486px; margin-right: 40px;">
                                     <div class="relative">
-                                        <p class="text-lg sm:text-xl">Join Our Community Today to Unlock Exclusive Benefits, Seamless Transactions, and Personalized Support—Your Journey Towards Effortless Convenience Starts Here.</p>
+                                        <p class="text-lg sm:text-xl">Join Our Community Today to Unlock Exclusive
+                                            Benefits, Seamless Transactions, and Personalized Support—Your Journey
+                                            Towards Effortless Convenience Starts Here.</p>
                                         <div class="flex gap-3 pt-3 justify-between">
                                             <div class="">
                                                 <p class="text-lg sm:text-2xl font-medium">Evelyn Alexander</p>
@@ -159,41 +162,47 @@
                     </div>
                 </div>
                 <div class="max-xl:container xl:w-[650px] xl:pr-8 max-xl:stp-30"><a href="/" class=""><img
-                            src="{{asset('')}}assets/images/logo (1).png" alt=""></a>
+                            src="{{ asset('') }}assets/images/logo (1).png" alt=""></a>
                     <h2 class="display-4 py-5">Register</h2>
                     <p class="text-bodyText pb-6 lg:pb-10"> Join Our Community: Register for Exclusive Access </p>
                     <button
                         class="flex justify-center items-center gap-2 font-semibold bg-softBg py-4 rounded-xl w-full"><span><img
-                                src="{{asset('')}}assets/images/google (1).png" alt=""></span> Sign up with Google </button>
-                               
-             <form action="{{route('registers')}}" method="POST"  >
+                                src="{{ asset('') }}assets/images/google (1).png" alt=""></span> Sign
+                        up with Google </button>
+
+                    <form action="{{ route('registers') }}" method="POST">
                         {{ csrf_field() }}
-                        @if ($errors->any())
-    <div class="alert alert-danger">
-        <ul>
-            @foreach ($errors->all() as $error)
-                <li>{{ $error }}</li>
-            @endforeach
-        </ul>
-    </div>
-@endif
+                        @if($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                        <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
 
 
-                    <div class="py-6 lg:py-8 text-center">
-                        <p
-                            class="relative after:absolute after:top-3 after:left-0 after:h-px after:bg-strokeColor after:w-[40%] before:absolute before:top-3 before:right-0 before:h-px before:bg-strokeColor max-md:before:content-none max-md:after:content-none before:w-[40%]">
-                            Or Sign In With </p>
-                    </div>
-                    <div class="grid grid-cols-2 gap-6">
-                        <div class="col-span-2 sm:col-span-1"><input type="text" name="sponsor"  value="" placeholder="Enter Sponsor ID " required
-                                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
-                        <div class="col-span-2 sm:col-span-1"><input type="text"  name="name"    required placeholder="Enter Name"
-                                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
+                        <div class="py-6 lg:py-8 text-center">
+                            <p
+                                class="relative after:absolute after:top-3 after:left-0 after:h-px after:bg-strokeColor after:w-[40%] before:absolute before:top-3 before:right-0 before:h-px before:bg-strokeColor max-md:before:content-none max-md:after:content-none before:w-[40%]">
+                                Or Sign In With </p>
+                        </div>
+                        <div class="grid grid-cols-2 gap-6">
+                            <div class="col-span-2 sm:col-span-1"><input type="text" name="sponsor" value=""
+                                    placeholder="Enter Sponsor Username " required
+                                    class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
+                            <div class="col-span-2 sm:col-span-1"><input type="text" name="name" required
+                                    placeholder="Enter Name"
+                                    class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
 
-                                <div class="col-span-2 sm:col-span-1"><input  name="phone" type="number" value="" placeholder="Enter Mobile no"
-                                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
-                                <div class="col-span-2 sm:col-span-1">
-    <select name="country" required class="py-4 px-8 border w-full outline-none">
+                            <div class="col-span-2 sm:col-span-1"><input name="phone" type="number" value=""
+                                    placeholder="Enter Mobile no"
+                                    class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"></div>
+                            <div class="col-span-2 sm:col-span-1">
+                                <input name="lastname" placeholder="Your Lastname"
+                                    class="py-4 px-8 border w-full outline-none">
+                                <!-- <select name="country" required class="py-4 px-8 border w-full outline-none">
         <option value="" disabled selected>Select Country</option>
         <option value="AF">Afghanistan</option>
         <option value="AL">Albania</option>
@@ -207,61 +216,95 @@
         <option value="AF">afrika</option>
         <option value="AL">afganistan</option>
         <option value="DZ">arjetina</option>
-        <!-- Add more countries here -->
-    </select>
-</div>
+    </select> -->
+                            </div>
+                            <div class="col-span-2 sm:col-span-1">
+                            <label for="male">Male</label>
+                              <input name="gender" type="radio" id="male" value="Male" class="py-4 px-8 border outline-none">
 
-                        <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
-                                class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
-                                    <g>
-                                        <path
-                                            d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
-                                        </path>
-                                    </g>
-                                </svg></span><input type="email" name="email"  placeholder="Email Address" required
-                                class="placeholder:text-bodyText w-full outline-none"></div>
-                        <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
-                                class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
-                                    <g>
-                                        <path
-                                            d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z">
-                                        </path>
-                                    </g>
-                                </svg></span><input type="password"  name="password"  placeholder="Password" required
-                                class="placeholder:text-bodyText w-full outline-none"></div>
-
-                                <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
-                                class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
-                                    viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
-                                    <g>
-                                        <path
-                                            d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z">
-                                        </path>
-                                    </g>
-                                </svg></span><input type="password" name="password_confirmation" placeholder="Enter Confirm Password" required autocomplete="new-password"
-                                class="placeholder:text-bodyText w-full outline-none"></div>
+                            <label for="female">Female</label>
+                            <input name="gender" type="radio" id="female" value="Female" class="py-4 px-8 border outline-none">
 
 
+                                
+                            </div>
 
-                        <div class="col-span-2 table-checkbox"><label
-                                class="flex justify-start items-center gap-2"><input type="checkbox" class="">
-                                <p> Agree With <span class="font-semibold underline"> Privacy &amp; Policy </span></p>
-                            </label></div>
+                            <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
+                                    class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
+                                        <g>
+                                            <path
+                                                d="M224,48H32a8,8,0,0,0-8,8V192a16,16,0,0,0,16,16H216a16,16,0,0,0,16-16V56A8,8,0,0,0,224,48ZM98.71,128,40,181.81V74.19Zm11.84,10.85,12,11.05a8,8,0,0,0,10.82,0l12-11.05,58,53.15H52.57ZM157.29,128,216,74.18V181.82Z">
+                                            </path>
+                                        </g>
+                                    </svg></span><input type="email" name="email" placeholder="Email Address" required
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+
+
+                                    <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
+                                    class="text-xl text-bodyText">  </span><input type="text" name="adhar" placeholder="Adhar Card Number" required
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+
+                                    <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
+                                    class="text-xl text-bodyText">
+                                    </span><input type="text" name="pan" placeholder="PAN Card Number" required
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+                                    <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
+                                
+                            </span><input type="text" name="nominee-name" placeholder="Nominee Name" required
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+
+                            <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2">
+
+                            </span><input type="text" name="nominee-relation"
+                                    placeholder="Nominee Relation" required 
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+
+
+
+                            <!-- <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
+                                    class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
+                                        <g>
+                                            <path
+                                                d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z">
+                                            </path>
+                                        </g>
+                                    </svg></span><input type="password" name="password" placeholder="Password" required
+                                    class="placeholder:text-bodyText w-full outline-none"></div>
+
+                            <div class="col-span-2 py-4 px-8 border flex justify-start items-center gap-2"><span
+                                    class="text-xl text-bodyText"><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 256 256" width="1em" height="1em" fill="currentColor">
+                                        <g>
+                                            <path
+                                                d="M208,80H176V56a48,48,0,0,0-96,0V80H48A16,16,0,0,0,32,96V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V96A16,16,0,0,0,208,80Zm-80,84a12,12,0,1,1,12-12A12,12,0,0,1,128,164Zm32-84H96V56a32,32,0,0,1,64,0Z">
+                                            </path>
+                                        </g>
+                                    </svg></span><input type="password" name="password_confirmation"
+                                    placeholder="Enter Confirm Password" required autocomplete="new-password"
+                                    class="placeholder:text-bodyText w-full outline-none"></div> -->
+
+
+
+                            <div class="col-span-2 table-checkbox"><label
+                                    class="flex justify-start items-center gap-2"><input type="checkbox" class="">
+                                    <p> Agree With <span class="font-semibold underline"> Privacy &amp; Policy </span>
+                                    </p>
+                                </label></div>
                             <div class="col-span-2">
-    <button type="submit"
-            class="py-4 bg-p1 text-white block text-center border border-p1 hover:bg-s2 hover:border-mainTextColor hover:text-mainTextColor duration-500"
-            style="height: 3rem; width: 100%; display: inline-block; text-decoration: none; line-height: 1.3rem;">
-        Register
-    </button>
-</div>
+                                <button type="submit"
+                                    class="py-4 bg-p1 text-white block text-center border border-p1 hover:bg-s2 hover:border-mainTextColor hover:text-mainTextColor duration-500"
+                                    style="height: 3rem; width: 100%; display: inline-block; text-decoration: none; line-height: 1.3rem;">
+                                    Register
+                                </button>
+                            </div>
 
-</form>
-                    </div>
+                    </form>
                 </div>
-            </section>
-        </main>
+    </div>
+    </section>
+    </main>
     </div>
 
 
