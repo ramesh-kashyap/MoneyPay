@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
 
     <title>{{sitename()}}</title>
-  <script defer src="{{asset('')}}assets/js/index.js"></script><link href="{{asset('')}}assets/css/style.css" rel="stylesheet"></head>
+  <script defer src="{{asset('')}}assets/js/index.js"></script>
+  <link href="{{asset('')}}assets/css/style.css" rel="stylesheet">
+  </head>
   <body>
     <!-- Header Start -->
     <header class="">

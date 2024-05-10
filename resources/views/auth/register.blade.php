@@ -99,7 +99,7 @@
         </div>
         <div class="max-xl:container xl:w-[650px] xl:pr-8 max-xl:stp-30">
           <a href="index.html">
-            <img src="assets/images/logo.png" alt="image" />
+            <img src="assets/images/logo.png" alt="image" style="width:180px; height:auto"/>
           </a>
           <h2 class="display-4 py-5">Register</h2>
           <p class="text-bodyText pb-6 lg:pb-10">
@@ -135,8 +135,7 @@
           <div class="grid grid-cols-2 gap-6">
             <div class="col-span-2 sm:col-span-1">
               <input
-              type="text" name="sponsor" value=""
-                                    placeholder="Enter Sponsor Username " required
+              type="text" name="sponsor" value=""   placeholder="Enter Sponsor Username " required
                 class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"
               />
             </div>
@@ -149,7 +148,7 @@
             </div>    
             <div class="col-span-2 sm:col-span-1">
               <input
-              name="name" placeholder="Your Name"
+              name="name" type-="text" value="" placeholder="Your Name"
                 class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"
               />
             </div>

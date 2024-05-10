@@ -60,6 +60,7 @@ Route::get('/contact', [App\Http\Controllers\FrontController::class, 'contact'])
 Route::get('/pricing', [App\Http\Controllers\FrontController::class, 'pricing'])->name('pricing');
 Route::get('/bank', [App\Http\Controllers\FrontController::class, 'bank'])->name('bank');
 
+
 Route::get('/home', [App\Http\Controllers\UserPanel\Dashboard::class, 'index'])->name('main.home');
 
 Route::prefix('user')->group(function ()
@@ -102,6 +103,10 @@ Route::post('/fundActivation', [App\Http\Controllers\UserPanel\Invest::class, 'f
 Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'invest_list'])->name('user.DepositHistory');
 
 // end invest
+
+
+//mobile recharge
+Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
 
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
