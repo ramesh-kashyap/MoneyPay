@@ -107,7 +107,7 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 //mobile recharge
 Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
-
+Route::get('/dth', [App\Http\Controllers\UserPanel\Invest::class, 'dth'])->name('user.dth');
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
 Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');

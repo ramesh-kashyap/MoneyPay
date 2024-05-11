@@ -448,8 +448,8 @@
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                         data-menu-toggle="hover">
-                                        <a href="" class="menu-link">
-                                            <span class="menu-text">Referral Income</span>
+                                        <a href="{{route('user.dth')}}" class="menu-link">
+                                            <span class="menu-text">DTH Recharge</span>
                                         </a>
                                     </li>
 

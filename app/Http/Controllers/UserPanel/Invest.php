@@ -32,6 +32,10 @@ class Invest extends Controller
 {
     return view('user.recharge.mobile');
 }
+public function dth()
+{
+    return view('user.recharge.dth');
+}
 
 
 
