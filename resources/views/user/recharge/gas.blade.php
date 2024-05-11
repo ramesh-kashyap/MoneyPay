@@ -292,10 +292,10 @@
     });
 </script>
 
-<head>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
-</head>
+
 <script>
     if (window.history.replaceState) {
         window.history.replaceState(null, null, window.location.href);

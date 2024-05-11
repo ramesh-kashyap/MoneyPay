@@ -318,4 +318,134 @@
         });
     });
 </script>
+
+
+
+<style>
+    .qrcode canvas {
+        width: 100%;
+    }
+</style>
+
+<!--begin::Content-->
+<div class="no-tp-gap content d-flex flex-column flex-column-fluid " id="kt_content" style="margin-top:50px">
+    <div class="mobile-nav" id="kt_header_mobile">
+        <div>
+            <button class="" id="kt_aside_mobile_toggle">
+                <i class="bi bi-text-left icon-lg"></i>
+            </button>
+            <span>Menu</span>
+        </div>
+        <div>
+            <span id="server-time-mobile"></span>
+        </div>
+    </div>
+    <!--begin::Subheader-->
+   
+
+    <!--end::Subheader-->
+    <!--begin::Entry-->
+
+    <!--begin: Wizard-->
+    <div class="wizard wizard-4 mbl-top-135" id="kt_wizard_v4" data-wizard-state="step-first"
+        data-wizard-clickable="true">
+        <div class="container-fluid">
+            <div class="row d-flex justify-content-center">
+             
+            
+  
+                    <form style="    width: 100%;">
+                        <div class="row">
+                            <div  class="col-xl-4">
+                                <div style=""class="form-group mb-3">
+                                    <input type="text" style="border-radius:15px;" Placeholder="Search Users"
+                                        name="search" class="form-control" value="{{ @$search }}">
+                                </div>
+                            </div>
+
+
+                            <div class="col-xl-2">
+                                <div class="form-group mb-3">
+                                    <select name="limit" style="border-radius:15px;" class="form-control">
+                                        <option value="10">10</option>
+                                        <option value="25">25</option>
+                                        <option value="50">50</option>
+                                        <option value="100">100</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group mb-3">
+                                    <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
+                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                        value="Search" />
+                                </div>
+                            </div>
+                            <div class="col-3">
+                                <div class="form-group mb-3">
+                                    <a href="{{ route('user.referral-team') }}" style="padding: 0.6rem 2rem;"
+                                        name="reset"
+                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                        value="Reset">Reset</a>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </form>
+             
+
+                    <div class="table-responsive form-white-curved table-main-wrap">
+                        <table class="table table-bordered">
+                            <thead class="gradient-yellow table-head-wrap">
+                                <tr>
+                                    <th>TXID</th>
+                                    <th>Operator</th>
+                                    <th>Number</th>
+                                    <th>Amount</th>
+                                 
+                                    <th>Status</th>
+                                    <th>Operator Id</th>
+                                    <th>Rechage By</th>
+                                        <!--<th>Point</th>-->
+                                    <th>Date Time</th>
+                                
+                                </tr>
+                            </thead>
+                            <tbody>
+                            
+                            
+                                    <tr>
+                                        <td>4</td>
+                                        <td>3</td>
+                                        <td>2</td>
+                                        <td>2</td>
+                                  
+                                        <td>3</td>
+                                        <td>32</td>
+                                        <td>3</td>
+                               
+
+                                        <td>
+                                    </td>
+
+
+                                    </tr>
+                            
+
+                           
+                        </tbody>
+                        </table>
+                        <br>
+                    
+                        <div id="datarowsremaining" style='text-align:center'>
+                        </div>
+                    </div>
+               
+            </div>
+        </div>
+    </div>
+</div>
+
+
 @include('layouts.upnl.footer')

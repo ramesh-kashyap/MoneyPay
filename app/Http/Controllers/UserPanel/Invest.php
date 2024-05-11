@@ -57,6 +57,10 @@ public function pantable()
     return view('user.recharge.pan-card');
 }
 
+public function postpaid()
+{
+    return view('user.recharge.postpaid');
+}
     public function fundActivation(Request $request)
     {
 
