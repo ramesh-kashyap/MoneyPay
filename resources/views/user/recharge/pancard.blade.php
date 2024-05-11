@@ -127,7 +127,7 @@
 
 
                             <div class="al-center">
-                                <button type="submit" class="btn btn-primary report-btn submit-btn">Make Investment
+                                <button type="submit" class="btn btn-primary report-btn submit-btn">buy
                                     <span class="thin-arrow">→</span></button>
                             </div>
                         </div>

@@ -471,14 +471,14 @@
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.gas')}}" class="menu-link">
-                                                <span class="menu-text">gas</span>
+                                                <span class="menu-text">Gas</span>
                                             </a>
                                         </li> 
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.elecrticity')}}" class="menu-link">
-                                                <span class="menu-text">Ecectricity</span>
+                                                <span class="menu-text">Electricity</span>
                                             </a>
                                         </li>                                        
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"

@@ -133,7 +133,7 @@
 
 
                             <div class="al-center">
-                                <button type="submit" class="btn btn-primary report-btn submit-btn">Make Investment
+                                <button type="submit" class="btn btn-primary report-btn submit-btn">Recharge
                                     <span class="thin-arrow">→</span></button>
                             </div>
                         </div>
@@ -341,18 +341,17 @@
                             
                             
                                     <tr>
-                                        <td>4</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                   
-                                        <td>3</td>
-                                        <td>32</td>
-                                        <td>3</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                
 
-                                        <td>
-                                    </td>
+                                        <td></td>
 
 
                                     </tr>
