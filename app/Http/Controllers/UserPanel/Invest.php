@@ -30,7 +30,7 @@ class Invest extends Controller
 
     public function mobile()
 {
-    return view('user.mobile');
+    return view('user.recharge.mobile');
 }
 
 
