@@ -192,7 +192,7 @@ class Team extends Controller
            $username = $tuser;
           }
 
-           $check=User::where('username',$username)->count();;
+           $check=User::where('username',$username)->count();
             if($check>0)
             {
                $username = $username;  
@@ -332,5 +332,8 @@ class Team extends Controller
 
     }
 
+
+
+   
 
 }

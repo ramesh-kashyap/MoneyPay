@@ -108,6 +108,13 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 //mobile recharge
 Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
 
+
+
+
+
+Route::get('/gas-recharge', [App\Http\Controllers\UserPanel\Invest::class, 'gas'])->name('user.gas-recharge');
+Route::get('/pan-card', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
+
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
 Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');
@@ -123,6 +130,8 @@ Route::get('/tree-view', [App\Http\Controllers\UserPanel\Team::class, 'genealogy
 Route::any('/UsrBinaryReport',[App\Http\Controllers\UserPanel\BinaryReport::class,'userReport'])->name('UsrBinaryReport');
 
 //end team
+
+
 
 //bonus
 Route::get('/level-income', [App\Http\Controllers\UserPanel\Bonus::class, 'index'])->name('user.level-income');

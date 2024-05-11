@@ -94,7 +94,7 @@ class User extends Authenticatable
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Direct Income');
 
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
- 
+
     } 
 
     public function payout()
