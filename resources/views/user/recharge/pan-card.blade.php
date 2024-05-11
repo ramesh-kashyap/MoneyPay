@@ -1,4 +1,4 @@
-
+@include('layouts.upnl.header')
 <script>
     $("#Withdrawal Report").addClass("menu-item-active");
 </script>
@@ -103,7 +103,7 @@
             <div class="d-flex align-items-center flex-wrap w-full justify-between">
                 <div>
                     <!--begin::Page Title-->
-                    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Referral team</h5>
+                    <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Incomplete Pan Card Details</h5>
                     <!--end::Page Title-->
                 </div>
                 <div>
@@ -217,5 +217,5 @@
         </div>
     </div>
 </div>
-
+@include('layouts.upnl.footer')
 

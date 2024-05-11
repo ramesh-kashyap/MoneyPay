@@ -1,3 +1,4 @@
+@include('layouts.upnl.header')
 <script>
     $("#Purchase Package").addClass("menu-item-active");
 </script>
@@ -457,3 +458,4 @@
 </div>
 
 
+@include('layouts.upnl.footer')
