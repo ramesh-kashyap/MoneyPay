@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Withdrawal Request <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">GAS BILL PAYMENT <span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -99,7 +99,7 @@
                                 <div class="col-lg-12">
     <div class="form-group mt-2 mb-3 text-left">
         <label for="investfromwallet">GAS Provider</label>
-        <select name="" class="form-control" required>
+        <select name="gas" class="form-control" required>
             <option value="">Select Provider </option>
             <option value="">Adani Gas</option>
             <option value="">Gujarat Gas</option>

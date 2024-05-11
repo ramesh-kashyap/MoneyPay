@@ -93,9 +93,9 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype"> Please Enter Postpaid Number </label>
-                                        <input type="number" name="dth" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Please Enter DTH Number" 
+                                        <label for="optinvesttype"> Customer Account  </label>
+                                        <input type="number" name="account" min="1000" id="PACKAGE_AMT" class="form-control"
+                                            placeholder="Customer Account" 
                                                value="">
                                     </div>
 
@@ -104,8 +104,8 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Select Operator</label>
-                                             <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+                                        <label for="investfromwallet">Select Provider</label>
+                                             <select name="provider" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
     <option value="">Select Operator</option>
     <option value="Adani power">Adani power</option>
     <option value="Ajmer Vidyut Vitran Nigam - RAJASTHAN">Ajmer Vidyut Vitran Nigam - RAJASTHAN</option>
@@ -197,7 +197,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Mobile Number</label>
+                                        <label for="investfromwallet">Amount</label>
                                         <input type="text" name="amount" class="form-control"
                                             autocomplete="off" placeholder="Amount" required
                                             value="">

@@ -105,7 +105,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                             <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+                                             <select name="operator" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
     <option value="">Select Operator</option>
     <option value="sim1">Airtel Digital DTH TV</option>
     <option value="sim2">Dish TV</option>
@@ -120,7 +120,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Mobile Number</label>
+                                        <label for="investfromwallet">Amount</label>
                                         <input type="text" name="amount" class="form-control"
                                             autocomplete="off" placeholder="Amount" required
                                             value="">
