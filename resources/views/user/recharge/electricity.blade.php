@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">MOBILE RECHARGE (Prepaid) <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">POST PAID RECHARGE<span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -93,9 +93,9 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype">  Amount </label>
-                                        <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Select Amount" 
+                                        <label for="optinvesttype"> Please Enter Postpaid Number </label>
+                                        <input type="number" name="dth" min="1000" id="PACKAGE_AMT" class="form-control"
+                                            placeholder="Please Enter DTH Number" 
                                                value="">
                                     </div>
 
@@ -105,13 +105,90 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                        <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+                                             <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
     <option value="">Select Operator</option>
-    <option value="JIO">JIO</option>
-    <option value="Airtel">Airtel</option>
-    <option value="VI">VI</option>
-    <option value="BSNL-STV">BSNL-STV</option>
-    <option value="BSNL-TOPUP">BSNL-TOPUP</option>
+    <option value="Adani power">Adani power</option>
+    <option value="Ajmer Vidyut Vitran Nigam - RAJASTHAN">Ajmer Vidyut Vitran Nigam - RAJASTHAN</option>
+    <option value="APDCL (Non-RAPDR) - ASSAM">APDCL (Non-RAPDR) - ASSAM</option>
+    <option value="APEPDCL - ANDHRA PRADESH">APEPDCL - ANDHRA PRADESH</option>
+    <option value="Bangalore ElectricitySupply Company">Bangalore ElectricitySupply Company</option>
+    <option value="BEST Mumbai">BEST Mumbai</option>
+    <option value="BharatpurElectricityServicesLtd">BharatpurElectricityServicesLtd</option>
+    <option value="Bikaner Electricity Supply Limited">Bikaner Electricity Supply Limited</option>
+    <option value="BSES Rajdhani Power Limited - Delhi">BSES Rajdhani Power Limited - Delhi</option>
+    <option value="BSES Yamuna Power Limited - Delhi">BSES Yamuna Power Limited - Delhi</option>
+    <option value="Central Power Distribution Company of Andhra Pradesh Ltd">Central Power Distribution Company of Andhra Pradesh Ltd</option>
+    <option value="CESC - WEST BENGAL">CESC - WEST BENGAL</option>
+    <option value="Chamundeshwari Electricity Supply Corporation Ltd. (Cesc,Mysore)">Chamundeshwari Electricity Supply Corporation Ltd. (Cesc,Mysore)</option>
+    <option value="Chhattisgarh State Power Distribution Company Ltd. (CSPDCL)">Chhattisgarh State Power Distribution Company Ltd. (CSPDCL)</option>
+    <option value="Dakshin Gujarat Vij Company Ltd">Dakshin Gujarat Vij Company Ltd</option>
+    <option value="Department of Power Arunachal Pradesh">Department of Power Arunachal Pradesh</option>
+    <option value="Department of Power, Nagaland">Department of Power, Nagaland</option>
+    <option value="DNHPowerDistributionCompanyLimited">DNHPowerDistributionCompanyLimited</option>
+    <option value="Gift Power Company Limited">Gift Power Company Limited</option>
+    <option value="DakshinHaryanaBijliVitranNigam">Government of Puducherry Electricity Department</option>
+    <option value="GulbargaElectricitySupplyCompanyLimited">GulbargaElectricitySupplyCompanyLimited</option>
+    <option value="Himachal Pradesh State Electricity Board Ltd">Himachal Pradesh State Electricity Board Ltd</option>
+    <option value="Hubli Electricity Supply Company Ltd. (HESCOM)">Hubli Electricity Supply Company Ltd. (HESCOM)</option>
+    <option value="India Power - WEST BENGAL">India Power - WEST BENGAL</option>
+    <option value="Jaipur Vidyut Vitran Nigam - RAJASTHAN">Jaipur Vidyut Vitran Nigam - RAJASTHAN</option>
+    <option value="Jammu &amp; Kashmir power Development department">Jammu &amp; Kashmir power Development department</option>
+    <option value="JBVNL - JHARKHAND">JBVNL - JHARKHAND</option>
+    <option value="Jodhpur Vidyut Vitran Nigam - RAJASTHAN">Jodhpur Vidyut Vitran Nigam - RAJASTHAN</option>
+    <option value="kannan devan hills power">kannan devan hills power</option>
+    <option value="Kanpur Electricity Supply Company">Kanpur Electricity Supply Company</option>
+    <option value="KEDL - KOTA">KEDL - KOTA</option>
+    <option value="Lakshadweep Electricity Department">Lakshadweep Electricity Department</option>
+    <option value="Madhya Gujarat Vij Company Ltd">Madhya Gujarat Vij Company Ltd</option>
+    <option value="Madhya Pradesh Madhya Kshetra Vidyut Vitaran-RURAL">Madhya Pradesh Madhya Kshetra Vidyut Vitaran-RURAL</option>
+    <option value="Madhya Pradesh Poorv Kshetra Vidyut Vitaran-URBAN">Madhya Pradesh Poorv Kshetra Vidyut Vitaran-URBAN</option>
+    <option value="Mangalore Electricity Supply Co. Ltd (MESCOM) - RAPDR">Mangalore Electricity Supply Co. Ltd (MESCOM) - RAPDR</option>
+    <option value="Mangalore Electricity Supply Co. Ltd (Non) - RAPDR">Mangalore Electricity Supply Co. Ltd (Non) - RAPDR</option>
+    <option value="Manipur State Power Distribution Company Limited (Prepaid)">Manipur State Power Distribution Company Limited (Prepaid)</option>
+    <option value="MEPDCL - MEGHALAYA">MEPDCL - MEGHALAYA</option>
+    <option value="MP Madhaya Kshetra Vidyut Vitaran -Urban">MP Madhaya Kshetra Vidyut Vitaran -Urban</option>
+    <option value="MP Poorv Kshetra Vidyut Vitaran - Jabalpur">MP Poorv Kshetra Vidyut Vitaran - Jabalpur</option>
+    <option value="MP Poorv Kshetra Vidyut Vitaran - Rular">MP Poorv Kshetra Vidyut Vitaran - Rular</option>
+    <option value="MSEDC - MAHARASHTRA">MSEDC - MAHARASHTRA</option>
+    <option value="MUNICIPALCORPORATIONOFGURUGRAM">MUNICIPALCORPORATIONOFGURUGRAM</option>
+    <option value="Muzaffarpur Vidyut Vitran">Muzaffarpur Vidyut Vitran</option>
+    <option value="NESCO Odisha">NESCO Odisha</option>
+    <option value="New Delhi Municipal Council (NDMC) - Electricity">New Delhi Municipal Council (NDMC) - Electricity</option>
+    <option value="Noida Power - NOIDA">Noida Power - NOIDA</option>
+    <option value="North Bihar Electricity">North Bihar Electricity</option>
+    <option value="NorthDelhiPowerLimited">NorthDelhiPowerLimited</option>
+    <option value="Paschim Gujarat Vij Company Ltd">Paschim Gujarat Vij Company Ltd</option>
+    <option value="Paschim Kshetra Vitaran - MADHYA PRADESH">Paschim Kshetra Vitaran - MADHYA PRADESH</option>
+    <option value="Power &amp; Electricity Department - Mizoram">Power &amp; Electricity Department - Mizoram</option>
+    <option value="Punjab State Power Corporation Limted">Punjab State Power Corporation Limted</option>
+    <option value="Reliance Energy">Reliance Energy</option>
+    <option value="Sikkim Power Rural">Sikkim Power Rural</option>
+    <option value="Sikkim Power Urban">Sikkim Power Urban</option>
+    <option value="SNDL Power - NAGPUR">SNDL Power - NAGPUR</option>
+    <option value="South Bihar Electricity">South Bihar Electricity</option>
+    <option value="SOUTHCO Odisha">SOUTHCO Odisha</option>
+    <option value="Southern Power - ANDHRA PRADESH">Southern Power - ANDHRA PRADESH</option>
+    <option value="Southern Power - TELANGANA">Southern Power - TELANGANA</option>
+    <option value="Tata Power - MUMBAI">Tata Power - MUMBAI</option>
+    <option value="Tata Power Delhi Limited - Delhi">Tata Power Delhi Limited - Delhi</option>
+    <option value="TNEB - TAMIL NADU">TNEB - TAMIL NADU</option>
+    <option value="Torrent Power agra">Torrent Power agra</option>
+    <option value="Torrent Power Ahemdabad">Torrent Power Ahemdabad</option>
+    <option value="Torrent Power Bhivandi">Torrent Power Bhivandi</option>
+    <option value="Torrent Power Dahej">Torrent Power Dahej</option>
+    <option value="Torrent Power SHIL">Torrent Power SHIL</option>
+    <option value="Torrent Power Surat">Torrent Power Surat</option>
+    <option value="TP Ajmer Distribution Ltd">TP Ajmer Distribution Ltd</option>
+    <option value="TP central odisha distribution limited">TP central odisha distribution limited</option>
+    <option value="TripuraStateElectricityCorporationLtd">TripuraStateElectricityCorporationLtd</option>
+    <option value="TSNPDCL Telangana northern power">TSNPDCL Telangana northern power</option>
+    <option value="UPPCL (URBAN) - UTTAR PRADESH">UPPCL (URBAN) - UTTAR PRADESH</option>
+    <option value="Uttar Pradesh Power Corporation Limited(Rular)">Uttar Pradesh Power Corporation Limited(Rular)</option>
+    <option value="UttarakhandPowerCorporationLimited">UttarakhandPowerCorporationLimited</option>
+    <option value="UttarGujarat Vij Company Ltd">UttarGujarat Vij Company Ltd</option>
+    <option value="UttarHaryanaBijliVitranNigam">UttarHaryanaBijliVitranNigam</option>
+    <option value="WBSEDCL - WEST BENGAL">WBSEDCL - WEST BENGAL</option>
+    <option value="Western Electricity supply co. Of orissa ltd.">Western Electricity supply co. Of orissa ltd.</option>
 </select>
 
                                         <span id="sponsor_res"></span>
@@ -121,8 +198,8 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Mobile Number</label>
-                                        <input type="mobile" name="mobile" class="form-control"
-                                            autocomplete="off" placeholder="Mobile Number" required
+                                        <input type="text" name="amount" class="form-control"
+                                            autocomplete="off" placeholder="Amount" required
                                             value="">
                                     </div>
                                 </div>

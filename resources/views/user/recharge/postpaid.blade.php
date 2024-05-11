@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">MOBILE RECHARGE (Prepaid) <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">POST PAID RECHARGE<span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -93,9 +93,9 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype">  Amount </label>
-                                        <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Select Amount" 
+                                        <label for="optinvesttype"> Please Enter Postpaid Number </label>
+                                        <input type="number" name="dth" min="1000" id="PACKAGE_AMT" class="form-control"
+                                            placeholder="Please Enter DTH Number" 
                                                value="">
                                     </div>
 
@@ -105,13 +105,17 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                        <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+                                             <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
     <option value="">Select Operator</option>
-    <option value="JIO">JIO</option>
-    <option value="Airtel">Airtel</option>
-    <option value="VI">VI</option>
-    <option value="BSNL-STV">BSNL-STV</option>
-    <option value="BSNL-TOPUP">BSNL-TOPUP</option>
+    <option value="Airtel Landline">Airtel Landline</option>
+    <option value="Airtel Postpaid">Airtel Postpaid</option>
+    <option value="BSNL Landline">BSNL Landline</option>
+    <option value="BSNL-Postpaid">BSNL-Postpaid</option>
+    <option value="IDEA Postpaid">IDEA Postpaid</option>
+    <option value="JIO Postpaid">JIO Postpaid</option>
+    <option value="MTNL Delhi Landline">MTNL Delhi Landline</option>
+    <option value="TATA DOcomo Postpaid">TATA DOcomo Postpaid</option>
+    <option value="Vodafon Postpaid">Vodafon Postpaid</option>
 </select>
 
                                         <span id="sponsor_res"></span>
@@ -121,8 +125,8 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Mobile Number</label>
-                                        <input type="mobile" name="mobile" class="form-control"
-                                            autocomplete="off" placeholder="Mobile Number" required
+                                        <input type="text" name="amount" class="form-control"
+                                            autocomplete="off" placeholder="Amount" required
                                             value="">
                                     </div>
                                 </div>

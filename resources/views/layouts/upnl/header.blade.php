@@ -415,7 +415,7 @@
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.reward-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Passive Income</span>
+                                                <span class="menu-text">Lelevel</span>
                                             </a>
                                         </li>
 
@@ -455,20 +455,30 @@
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
-                                            <a href="" class="menu-link">
-                                                <span class="menu-text">Level Income</span>
+                                            <a href="{{route('user.postpaid')}}" class="menu-link">
+                                                <span class="menu-text">Postpaid Rechage</span>
                                             </a>
                                         </li>
                                        
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
-                                            <a href="" class="menu-link">
-                                                <span class="menu-text">Passive Income</span>
+                                            <a href="{{route('user.elecrticity')}}" class="menu-link">
+                                                <span class="menu-text">Ecectricity</span>
                                             </a>
-                                        </li>
-
-
+                                        </li>                                        
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.newpan')}}" class="menu-link">
+                                                <span class="menu-text">New Pan</span>
+                                            </a>
+                                        </li> 
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.pancard')}}" class="menu-link">
+                                                <span class="menu-text">Pan Card Correction</span>
+                                            </a>
+                                        </li> 
 
                                     </ul>
                                 </div>

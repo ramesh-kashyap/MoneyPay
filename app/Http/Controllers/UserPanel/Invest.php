@@ -36,8 +36,18 @@ public function dth()
 {
     return view('user.recharge.dth');
 }
-
-
+public function elecrticity()
+{
+    return view('user.recharge.electricity');
+}
+public function newpan()
+{
+    return view('user.recharge.newpan');
+}
+public function pancard()
+{
+    return view('user.recharge.pancard');
+}
 
     public function fundActivation(Request $request)
     {

@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">MOBILE RECHARGE (Prepaid) <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">NSDL e-KYC Instant PAN <span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -80,22 +80,13 @@
                     <div class="col-xl-6 offset-xl-3">
 
                         <div class="invest-main-wrap transaction-card-wrap">
-                            <div class="row">
-                                 <!-- <div class="col-lg-12">
-                                    <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">ACTIVATION WALLET</label>
-                                        <input type="text" name="" class="form-control check_sponsor_exist"
-                                         value="" disabled>
-                                        
-                                    </div>
-                                </div> -->
-
+                            <div class="row">                               
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype">  Amount </label>
+                                        <label for="optinvesttype">  Customer Mobile No: </label>
                                         <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Select Amount" 
+                                            placeholder="Please Enter Mobile Number" 
                                                value="">
                                     </div>
 
@@ -104,28 +95,22 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Select Operator</label>
+                                        <label for="investfromwallet">Transaction Type</label>
                                         <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select Operator</option>
-    <option value="JIO">JIO</option>
-    <option value="Airtel">Airtel</option>
-    <option value="VI">VI</option>
-    <option value="BSNL-STV">BSNL-STV</option>
-    <option value="BSNL-TOPUP">BSNL-TOPUP</option>
+                                              <option value="">Select Operator</option>
+                                              <option value="JIO">NSDL EKYC PAN</option>
+                                              <option value="Airtel">NSDL ESIGN PAN</option>
+                                              <!-- <option value="VI">VI</option>
+                                             <option value="BSNL-STV">BSNL-STV</option>
+                                              <option value="BSNL-TOPUP">BSNL-TOPUP</option> -->
 </select>
 
                                         <span id="sponsor_res"></span>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Mobile Number</label>
-                                        <input type="mobile" name="mobile" class="form-control"
-                                            autocomplete="off" placeholder="Mobile Number" required
-                                            value="">
-                                    </div>
-                                </div>
+                                <label>
+                                <input type="checkbox" value="" required="">I (Consumer ) hereby state that I have no objection in authenticating myself with Aadhaar based UID/VID authentication system and provide my consent for the same.
+                                 </label>                            
 
 
                             </div>
