@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Buy Package <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">NSDL e-KYC PAN CARD CORRECTION<span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
@@ -93,10 +93,10 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype">  Amount </label>
+                                        <label for="optinvesttype">  Customer Mobile No: </label>
                                         <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            autocomplete="off" placeholder="" 
-                                              readonly value="3150">
+                                            placeholder="Please Enter Mobile Number" 
+                                               value="">
                                     </div>
 
                                 </div>
@@ -104,28 +104,22 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Select Operator</label>
+                                        <label for="investfromwallet">Transaction Type</label>
                                         <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select a SIM</option>
-    <option value="sim1">SIM 1</option>
-    <option value="sim2">SIM 2</option>
-    <option value="sim3">SIM 3</option>
-    <option value="sim4">SIM 4</option>
-    <option value="sim5">SIM 5</option>
+                                              <option value="">Select Operator</option>
+                                              <option value="JIO">NSDL EKYC PAN</option>
+                                              <option value="Airtel">NSDL ESIGN PAN</option>
+                                              <!-- <option value="VI">VI</option>
+                                             <option value="BSNL-STV">BSNL-STV</option>
+                                              <option value="BSNL-TOPUP">BSNL-TOPUP</option> -->
 </select>
 
                                         <span id="sponsor_res"></span>
                                     </div>
                                 </div>
-
-                                <div class="col-lg-12">
-                                    <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Mobile Number</label>
-                                        <input type="mobile" name="mobile" class="form-control"
-                                            autocomplete="off" placeholder="Mobile Number" required
-                                            value="">
-                                    </div>
-                                </div>
+                                <label>
+                                <input type="checkbox" value="" required="">I (Consumer ) hereby state that I have no objection in authenticating myself with Aadhaar based UID/VID authentication system and provide my consent for the same.
+                                 </label>                            
 
 
                             </div>

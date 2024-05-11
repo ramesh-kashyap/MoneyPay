@@ -423,7 +423,7 @@
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.reward-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Passive Income</span>
+                                                <span class="menu-text">Lelevel</span>
                                             </a>
                                         </li>
 
@@ -432,6 +432,66 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"
+                                id="reports">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <span class="svg-icon menu-icon sidemenu-icon">
+                                        <i class="bx bx-bar-chart"></i>
+                                    </span>
+                                    <span class="menu-text">Recharge</span>
+                                    <i class="fas fa-angle-right" id="arrow-icon"></i>
+                                </a>
+                                <div class="menu-submenu dropdown-menu-wrap">
+                                    <i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.mobile')}}" class="menu-link">
+                                                <span class="menu-text">Mobile Rechage</span>
+                                            </a>
+                                        </li>
+                                       
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        data-menu-toggle="hover">
+                                        <a href="{{route('user.dth')}}" class="menu-link">
+                                            <span class="menu-text">DTH Recharge</span>
+                                        </a>
+                                    </li>
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.postpaid')}}" class="menu-link">
+                                                <span class="menu-text">Postpaid Rechage</span>
+                                            </a>
+                                        </li>
+                                       
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.elecrticity')}}" class="menu-link">
+                                                <span class="menu-text">Ecectricity</span>
+                                            </a>
+                                        </li>                                        
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.newpan')}}" class="menu-link">
+                                                <span class="menu-text">New Pan</span>
+                                            </a>
+                                        </li> 
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.pancard')}}" class="menu-link">
+                                                <span class="menu-text">Pan Card Correction</span>
+                                            </a>
+                                        </li> 
+
+                                    </ul>
+                                </div>
+                            </li>
+
                             <li class="menu-item" aria-haspopup="true" id="support">
                                 <a href="{{route('user.ticket')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">

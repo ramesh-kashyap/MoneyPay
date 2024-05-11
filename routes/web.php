@@ -107,6 +107,7 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 //mobile recharge
 Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
+<<<<<<< HEAD
 
 
 
@@ -115,6 +116,13 @@ Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])-
 Route::get('/gas-recharge', [App\Http\Controllers\UserPanel\Invest::class, 'gas'])->name('user.gas-recharge');
 Route::get('/pan-card', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
 
+=======
+Route::get('/dth', [App\Http\Controllers\UserPanel\Invest::class, 'dth'])->name('user.dth');
+Route::get('/postpaid', [App\Http\Controllers\UserPanel\Invest::class, 'postpaid'])->name('user.postpaid');
+Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Invest::class, 'elecrticity'])->name('user.elecrticity');
+Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])->name('user.newpan');
+Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
+>>>>>>> e7af3e7253ef281cf572bce2523b2bd1a35b3454
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
 Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');

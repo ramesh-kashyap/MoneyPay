@@ -30,32 +30,24 @@ class Invest extends Controller
 
     public function mobile()
 {
-    return view('user.mobile');
+    return view('user.recharge.mobile');
 }
-
-public function gas()
+public function dth()
 {
-
-$this->data['page'] = 'user.recharge.gas';
-return $this->dashboard_layout();
-
+    return view('user.recharge.dth');
 }
-
-
+public function elecrticity()
+{
+    return view('user.recharge.electricity');
+}
+public function newpan()
+{
+    return view('user.recharge.newpan');
+}
 public function pancard()
 {
-
-$this->data['page'] = 'user.recharge.pan-card';
-return $this->dashboard_layout();
-
+    return view('user.recharge.pancard');
 }
-
-
-
-
-
-
-
 
     public function fundActivation(Request $request)
     {
