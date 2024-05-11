@@ -103,10 +103,14 @@
         <!--begin::Logo-->
         <a href="/">
 <<<<<<< HEAD
+<<<<<<< HEAD
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png" />
 =======
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png"/>
 >>>>>>> 1720704374cc6e0a11b66a1978bc7700da2eacd3
+=======
+            <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png"/>
+>>>>>>> 41e32d65d4b22e9b50e6d4c55b91f5f2ca0aa528
         </a>
         <!--end::Logo-->
         <!--begin::Toolbar-->

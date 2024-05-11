@@ -7,12 +7,14 @@
     <link rel="icon" type="image/svg+xml" href="{{asset('')}}assets/images/fav.png" />
 
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
-    <link rel="stylesheet" href="{{asset('')}}assets/css/swiper.min.css" />
-    <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css" />
+    <link rel="stylesheet" href="{{asset('')}}assets/css/swiper.min.css"/>
+    <link rel="stylesheet" href="{{asset('')}}assets/css/odometer.css"/>
     <link rel="stylesheet" href="{{asset('')}}assets/css/animate.min.css" />
 
     <title>{{sitename()}}</title>
-  <script defer src="{{asset('')}}assets/js/index.js"></script><link href="{{asset('')}}assets/css/style.css" rel="stylesheet"></head>
+  <script defer src="{{asset('')}}assets/js/index.js"></script>
+  <link href="{{asset('')}}assets/css/style.css" rel="stylesheet">
+  </head>
   <body>
     <!-- Header Start -->
     <header class="">
@@ -23,7 +25,7 @@
           <i class="ph ph-list"></i>
         </button>
         <a href="{{route('Index')}}">
-          <img src="{{asset('')}}assets/images/moneyl.png" alt="accupay logo" style="width:180px;"/>
+          <img src="{{asset('')}}assets/images/newlogo.png" alt="accupay logo" style="width:180px;"/>
         </a>
       </div>
       <!-- Desktop Menu Start -->
@@ -38,6 +40,13 @@
           </li>
           <li class="">
             <a
+              href="{{route('about-us')}}"
+              class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg"
+              >About</a
+            >
+          </li>
+          <li class="">
+            <a
               href="{{route('services')}}"
               class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg"
               >Services</a
@@ -45,9 +54,16 @@
           </li>
           <li class="">
             <a
-              href="{{route('pricing')}}"
+              href=""
               class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg"
-              >Pricing</a
+              >Opportunity</a
+            >
+          </li>
+          <li class="">
+            <a
+              href="{{route('bank')}}"
+              class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg"
+              >Bank</a
             >
           </li>
           <li class="">
@@ -144,8 +160,8 @@
             class="flex flex-col justify-start items-start group subMenuToggle"
           >
             <div class="flex justify-start items-center cursor-pointer">
-            <a href="{{route('pricing')}}">
-              <span>Pricing</span>
+            <a href="">
+              <span>Opportunity</span>
 </a>
               <i class="!text-xl pl-1 pt-1 duration-500">
                 <i class="ph ph-caret-right"></i>

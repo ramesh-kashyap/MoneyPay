@@ -19,7 +19,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'name', 'email', 'password','phone','username','sponsor','ParentId','position','active_status','jdate','level','tpassword','adate','PSR','TPSR','country'
+        'name', 'email', 'password','phone','username','sponsor','ParentId','position','active_status','jdate','level','adate','nominee_name','nominee_relation','adhar','pan','TPSR','country'
     ];
 
     /**
@@ -90,7 +90,11 @@ class User extends Authenticatable
     } 
     public function direct_bonus()
     {
+
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Direct Income');
+
+        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
+ 
     } 
 
     public function payout()

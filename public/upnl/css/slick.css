@@ -9992,7 +9992,7 @@ span.fis {
     font-weight: 600;
     }
 .gradient-yellow {
-    /* background: linear-gradient(90deg, rgba(253,213,81,1) 0%, rgba(228,167,62,1) 10%, rgba(253,213,81,1) 20%, rgba(253,213,81,1) 40%, rgba(248,244,171,1) 50%, rgba(253,213,81,1) 60%, rgba(253,213,81,1) 80%, rgba(228,167,62,1) 90%, rgba(253,213,81,1) 100%); */
+    background: #2d2e35;
 }
 .table-head-wrap th {
     color: #ffffff !important;

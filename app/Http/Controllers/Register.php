@@ -50,8 +50,9 @@ class Register extends Controller
             $validation =  Validator::make($request->all(), [
                 'email' => 'required|unique:users,email',
                 'name' => 'required',
-                'password' => 'required|confirmed|min:5',
+                // 'password' => 'required|confirmed|min:5',
                 'sponsor' => 'required|exists:users,username',
+                // 'nominee-name' => 'required|exists:users,name',
                 // 'telegram' => 'required'
               
             ]);
@@ -64,8 +65,7 @@ class Register extends Controller
                 return Redirect::back()->withErrors($validation->getMessageBag()->first())->withInput();
             }
             //check if email exist
-          
-          
+        
             if (isset($request->captcha)) {
                 if (!captchaVerify($request->captcha, $request->captcha_secret)) {
                     $notify[] = ['error', "Invalid Captcha"];
@@ -75,10 +75,12 @@ class Register extends Controller
 
             
             $user = User::where('username',$request->sponsor)->first();
+            
             if(!$user)
             {
                 return Redirect::back()->withErrors(array('Introducer ID Not Active'));
             }
+            
             $totalID = User::count();
             $totalID++;
             $username =substr(time(),4).$totalID;
@@ -88,15 +90,29 @@ class Register extends Controller
             $post_array  = $request->all();
                 //  
           
-            $data['name'] = $post_array['name'];
-            $data['phone'] = $post_array['phone'];
+$data['name'] = $post_array['name'];
+<<<<<<< HEAD
+$data['phone'] = $post_array['phone'];
+=======
+$data['lastname'] = $post_array['lastname'];
+<<<<<<< HEAD
+$data['phone'] = $post_array['phone'];
+=======
+// $data['phone'] = $post_array['phone'];
+>>>>>>> bb479c5e44f8f6ddcfdd279a006320a1c233388f
+>>>>>>> 2803e124d91fb634cc454ca613d7a7f88ca2a810
+
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
-            $data['password'] =   Hash::make($post_array['password']);
+            // $data['password'] =   Hash::make($post_array['password']);
             $data['tpassword'] =   Hash::make($tpassword);
-            $data['PSR'] =  $post_array['password'];
+            // $data['PSR'] =  $post_array['password'];
+            $data['adhar'] =  $post_array['adhar'];
+            $data['pan'] =  $post_array['pan'];
+            $data['nominee_name'] =  $post_array['nominee_name'];
+
+            $data['nominee_relation'] =  $post_array['nominee_relation'];
             // $data['telegram'] =  $post_array['telegram'];
-           
             $data['TPSR'] =  $tpassword;
             $data['sponsor'] = $user->id;
             $data['package'] = 0;
@@ -124,8 +140,9 @@ class Register extends Controller
             
             
 
-            return redirect()->route('user.dashboard');
-            //  return redirect()->route('register_sucess')->with('messages', $user);
+            // return redirect()->route('register_sucess');
+            // dd($user);
+             return redirect()->route('register_sucess')->with('messages', $user);
 
         }
         catch(\Exception $e){

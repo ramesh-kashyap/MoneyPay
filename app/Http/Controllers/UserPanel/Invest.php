@@ -28,6 +28,12 @@ class Invest extends Controller
         return $this->dashboard_layout();
     }
 
+    public function mobile()
+{
+    return view('user.mobile');
+}
+
+
 
     public function fundActivation(Request $request)
     {
