@@ -95,8 +95,8 @@
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype">  Amount </label>
                                         <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            autocomplete="off" placeholder="" 
-                                              readonly value="3150">
+                                            placeholder="Select Amount" 
+                                               value="">
                                     </div>
 
                                 </div>
@@ -106,12 +106,12 @@
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
                                         <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select a SIM</option>
-    <option value="sim1">SIM 1</option>
-    <option value="sim2">SIM 2</option>
-    <option value="sim3">SIM 3</option>
-    <option value="sim4">SIM 4</option>
-    <option value="sim5">SIM 5</option>
+    <option value="">Select Operator</option>
+    <option value="sim1">JIO</option>
+    <option value="sim2">Airtel</option>
+    <option value="sim3">VI</option>
+    <option value="sim4">BSNL-STV</option>
+    <option value="sim5">BSNL-TOPUP</option>
 </select>
 
                                         <span id="sponsor_res"></span>
