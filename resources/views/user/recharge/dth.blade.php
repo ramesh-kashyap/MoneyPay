@@ -54,7 +54,7 @@
             <!--begin::Info-->
             <div class="d-flex align-items-center flex-wrap mr-2">
                 <!--begin::Page Title-->
-                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">Buy Package <span
+                <h5 class="text-dark font-weight-bold mt-2 mb-2 mr-5">DTH RECHARGE <span
                         style="text-transform:capitalize"></span></h5>
                 <!--end::Page Title-->
             </div>
