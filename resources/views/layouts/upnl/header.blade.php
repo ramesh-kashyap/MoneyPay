@@ -424,6 +424,56 @@
                                     </ul>
                                 </div>
                             </li>
+
+                            <li class="menu-item menu-item-submenu" aria-haspopup="true" data-menu-toggle="hover"
+                                id="reports">
+                                <a href="javascript:;" class="menu-link menu-toggle">
+                                    <span class="svg-icon menu-icon sidemenu-icon">
+                                        <i class="bx bx-bar-chart"></i>
+                                    </span>
+                                    <span class="menu-text">Recharge</span>
+                                    <i class="fas fa-angle-right" id="arrow-icon"></i>
+                                </a>
+                                <div class="menu-submenu dropdown-menu-wrap">
+                                    <i class="menu-arrow"></i>
+                                    <ul class="menu-subnav">
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.mobile')}}" class="menu-link">
+                                                <span class="menu-text">Mobile Rechage</span>
+                                            </a>
+                                        </li>
+                                       
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        data-menu-toggle="hover">
+                                        <a href="" class="menu-link">
+                                            <span class="menu-text">Referral Income</span>
+                                        </a>
+                                    </li>
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="" class="menu-link">
+                                                <span class="menu-text">Level Income</span>
+                                            </a>
+                                        </li>
+                                       
+
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="" class="menu-link">
+                                                <span class="menu-text">Passive Income</span>
+                                            </a>
+                                        </li>
+
+
+
+                                    </ul>
+                                </div>
+                            </li>
+
                             <li class="menu-item" aria-haspopup="true" id="support">
                                 <a href="{{route('user.ticket')}}" class="menu-link">
                                     <span class="svg-icon menu-icon sidemenu-icon">
