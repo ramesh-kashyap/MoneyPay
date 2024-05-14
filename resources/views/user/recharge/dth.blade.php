@@ -107,11 +107,11 @@
                                         <label for="investfromwallet">Select Operator</label>
                                              <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
     <option value="">Select Operator</option>
-    <option value="sim1">Airtel Digital DTH TV</option>
-    <option value="sim2">Dish TV</option>
-    <option value="sim3">Sundirect DTH TV</option>
-    <option value="sim4">BSNL-STV</option>
-    <option value="sim5">BSNL-TOPUP</option>
+    <option value="">Airtel Digital DTH TV</option>
+    <option value="">Dish TV</option>
+    <option value="">Sundirect DTH TV</option>
+    <option value="">BSNL-STV</option>
+    <option value="">BSNL-TOPUP</option>
 </select>
 
                                         <span id="sponsor_res"></span>
