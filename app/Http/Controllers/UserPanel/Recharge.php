@@ -117,4 +117,21 @@ class Recharge extends Controller
             ];
         }
     }
+
+
+    //fatch data from database
+    public function showTransactions()
+{
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+
+    // Pass the transactions to the view
+    return view('user.recharge.mobile', ['transactions' => $transactions]);
+}
+//
+
+
 }

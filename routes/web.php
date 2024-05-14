@@ -115,6 +115,9 @@ Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])-
 Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
 Route::get('/pantable', [App\Http\Controllers\UserPanel\Invest::class, 'pantable'])->name('user.pantable');
 Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'processRecharge'])->name('recharge.process');
+// Route::get('/transactions', 'YourController@showTransactions')->name('user.mobile');
+Route::get('/mobile', [App\Http\Controllers\UserPanel\Recharge::class, 'showTransactions'])->name('user.mobile');
+
 
 
 
