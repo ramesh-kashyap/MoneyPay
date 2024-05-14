@@ -327,12 +327,11 @@
                                     <th>TXID</th>
                                     <th>Operator</th>
                                     <th>Number</th>
+                                    <th>Operator Id</th>
                                     <th>Amount</th>
                                  
                                     <th>Status</th>
-                                    <th>Operator Id</th>
-                                    <th>Rechage By</th>
-                                        <!--<th>Point</th>-->
+                                    
                                     <th>Date Time</th>
                                 
                                 </tr>

@@ -114,6 +114,13 @@ Route::get('/gas', [App\Http\Controllers\UserPanel\Invest::class, 'gas'])->name(
 Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])->name('user.newpan');
 Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
 Route::get('/pantable', [App\Http\Controllers\UserPanel\Invest::class, 'pantable'])->name('user.pantable');
+Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'processRecharge'])->name('recharge.process');
+
+
+
+
+
+
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
 Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');

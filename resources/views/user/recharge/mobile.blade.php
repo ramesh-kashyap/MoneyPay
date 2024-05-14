@@ -67,9 +67,21 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method=""
-                action="">
+            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method="post"
+                action="{{ route('recharge.process') }}">
                 {{ csrf_field() }}
+                @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
+    </div>
+@endif
+
+@if (session('error'))
+    <div class="alert alert-danger">
+        {{ session('error') }}
+    </div>
+@endif
+
 
                 <div class="col-12">
                 </div>
@@ -89,12 +101,23 @@
                                         
                                     </div>
                                 </div> -->
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Select Wallet</label>
+                                        <select name="walletType" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>                                            
+                                            <option value="1">ACTIVATION WALLET</option>
+                                            <option value="2">ACCOUNT BALANCE</option>                                            
+                                        </select>
+                                        <span id="sponsor_res"></span>
+                                    </div>  
+                                </div>
 
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype">  Amount </label>
-                                        <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
+                                        <input type="number" name="amount" min="49" id="PACKAGE_AMT" class="form-control"
                                             placeholder="Select Amount" 
                                                value="">
                                     </div>
@@ -105,15 +128,14 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                        <select name="operator" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select Operator</option>
-    <option value="JIO">JIO</option>
-    <option value="Airtel">Airtel</option>
-    <option value="VI">VI</option>
-    <option value="BSNL-STV">BSNL-STV</option>
-    <option value="BSNL-TOPUP">BSNL-TOPUP</option>
-</select>
-
+                                        <select name="operatorcode" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>                                            
+                                            <option value="RC">JIO</option>
+                                            <option value="A">Airtel</option>
+                                            <option value="V">VI</option>
+                                            <option value="BR">BSNL-STV</option>
+                                            <option value="BT">BSNL-TOPUP</option>
+                                        </select>
                                         <span id="sponsor_res"></span>
                                     </div>
                                 </div>
@@ -121,8 +143,8 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Mobile Number</label>
-                                        <input type="mobile" name="mobile" class="form-control"
-                                            autocomplete="off" placeholder="Mobile Number" required
+                                        <input type="tel" name="number" class="form-control"
+                                           placeholder="Mobile Number" required
                                             value="">
                                     </div>
                                 </div>
@@ -134,7 +156,8 @@
 
                             <div class="al-center">
                                 <button type="submit" class="btn btn-primary report-btn submit-btn">Recharge
-                                    <span class="thin-arrow">→</span></button>
+                                    <span class="thin-arrow">→</span>
+                                </button>
                             </div>
                         </div>
                         <div class="bronze-main-wrap mt-5 mb-4" style="display: none;">
@@ -324,13 +347,11 @@
                                 <tr>
                                     <th>TXID</th>
                                     <th>Operator</th>
-                                    <th>Number</th>
-                                    <th>Amount</th>
-                                 
-                                    <th>Status</th>
+                                    
                                     <th>Operator Id</th>
-                                    <th>Rechage By</th>
-                                        <!--<th>Point</th>-->
+                                    <th>Amount</th>                                    
+                                    <th>Number</th>
+                                    <th>Status</th>
                                     <th>Date Time</th>
                                 
                                 </tr>
@@ -339,18 +360,15 @@
                             
                             
                                     <tr>
-                                        <td>4</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>2</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
                                   
-                                        <td>3</td>
-                                        <td>32</td>
-                                        <td>3</td>
-                               
-
-                                        <td>
-                                    </td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        
 
 
                                     </tr>

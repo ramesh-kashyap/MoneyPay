@@ -89,18 +89,11 @@ class Register extends Controller
            $tpassword =substr(time(),-2).substr(rand(),-2).substr(mt_rand(),-1);
             $post_array  = $request->all();
                 //  
-          
-$data['name'] = $post_array['name'];
-<<<<<<< HEAD
-$data['phone'] = $post_array['phone'];
-=======
-$data['lastname'] = $post_array['lastname'];
-<<<<<<< HEAD
-$data['phone'] = $post_array['phone'];
-=======
-// $data['phone'] = $post_array['phone'];
->>>>>>> bb479c5e44f8f6ddcfdd279a006320a1c233388f
->>>>>>> 2803e124d91fb634cc454ca613d7a7f88ca2a810
+                    
+            $data['name'] = $post_array['name'];
+            $data['lastname'] = $post_array['lastname'];
+
+            $data['phone'] = $post_array['phone'];
 
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
