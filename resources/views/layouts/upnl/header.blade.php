@@ -468,11 +468,17 @@
                                             </a>
                                         </li>
                                        
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.gas')}}" class="menu-link">
+                                                <span class="menu-text">Gas</span>
+                                            </a>
+                                        </li> 
 
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.elecrticity')}}" class="menu-link">
-                                                <span class="menu-text">Ecectricity</span>
+                                                <span class="menu-text">Electricity</span>
                                             </a>
                                         </li>                                        
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
@@ -487,7 +493,12 @@
                                                 <span class="menu-text">Pan Card Correction</span>
                                             </a>
                                         </li> 
-
+                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                            data-menu-toggle="hover">
+                                            <a href="{{route('user.pantable')}}" class="menu-link">
+                                                <span class="menu-text">Incomplete Pan Card Details</span>
+                                            </a>
+                                        </li> 
                                     </ul>
                                 </div>
                             </li>

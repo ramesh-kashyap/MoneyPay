@@ -110,8 +110,20 @@ Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])-
 Route::get('/dth', [App\Http\Controllers\UserPanel\Invest::class, 'dth'])->name('user.dth');
 Route::get('/postpaid', [App\Http\Controllers\UserPanel\Invest::class, 'postpaid'])->name('user.postpaid');
 Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Invest::class, 'elecrticity'])->name('user.elecrticity');
+Route::get('/gas', [App\Http\Controllers\UserPanel\Invest::class, 'gas'])->name('user.gas');
 Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])->name('user.newpan');
 Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
+Route::get('/pantable', [App\Http\Controllers\UserPanel\Invest::class, 'pantable'])->name('user.pantable');
+Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'processRecharge'])->name('recharge.process');
+// Route::get('/transactions', 'YourController@showTransactions')->name('user.mobile');
+Route::get('/mobile', [App\Http\Controllers\UserPanel\Recharge::class, 'showTransactions'])->name('user.mobile');
+
+
+
+
+
+
+
 // withdraw
 Route::get('/withdraw-request', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'index'])->name('user.withdraw-request');
 Route::post('/WithdrawRequest', [App\Http\Controllers\UserPanel\WithdrawRequest::class, 'WithdrawRequest'])->name('user.Withdraw-Request');
