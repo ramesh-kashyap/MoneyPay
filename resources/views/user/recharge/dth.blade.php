@@ -67,8 +67,8 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method=""
-                action="">
+            <form  class="form mt-0" name="frmmain" id="kt_form" method="post"
+                action="{{route('user.dthrecharge')}}">
                 {{ csrf_field() }}
 
                 <div class="col-12">
@@ -89,12 +89,23 @@
                                         
                                     </div>
                                 </div> -->
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Select Wallet</label>
+                                        <select name="walletType" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>
+                                            <option value="1">ACTIVATION WALLET</option>
+                                            <option value="2">ACCOUNT BALANCE</option>
+                                        </select>
+                                        <span id="sponsor_res"></span>
+                                    </div>
+                                </div>
 
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype"> DTH Number </label>
-                                        <input type="number" name="dth" min="1000" id="PACKAGE_AMT" class="form-control"
+                                        <input type="number" name="number"  id="PACKAGE_AMT" class="form-control"
                                             placeholder="Please Enter DTH Number" 
                                                value="">
                                     </div>
@@ -105,13 +116,13 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                             <select name="operator" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select Operator</option>
-    <option value="sim1">Airtel Digital DTH TV</option>
-    <option value="sim2">Dish TV</option>
-    <option value="sim3">Sundirect DTH TV</option>
-    <option value="sim4">BSNL-STV</option>
-    <option value="sim5">BSNL-TOPUP</option>
+                                             <select name="operatorcode" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+    
+    <option value="ATV">Airtel Digital DTH TV</option>
+    <option value="DTV">Dish TV</option>
+    <option value="STV">Sundirect DTH TV</option>
+    <option value="BR">tatasky DTH TV</option>
+    <option value="VTV">videocon DTH TV</option>
 </select>
 
                                         <span id="sponsor_res"></span>
@@ -121,7 +132,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Amount</label>
-                                        <input type="text" name="amount" class="form-control"
+                                        <input type="number" name="amount"  class="form-control"
                                             autocomplete="off" placeholder="Amount" required
                                             value="">
                                     </div>
@@ -276,99 +287,65 @@
         data-wizard-clickable="true">
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
-             
-            
-  
-                    <form style="    width: 100%;">
-                        <div class="row">
-                            <div  class="col-xl-4">
-                                <div style=""class="form-group mb-3">
-                                    <input type="text" style="border-radius:15px;" Placeholder="Search Users"
-                                        name="search" class="form-control" value="{{ @$search }}">
-                                </div>
-                            </div>
 
 
-                            <div class="col-xl-2">
-                                <div class="form-group mb-3">
-                                    <select name="limit" style="border-radius:15px;" class="form-control">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group mb-3">
-                                    <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
-                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
-                                        value="Search" />
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group mb-3">
-                                    <a href="{{ route('user.referral-team') }}" style="padding: 0.6rem 2rem;"
-                                        name="reset"
-                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
-                                        value="Reset">Reset</a>
-                                </div>
-                            </div>
 
-
+                <form style="    width: 100%;">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div style="" class="form-group mb-3">
+                                <input type="text" style="border-radius:15px;" Placeholder="Search Users" name="search"
+                                    class="form-control" value="{{ @$search }}">
+                            </div>
                         </div>
-                    </form>
-             
-
-                    <div class="table-responsive form-white-curved table-main-wrap">
-                        <table class="table table-bordered">
-                            <thead class="gradient-yellow table-head-wrap">
-                                <tr>
-                                    <th>TXID</th>
-                                    <th>Operator</th>
-                                    <th>Number</th>
-                                    <th>Operator Id</th>
-                                    <th>Amount</th>
-                                 
-                                    <th>Status</th>
-                                    
-                                    <th>Date Time</th>
-                                
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                            
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                  
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                               
-
-                                        <td></td>
 
 
-                                    </tr>
-                            
-
-                           
-                        </tbody>
-                        </table>
-                        <br>
-                    
-                        <div id="datarowsremaining" style='text-align:center'>
+                        <div class="col-xl-2">
+                            <div class="form-group mb-3">
+                                <select name="limit" style="border-radius:15px;" class="form-control">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
                         </div>
+                        <div class="col-3">
+                            <div class="form-group mb-3">
+                                <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
+                                    class="btn btn-outline-theme btn-lg d-block w-100 btn-primary" value="Search" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group mb-3">
+                                <a href="{{ route('user.referral-team') }}"
+                                    style="padding: 0.6rem 2rem;" name="reset"
+                                    class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                    value="Reset">Reset</a>
+                            </div>
+                        </div>
+
+
                     </div>
-               
+                </form>
+
+
+                <div class="table-responsive form-white-curved table-main-wrap">
+                    
+                    <table class="table table-bordered">
+                       
+
+                    </table>
+                    
+                    <br>
+
+                    <div id="datarowsremaining" style='text-align:center'>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>
 </div>
-
 
 @include('layouts.upnl.footer')

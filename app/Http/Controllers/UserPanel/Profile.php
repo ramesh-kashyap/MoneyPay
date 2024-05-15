@@ -105,7 +105,7 @@ class Profile extends Controller
             $msg = [
                 'old_password.required'     => 'Old Password is required',
                 'password.required'         => 'Password is required' ,
-                'password.confirmed'        => 'Password must match'    ,
+                'password.confirmed'        => 'Password must match',
             ];
 
             $validator = Validator::make($data, $rules, $msg);
