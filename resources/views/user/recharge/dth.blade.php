@@ -121,7 +121,7 @@
     <option value="ATV">Airtel Digital DTH TV</option>
     <option value="DTV">Dish TV</option>
     <option value="STV">Sundirect DTH TV</option>
-    <option value="BR">tatasky DTH TV</option>
+    <option value="TTV">tatasky DTH TV</option>
     <option value="VTV">videocon DTH TV</option>
 </select>
 
@@ -334,7 +334,32 @@
                     
                     <table class="table table-bordered">
                        
-
+                    <thead>
+            <tr>
+                <th>Id</th>
+                <th>Operator Code</th>
+                <th>Amount</th>
+                <th>Number</th>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($transactions as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->operatorcode }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->transaction_id }}</td>
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->created_at }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+            @endforeach
+        </tbody>
                     </table>
                     
                     <br>

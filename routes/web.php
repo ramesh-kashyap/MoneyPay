@@ -121,7 +121,8 @@ Route::get('/mobile', [App\Http\Controllers\UserPanel\Recharge::class, 'showTran
 
 Route::post('/dth_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'DthRecharge'])->name('user.dthrecharge');
 Route::get('/dth', [App\Http\Controllers\UserPanel\Recharge::class, 'dth_Transactions'])->name('user.dth');
-
+Route::post('/postpaid_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'post_recharge'])->name('user.postpaidrecharge');
+Route::post('/gas_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'gas_post_recharge'])->name('user.gasrecharge');
 
 
 

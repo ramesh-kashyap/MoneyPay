@@ -68,9 +68,10 @@
         <div class="container-fluid">
             <!--begin::Dashboard-->
             <form  class="form mt-0" name="frmmain" id="kt_form" style="width: 100%; margin-bottom: 50px;"
-             >
+            method="post"
+                action="{{route('user.gasrecharge')}}">
+                {{ csrf_field() }} 
           
-
                 <div class="col-12">
                 </div>
 
@@ -82,6 +83,18 @@
                         <div class="invest-main-wrap transaction-card-wrap">
                             <div class="row">
 
+                            <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Select Wallet</label>
+                                        <select name="walletType" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>
+                                            <option value="1">ACTIVATION WALLET</option>
+                                            <option value="2">ACCOUNT BALANCE</option>
+                                        </select>
+                                        <span id="sponsor_res"></span>
+                                    </div>
+                                </div>
+
 
 
                                 <!-- ==================================== -->
@@ -89,7 +102,7 @@
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype"> Mobile Number </label>
                                       
-                                          <input type="number" name="phone" min="10" id="PACKAGE_AMT" class="form-control"
+                                          <input type="number" name="number"  id="PACKAGE_AMT" class="form-control"
                                             autocomplete="off" placeholder="mobile number"  required value="" >
                                     </div>
 
@@ -99,13 +112,13 @@
                                 <div class="col-lg-12">
     <div class="form-group mt-2 mb-3 text-left">
         <label for="investfromwallet">GAS Provider</label>
-        <select name="gas" class="form-control" required>
+        <select name="operatorcode" class="form-control" required>
             <option value="">Select Provider </option>
-            <option value="">Adani Gas</option>
-            <option value="">Gujarat Gas</option>
-            <option value="">Hindustan Petroleum Corporation Ltd</option>
-            <option value="">Indraprasta Gas</option>
-            <option value="">Mahanagar Gas</option>
+            <option value="AG">Adani Gas</option>
+            <option value="GG">Gujarat Gas</option>
+            <option value="HPCLGC">Hindustan Petroleum Corporation Ltd</option>
+            <option value="IG">Indraprasta Gas</option>
+            <option value="MG">Mahanagar Gas</option>
             <!-- Add more options as needed -->
         </select>
     </div>
