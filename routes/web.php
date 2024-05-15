@@ -119,6 +119,9 @@ Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'proce
 Route::get('/mobile', [App\Http\Controllers\UserPanel\Recharge::class, 'showTransactions'])->name('user.mobile');
 
 
+Route::post('/dth_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'DthRecharge'])->name('user.dthrecharge');
+Route::get('/dth', [App\Http\Controllers\UserPanel\Recharge::class, 'dth_Transactions'])->name('user.dth');
+
 
 
 

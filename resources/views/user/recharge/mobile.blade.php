@@ -378,13 +378,8 @@
                                     <td>{{ $transaction->number }}</td>
                                     <td>{{ $transaction->status }}</td>
                                     <td>{{ $transaction->created_at}}</td>
-
-
-
                                 </tr>
                                 @endforeach
-
-
                             </tbody>
                             @endif
                     </table>
