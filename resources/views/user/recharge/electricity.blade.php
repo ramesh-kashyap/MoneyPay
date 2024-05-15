@@ -70,7 +70,8 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method="post" action="{{route('user.electricitycharge')}}">
+            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form"
+             method="post" action="{{route('user.electricitycharge')}}">
                 {{ csrf_field() }}
 
                 <div class="col-12">
@@ -477,44 +478,38 @@
 
                 <div class="table-responsive form-white-curved table-main-wrap">
                     <table class="table table-bordered">
-                        <thead class="gradient-yellow table-head-wrap">
-                            <tr>
-                                <th>TXID</th>
-                                <th>Operator</th>
-                                <th>Number</th>
-                                <th>Amount</th>
+                    @if($transactions->isEmpty())
+                            <p>No transactions found.</p>
+                        @else
+                            <thead class="gradient-yellow table-head-wrap">
+                                <tr>
+                                    <th>TXID</th>
+                                    <th>Operator</th>
 
-                                <th>Status</th>
-                                <th>Operator Id</th>
-                                <th>Rechage By</th>
-                                <!--<th>Point</th>-->
-                                <th>Date Time</th>
+                                    <th>Operator Id</th>
+                                    <th>Amount</th>
+                                    <th>Number</th>
+                                    <th>Status</th>
+                                    <th>Date Time</th>
 
-                            </tr>
-                        </thead>
-                        <tbody>
+                                </tr>
+                            </thead>
+                            <tbody>
 
+                            @foreach($transactions as $transaction)
+                                <tr>
+                                    <td>{{ $transaction->transaction_id }}</td>
+                                    <td>{{ $transaction->user_id}}</td>
+                                    <td>{{ $transaction->operatorcode}}</td>
+                                    <td>{{ $transaction->amount }}</td>
 
-                            <tr>
-                                <td>4</td>
-                                <td>3</td>
-                                <td>2</td>
-                                <td>2</td>
-
-                                <td>3</td>
-                                <td>32</td>
-                                <td>3</td>
-
-
-                                <td>
-                                </td>
-
-
-                            </tr>
-
-
-
-                        </tbody>
+                                    <td>{{ $transaction->number }}</td>
+                                    <td>{{ $transaction->status }}</td>
+                                    <td>{{ $transaction->created_at}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            @endif
                     </table>
                     <br>
 

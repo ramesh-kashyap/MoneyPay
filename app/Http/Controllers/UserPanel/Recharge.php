@@ -135,7 +135,7 @@ class Recharge extends Controller
 
 
 
-<<<<<<< HEAD
+
 //electricity recharge
 public function electricitycharge(Request $request)
     {
@@ -172,14 +172,18 @@ public function electricitycharge(Request $request)
                 'status'=>'Success',
                 'transaction_id' => Auth::user()->username,                
             ];
+            $inserted = DB::table('mobile_recharge')->insert($data);
+            // dd($data);
+            
+            // dd($apiResult);
             //submitting data into database 
-            // $inserted = DB::table('mobile_recharge')->insert($data);
             // dd($inserted);
-            // if ($inserted) {
-            //     return redirect()->route('user.mobile')->with('success', 'Transaction inserted successfully!');
-            // } else {
-            //     return redirect()->back()->with('error', 'Failed to insert transaction');
-            // }
+            if ($inserted) {
+                return redirect()->route('user.mobile')->with('success', 'Transaction inserted successfully!');
+            } else {
+                return redirect()->back()->with('error', 'Failed to insert transaction');
+            }
+                        
             //api work start
             $apiResult = $this->eleRecharge($data);
             if ($apiResult['success']) {
@@ -187,6 +191,7 @@ public function electricitycharge(Request $request)
             } else {
                 return back()->withErrors(['error' => $apiResult['message']]);
             }
+           
         } catch (\Exception $e) {
             Log::error('Error processing recharge: ' . $e->getMessage());
             return redirect()->route('user.elecrticity')->withErrors('An unexpected error occurred. Please try again.');
@@ -238,10 +243,20 @@ public function electricitycharge(Request $request)
 
 
     //fatch data from database
+    public function ele_Transactions()
+    {
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+    
+    // Pass the transactions to the view
+    return view('user.recharge.electricity', ['transactions' => $transactions]);
+    }
 
 
 
-=======
 
 
 
@@ -282,12 +297,13 @@ public function DthRecharge(Request $request)
             'number' => $request->input('number'),
             'walletType'=> $request->input('walletType'),
             'status'=>'Success',
-            'transaction_id' => Auth::user()->username,                
+            'transaction_id' => Auth::user()->username,               
         ];
 
         //submitting data into database 
-        $inserted = DB::table('dth_recharge')->insert($data);
+        $inserted = DB::table('mobile_recharge')->insert($data);
         // dd($inserted);
+        
 
         if ($inserted) {
             // Flash a success message to the session and redirect to a specific route
@@ -300,6 +316,7 @@ public function DthRecharge(Request $request)
         
         //api work start
 
+        
         $apiResult = $this->D_Recharge($data);
         if ($apiResult['success']) {
             return back()->with('success', 'Recharge successful!');
@@ -334,7 +351,7 @@ private function D_Recharge($data)
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
-        dd($responseBody);
+        // dd($responseBody);
         if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
             return [
                 'success' => true,
@@ -368,5 +385,5 @@ $transactions = DB::table('mobile_recharge')
 // Pass the transactions to the view
 return view('user.recharge.dth', ['transactions' => $transactions]);
 }
->>>>>>> 1159272cd5f0a95f9d98af46044d0e43e5a59d48
+
 }

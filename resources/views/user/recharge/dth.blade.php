@@ -70,6 +70,18 @@
             <form  class="form mt-0" name="frmmain" id="kt_form" method="post"
                 action="{{route('user.dthrecharge')}}">
                 {{ csrf_field() }}
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if(session('error'))
+                    <div class="alert alert-danger">
+                        {{ session('error') }}
+                    </div>
+                @endif
+
 
                 <div class="col-12">
                 </div>
@@ -121,8 +133,8 @@
                                                  <option value="ATV">Airtel Digital DTH TV</option>
                                                  <option value="DTV">Dish TV</option>
                                                  <option value="STV">Sundirect DTH TV</option>
-                                                 <option value="BR">tatasky DTH TV</option>
-                                                 <option value="VTV">videocon DTH TV</option>
+                                                 <option value="TTV">TATASKY DTH TV</option>
+                                                 <option value="VTV">Videocon DTH TV</option>
                                              </select>
 
                                              <span id="sponsor_res"></span>
@@ -333,7 +345,32 @@
                 <div class="table-responsive form-white-curved table-main-wrap">
                     
                     <table class="table table-bordered">
-                       
+                    <thead>
+            <tr>
+                <th>Id</th>
+                <th>Operator Code</th>
+                <th>Amount</th>
+                <th>Number</th>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($transactions as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->operatorcode }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->transaction_id }}</td>
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->created_at }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+            @endforeach
+        </tbody>
 
                     </table>
                     
