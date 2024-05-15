@@ -116,16 +116,16 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                             <select name="operatorcode" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    
-    <option value="ATV">Airtel Digital DTH TV</option>
-    <option value="DTV">Dish TV</option>
-    <option value="STV">Sundirect DTH TV</option>
-    <option value="BR">tatasky DTH TV</option>
-    <option value="VTV">videocon DTH TV</option>
-</select>
+                                             <select name="operatorcode" class="form-control check_sponsor_exist"
+                                                 data-response="sponsor_res" required>
+                                                 <option value="ATV">Airtel Digital DTH TV</option>
+                                                 <option value="DTV">Dish TV</option>
+                                                 <option value="STV">Sundirect DTH TV</option>
+                                                 <option value="BR">tatasky DTH TV</option>
+                                                 <option value="VTV">videocon DTH TV</option>
+                                             </select>
 
-                                        <span id="sponsor_res"></span>
+                                             <span id="sponsor_res"></span>
                                     </div>
                                 </div>
 
