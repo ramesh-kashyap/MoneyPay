@@ -106,7 +106,7 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 
 //mobile recharge
-Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
+// Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
 Route::get('/dth', [App\Http\Controllers\UserPanel\Invest::class, 'dth'])->name('user.dth');
 Route::get('/postpaid', [App\Http\Controllers\UserPanel\Invest::class, 'postpaid'])->name('user.postpaid');
 Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Invest::class, 'elecrticity'])->name('user.elecrticity');
@@ -115,9 +115,10 @@ Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])-
 Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
 Route::get('/pantable', [App\Http\Controllers\UserPanel\Invest::class, 'pantable'])->name('user.pantable');
 Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'processRecharge'])->name('recharge.process');
-// Route::get('/transactions', 'YourController@showTransactions')->name('user.mobile');
 Route::get('/mobile', [App\Http\Controllers\UserPanel\Recharge::class, 'showTransactions'])->name('user.mobile');
-
+// Route::get('/transactions', 'YourController@showTransactions')->name('user.mobile');
+Route::post('/electricitycharge', [App\Http\Controllers\UserPanel\Recharge::class, 'electricitycharge'])->name('user.electricitycharge');
+Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Recharge::class, 'ele_Transactions'])->name('user.elecrticity');
 
 Route::post('/dth_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'DthRecharge'])->name('user.dthrecharge');
 Route::get('/dth', [App\Http\Controllers\UserPanel\Recharge::class, 'dth_Transactions'])->name('user.dth');

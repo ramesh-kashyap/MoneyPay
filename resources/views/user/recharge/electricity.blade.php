@@ -1,6 +1,7 @@
 @include('layouts.upnl.header')
 <script>
     $("#Purchase Package").addClass("menu-item-active");
+
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js"></script>
 
@@ -9,17 +10,18 @@
     var clipboard = new ClipboardJS('.copy-btn');
 
     // Show success message on successful copy
-    clipboard.on('success', function(e) {
+    clipboard.on('success', function (e) {
         console.log('Copied:', e.text);
         alert('Copied: ' + e.text);
         e.clearSelection();
     });
 
     // Show error message on copy failure
-    clipboard.on('error', function(e) {
+    clipboard.on('error', function (e) {
         console.error('Copy failed:', e.action);
         alert('Copy failed. Please try again.');
     });
+
 </script>
 <script>
     // Get the copy button and icon elements
@@ -27,11 +29,12 @@
     const icon = copyBtn.querySelector('i');
 
     // Add a click event listener to the copy button
-    copyBtn.addEventListener('click', function() {
+    copyBtn.addEventListener('click', function () {
         // Update the HTML of the icon element to change the icon
         icon.classList.remove('bx-copy');
         icon.classList.add('bx-check'); // Change the class to the desired new icon
     });
+
 </script>
 <!-- Main Body -->
 
@@ -67,8 +70,8 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Dashboard-->
-            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form" method=""
-                action="">
+            <form onsubmit="return amtValue();" class="form mt-0" name="frmmain" id="kt_form"
+             method="post" action="{{route('user.electricitycharge')}}">
                 {{ csrf_field() }}
 
                 <div class="col-12">
@@ -81,7 +84,7 @@
 
                         <div class="invest-main-wrap transaction-card-wrap">
                             <div class="row">
-                                 <!-- <div class="col-lg-12">
+                                <!-- <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">ACTIVATION WALLET</label>
                                         <input type="text" name="" class="form-control check_sponsor_exist"
@@ -89,107 +92,181 @@
                                         
                                     </div>
                                 </div> -->
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Select Wallet</label>
+                                        <select name="walletType" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>
+                                            <option value="1">ACTIVATION WALLET</option>
+                                            <option value="2">ACCOUNT BALANCE</option>
+                                        </select>
+                                        <span id="sponsor_res"></span>
+                                    </div>
+                                </div>
 
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="optinvesttype"> Customer Account  </label>
-                                        <input type="number" name="account" min="1000" id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Customer Account" 
-                                               value="">
+                                        <label for="optinvesttype"> Account </label>
+                                        <input type="number" name="number"  id="PACKAGE_AMT"
+                                            class="form-control" placeholder="Enter Account No" value="">
                                     </div>
-
                                 </div>
 
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Provider</label>
-                                             <select name="provider" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    <option value="">Select Operator</option>
-    <option value="Adani power">Adani power</option>
-    <option value="Ajmer Vidyut Vitran Nigam - RAJASTHAN">Ajmer Vidyut Vitran Nigam - RAJASTHAN</option>
-    <option value="APDCL (Non-RAPDR) - ASSAM">APDCL (Non-RAPDR) - ASSAM</option>
-    <option value="APEPDCL - ANDHRA PRADESH">APEPDCL - ANDHRA PRADESH</option>
-    <option value="Bangalore ElectricitySupply Company">Bangalore ElectricitySupply Company</option>
-    <option value="BEST Mumbai">BEST Mumbai</option>
-    <option value="BharatpurElectricityServicesLtd">BharatpurElectricityServicesLtd</option>
-    <option value="Bikaner Electricity Supply Limited">Bikaner Electricity Supply Limited</option>
-    <option value="BSES Rajdhani Power Limited - Delhi">BSES Rajdhani Power Limited - Delhi</option>
-    <option value="BSES Yamuna Power Limited - Delhi">BSES Yamuna Power Limited - Delhi</option>
-    <option value="Central Power Distribution Company of Andhra Pradesh Ltd">Central Power Distribution Company of Andhra Pradesh Ltd</option>
-    <option value="CESC - WEST BENGAL">CESC - WEST BENGAL</option>
-    <option value="Chamundeshwari Electricity Supply Corporation Ltd. (Cesc,Mysore)">Chamundeshwari Electricity Supply Corporation Ltd. (Cesc,Mysore)</option>
-    <option value="Chhattisgarh State Power Distribution Company Ltd. (CSPDCL)">Chhattisgarh State Power Distribution Company Ltd. (CSPDCL)</option>
-    <option value="Dakshin Gujarat Vij Company Ltd">Dakshin Gujarat Vij Company Ltd</option>
-    <option value="Department of Power Arunachal Pradesh">Department of Power Arunachal Pradesh</option>
-    <option value="Department of Power, Nagaland">Department of Power, Nagaland</option>
-    <option value="DNHPowerDistributionCompanyLimited">DNHPowerDistributionCompanyLimited</option>
-    <option value="Gift Power Company Limited">Gift Power Company Limited</option>
-    <option value="DakshinHaryanaBijliVitranNigam">Government of Puducherry Electricity Department</option>
-    <option value="GulbargaElectricitySupplyCompanyLimited">GulbargaElectricitySupplyCompanyLimited</option>
-    <option value="Himachal Pradesh State Electricity Board Ltd">Himachal Pradesh State Electricity Board Ltd</option>
-    <option value="Hubli Electricity Supply Company Ltd. (HESCOM)">Hubli Electricity Supply Company Ltd. (HESCOM)</option>
-    <option value="India Power - WEST BENGAL">India Power - WEST BENGAL</option>
-    <option value="Jaipur Vidyut Vitran Nigam - RAJASTHAN">Jaipur Vidyut Vitran Nigam - RAJASTHAN</option>
-    <option value="Jammu &amp; Kashmir power Development department">Jammu &amp; Kashmir power Development department</option>
-    <option value="JBVNL - JHARKHAND">JBVNL - JHARKHAND</option>
-    <option value="Jodhpur Vidyut Vitran Nigam - RAJASTHAN">Jodhpur Vidyut Vitran Nigam - RAJASTHAN</option>
-    <option value="kannan devan hills power">kannan devan hills power</option>
-    <option value="Kanpur Electricity Supply Company">Kanpur Electricity Supply Company</option>
-    <option value="KEDL - KOTA">KEDL - KOTA</option>
-    <option value="Lakshadweep Electricity Department">Lakshadweep Electricity Department</option>
-    <option value="Madhya Gujarat Vij Company Ltd">Madhya Gujarat Vij Company Ltd</option>
-    <option value="Madhya Pradesh Madhya Kshetra Vidyut Vitaran-RURAL">Madhya Pradesh Madhya Kshetra Vidyut Vitaran-RURAL</option>
-    <option value="Madhya Pradesh Poorv Kshetra Vidyut Vitaran-URBAN">Madhya Pradesh Poorv Kshetra Vidyut Vitaran-URBAN</option>
-    <option value="Mangalore Electricity Supply Co. Ltd (MESCOM) - RAPDR">Mangalore Electricity Supply Co. Ltd (MESCOM) - RAPDR</option>
-    <option value="Mangalore Electricity Supply Co. Ltd (Non) - RAPDR">Mangalore Electricity Supply Co. Ltd (Non) - RAPDR</option>
-    <option value="Manipur State Power Distribution Company Limited (Prepaid)">Manipur State Power Distribution Company Limited (Prepaid)</option>
-    <option value="MEPDCL - MEGHALAYA">MEPDCL - MEGHALAYA</option>
-    <option value="MP Madhaya Kshetra Vidyut Vitaran -Urban">MP Madhaya Kshetra Vidyut Vitaran -Urban</option>
-    <option value="MP Poorv Kshetra Vidyut Vitaran - Jabalpur">MP Poorv Kshetra Vidyut Vitaran - Jabalpur</option>
-    <option value="MP Poorv Kshetra Vidyut Vitaran - Rular">MP Poorv Kshetra Vidyut Vitaran - Rular</option>
-    <option value="MSEDC - MAHARASHTRA">MSEDC - MAHARASHTRA</option>
-    <option value="MUNICIPALCORPORATIONOFGURUGRAM">MUNICIPALCORPORATIONOFGURUGRAM</option>
-    <option value="Muzaffarpur Vidyut Vitran">Muzaffarpur Vidyut Vitran</option>
-    <option value="NESCO Odisha">NESCO Odisha</option>
-    <option value="New Delhi Municipal Council (NDMC) - Electricity">New Delhi Municipal Council (NDMC) - Electricity</option>
-    <option value="Noida Power - NOIDA">Noida Power - NOIDA</option>
-    <option value="North Bihar Electricity">North Bihar Electricity</option>
-    <option value="NorthDelhiPowerLimited">NorthDelhiPowerLimited</option>
-    <option value="Paschim Gujarat Vij Company Ltd">Paschim Gujarat Vij Company Ltd</option>
-    <option value="Paschim Kshetra Vitaran - MADHYA PRADESH">Paschim Kshetra Vitaran - MADHYA PRADESH</option>
-    <option value="Power &amp; Electricity Department - Mizoram">Power &amp; Electricity Department - Mizoram</option>
-    <option value="Punjab State Power Corporation Limted">Punjab State Power Corporation Limted</option>
-    <option value="Reliance Energy">Reliance Energy</option>
-    <option value="Sikkim Power Rural">Sikkim Power Rural</option>
-    <option value="Sikkim Power Urban">Sikkim Power Urban</option>
-    <option value="SNDL Power - NAGPUR">SNDL Power - NAGPUR</option>
-    <option value="South Bihar Electricity">South Bihar Electricity</option>
-    <option value="SOUTHCO Odisha">SOUTHCO Odisha</option>
-    <option value="Southern Power - ANDHRA PRADESH">Southern Power - ANDHRA PRADESH</option>
-    <option value="Southern Power - TELANGANA">Southern Power - TELANGANA</option>
-    <option value="Tata Power - MUMBAI">Tata Power - MUMBAI</option>
-    <option value="Tata Power Delhi Limited - Delhi">Tata Power Delhi Limited - Delhi</option>
-    <option value="TNEB - TAMIL NADU">TNEB - TAMIL NADU</option>
-    <option value="Torrent Power agra">Torrent Power agra</option>
-    <option value="Torrent Power Ahemdabad">Torrent Power Ahemdabad</option>
-    <option value="Torrent Power Bhivandi">Torrent Power Bhivandi</option>
-    <option value="Torrent Power Dahej">Torrent Power Dahej</option>
-    <option value="Torrent Power SHIL">Torrent Power SHIL</option>
-    <option value="Torrent Power Surat">Torrent Power Surat</option>
-    <option value="TP Ajmer Distribution Ltd">TP Ajmer Distribution Ltd</option>
-    <option value="TP central odisha distribution limited">TP central odisha distribution limited</option>
-    <option value="TripuraStateElectricityCorporationLtd">TripuraStateElectricityCorporationLtd</option>
-    <option value="TSNPDCL Telangana northern power">TSNPDCL Telangana northern power</option>
-    <option value="UPPCL (URBAN) - UTTAR PRADESH">UPPCL (URBAN) - UTTAR PRADESH</option>
-    <option value="Uttar Pradesh Power Corporation Limited(Rular)">Uttar Pradesh Power Corporation Limited(Rular)</option>
-    <option value="UttarakhandPowerCorporationLimited">UttarakhandPowerCorporationLimited</option>
-    <option value="UttarGujarat Vij Company Ltd">UttarGujarat Vij Company Ltd</option>
-    <option value="UttarHaryanaBijliVitranNigam">UttarHaryanaBijliVitranNigam</option>
-    <option value="WBSEDCL - WEST BENGAL">WBSEDCL - WEST BENGAL</option>
-    <option value="Western Electricity supply co. Of orissa ltd.">Western Electricity supply co. Of orissa ltd.</option>
-</select>
+                                        <select name="operatorcode" class="form-control check_sponsor_exist"
+                                            data-response="sponsor_res" required>                                            
+                                            <option value="AEML">Adani power</option>
+                                            <option value="APDCLR">Assam Power Distribution Company Ltd (RAPDR)</option>
+                                            <option value="AJV">Ajmer Vidyut Vitran
+                                                Nigam - RAJASTHAN</option>
+                                            <option value="APDCLN">APDCL (Non-RAPDR) - ASSAM</option>
+                                            <option value="APEPDCL">APEPDCL - ANDHRA PRADESH</option>
+                                            <option value="BESCOM">Bangalore
+                                                ElectricitySupply Company</option>
+                                            <option value="BEST">BEST Mumbai</option>
+                                            <option value="BHES">
+                                                BharatpurElectricityServicesLtd</option>
+                                            <option value="BMESTU">
+                                                BrihanMumbaiElectricSupplyandTransportUndertaking</option>   
+                                            <option value="BESL">Bikaner Electricity
+                                                Supply Limited</option>
+                                            <option value="BSES">BSES Rajdhani Power
+                                                Limited - Delhi</option>
+                                            <option value="BSESY">BSES Yamuna Power Limited
+                                                - Delhi</option>
+                                            <option value="APCPDCL">
+                                                Central Power Distribution Company of Andhra Pradesh Ltd</option>
+                                            <option value="CESC">CESC - WEST BENGAL</option>
+                                            <option
+                                                value="CESCOM">
+                                                Chamundeshwari Electricity Supply Corporation Ltd. (Cesc,Mysore)
+                                            </option>
+                                            <option value="CSPDCL">
+                                                Chhattisgarh State Power Distribution Company Ltd. (CSPDCL)</option>
+                                            <option value=" DGVCL">Dakshin Gujarat Vij Company
+                                                Ltd</option>
+                                            <option value="ARPDOP">Department of Power
+                                                Arunachal Pradesh</option>
+                                            <option value="NDOP">Department of Power, Nagaland
+                                            </option>
+                                            <option value="DDCL">
+                                                DNH Power Distribution Company Limited</option>
+                                            <option value="GPCL">Gift Power Company Limited
+                                            </option>
+                                            <option value="GOAELC">Goa Electricity
+                                            </option>
+                                            <option value="IPCL">IndiaPowerCorporationLimited
+                                            </option>
+                                            <option value="DHBVN">Government of Puducherry
+                                                Electricity Department</option>
+                                            <option value="GESCL">
+                                                GulbargaElectricitySupplyCompanyLimited</option>
+                                            <option value="HPSEBL">Himachal
+                                                Pradesh State Electricity Board Ltd</option>
+                                            <option value="HESCOM">Hubli
+                                                Electricity Supply Company Ltd. (HESCOM)</option>
+                                            <option value="IPWB">India Power - WEST BENGAL</option>
+                                            <option value="JVV">Jaipur Vidyut Vitran
+                                                Nigam - RAJASTHAN</option>
+                                            <option value="JUSCL">Jamshedpur Utilities 
+                                                and Services Company Limited</option>
+                                            <option value="JKPDD">Jammu &amp;
+                                                Kashmir power Development department</option>
+                                            <option value="JBVNL">JBVNL - JHARKHAND</option>
+                                            <option value="JDVV">Jodhpur Vidyut
+                                                Vitran Nigam - RAJASTHAN</option>
+                                            <option value="KDHPCPL">kannan devan hills power</option>
+                                            <option value="KESCO">Kanpur Electricity Supply
+                                                Company</option>
+                                            <option value="KEDL">KEDL - KOTA</option>
+                                            <option value="LED">Lakshadweep Electricity
+                                                Department</option>
+                                            <option value="MGVCL">Madhya Gujarat Vij Company
+                                                Ltd</option>
+                                            <option value="MPPKVVCLMR">Madhya
+                                                Pradesh Madhya Kshetra Vidyut Vitaran-RURAL</option>
+                                            <option value="MPPKVVCL">Madhya
+                                                Pradesh Poorv Kshetra Vidyut Vitaran-URBAN</option>                                        
+                                            <option value="MESCOMNR">
+                                                Mangalore Electricity Supply Co. Ltd (MESCOM) - RAPDR</option>
+                                            <option value="MESCOMNR">
+                                                Mangalore Electricity Supply Co. Ltd (Non) - RAPDR</option>
+                                            <option value="MSPDCLPR">
+                                                Manipur State Power Distribution Company Limited (Prepaid)</option>
+                                            <option value="MESCOMR">
+                                                Mangalore Electricity Supply Co. Ltd (MESCOM)-RAPDR</option>
+                                            <option value="MEPDCL">MEPDCL - MEGHALAYA</option>
+                                            <option value="MKV">MP Madhaya Kshetra
+                                                Vidyut Vitaran -Urban</option>
+                                            <option value="MPPKVVCLPU">MP Poorv Kshetra
+                                                Vidyut Vitaran - Jabalpur</option>
+                                            <option value="MPPKVVCLPU">MP Poorv Kshetra
+                                                Vidyut Vitaran - Rular</option>
+                                            <option value="MSEDC">MSEDC - MAHARASHTRA</option>
+                                            <option value="MCG">
+                                                MUNICIPAL CORPORATION OF GURUGRAM</option>
+                                            <option value="MVV">Muzaffarpur Vidyut Vitran</option>
+                                            <option value="NESCO">NESCO Odisha</option>
+                                            <option value="NDMC">New Delhi
+                                                Municipal Council (NDMC) - Electricity</option>
+                                            <option value="NP">Noida Power - NOIDA</option>
+                                            <option value="North Bihar Electricity">North Bihar Electricity</option>
+                                            <option value="NDPL">NorthDelhiPowerLimited</option>
+                                            <option value="PGVCL">Paschim Gujarat Vij Company
+                                                Ltd</option>
+                                            <option value="PKV">Paschim Kshetra
+                                                Vitaran - MADHYA PRADESH</option>
+                                            <option value="MPED">Power &amp;
+                                                Electricity Department - Mizoram</option>
+                                            <option value=" PSPCL">Punjab State Power
+                                                Corporation Limted</option>
+                                            <option value="RELIANCE">Reliance Energy</option>
+                                            <option value="SPR">Sikkim Power Rural</option>
+                                            <option value="SPU">Sikkim Power Urban</option>
+                                            <option value="SNDL">SNDL Power - NAGPUR</option>
+                                            <option value="SBE">South Bihar Electricity</option>
+                                            <option value="SOUTHCO">SOUTHCO Odisha</option>
+                                            <option value="SPA">Southern Power - ANDHRA
+                                                PRADESH</option>
+                                            <option value="KSEB">Kerala
+                                                State Electricity Board Ltd.</option>
+                                            <option value="SPT">Southern Power - TELANGANA
+                                            </option>
+                                            <option value="TPDM">Tata Power - MUMBAI</option>
+                                            <option value="TPD">Tata Power Delhi Limited -
+                                                Delhi</option>
+                                            <option value="TNEB">TNEB - TAMIL NADU</option>
+                                            <option value="TRP">Torrent Power agra</option>
+                                            <option value="TORRENTAHM">Torrent Power Ahemdabad</option>
+                                            <option value="TORRENTBHI">Torrent Power Bhivandi</option>
+                                            <option value="TORRENTDAH">Torrent Power Dahej</option>
+                                            <option value="TORRENTSHI">Torrent Power SHIL</option>
+                                            <option value="TORRENTSUR">Torrent Power Surat</option>
+                                            <option value="TPADL">TP Ajmer Distribution Ltd</option>
+                                            <option value="TPCODL">TP central odisha
+                                                distribution limited</option>
+                                            <option value="TSECL">
+                                                TripuraStateElectricityCorporationLtd</option>
+                                            <option value=" TSNPDCL">TSNPDCL Telangana northern
+                                                power</option>
+                                            <option value="UPPCLU">UPPCL (URBAN) - UTTAR PRADESH
+                                            </option>
+                                            <option value="UPPCLR">Uttar Pradesh
+                                                Power Corporation Limited(Rular)</option>
+                                            <option value="UKPCL">
+                                                UttarakhandPowerCorporationLimited</option>
+                                            <option value="UGVCL">UttarGujarat Vij Company Ltd
+                                            </option>
+                                            <option value="UHBV">Uttar Haryana Bijli Vitran Nigam
+                                            </option>
+                                            <option value="WBSEDCL">WBSEDCL - WEST BENGAL</option>
+                                            <option value="WESCO">Western
+                                                Electricity supply co. Of orissa ltd.</option>
+                                        </select>
 
                                         <span id="sponsor_res"></span>
                                     </div>
@@ -198,9 +275,8 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Amount</label>
-                                        <input type="text" name="amount" class="form-control"
-                                            autocomplete="off" placeholder="Amount" required
-                                            value="">
+                                        <input type="text" name="amount" class="form-control" autocomplete="off"
+                                            placeholder="Amount" required value="">
                                     </div>
                                 </div>
 
@@ -220,7 +296,8 @@
                                 <div class="box">
                                     <h2 class="box-heading">Bronze</h2>
                                     <div class="box-image">
-                                        <img src="{{ asset('') }}upnl/images/package1.png" alt="Box Image">
+                                        <img src="{{ asset('') }}upnl/images/package1.png"
+                                            alt="Box Image">
                                         <i class="bx bx-check check-icon"></i>
                                     </div>
                                 </div>
@@ -232,7 +309,8 @@
                                 <div class="box">
                                     <h2 class="box-heading">Silver</h2>
                                     <div class="box-image">
-                                        <img src="{{ asset('') }}upnl/images/package2.png" alt="Box Image">
+                                        <img src="{{ asset('') }}upnl/images/package2.png"
+                                            alt="Box Image">
                                         <i class="bx bx-check check-icon"></i>
                                     </div>
                                 </div>
@@ -244,7 +322,8 @@
                                 <div class="box">
                                     <h2 class="box-heading">Gold</h2>
                                     <div class="box-image">
-                                        <img src="{{ asset('') }}upnl/images/package3.png" alt="Box Image">
+                                        <img src="{{ asset('') }}upnl/images/package3.png"
+                                            alt="Box Image">
                                         <i class="bx bx-check check-icon"></i>
                                     </div>
                                 </div>
@@ -256,7 +335,8 @@
                                 <div class="box">
                                     <h2 class="box-heading">Platinum</h2>
                                     <div class="box-image">
-                                        <img src="{{ asset('') }}upnl/images/package4.png" alt="Box Image">
+                                        <img src="{{ asset('') }}upnl/images/package4.png"
+                                            alt="Box Image">
                                         <i class="bx bx-check check-icon"></i>
                                     </div>
                                 </div>
@@ -289,7 +369,7 @@
 
 
 
-    $('.check_sponsor_exist').keyup(function(e) {
+    $('.check_sponsor_exist').keyup(function (e) {
         var ths = $(this);
         var res_area = $(ths).attr('data-response');
         var sponsor = $(this).val();
@@ -301,7 +381,7 @@
                 "user_id": sponsor,
                 "_token": "{{ csrf_token() }}",
             },
-            success: function(response) {
+            success: function (response) {
                 // alert(response);      
                 if (response != 1) {
                     // alert("hh");
@@ -317,6 +397,7 @@
             }
         });
     });
+
 </script>
 
 
@@ -325,6 +406,7 @@
     .qrcode canvas {
         width: 100%;
     }
+
 </style>
 
 <!--begin::Content-->
@@ -341,7 +423,7 @@
         </div>
     </div>
     <!--begin::Subheader-->
-   
+
 
     <!--end::Subheader-->
     <!--begin::Entry-->
@@ -351,97 +433,90 @@
         data-wizard-clickable="true">
         <div class="container-fluid">
             <div class="row d-flex justify-content-center">
-             
-            
-  
-                    <form style="    width: 100%;">
-                        <div class="row">
-                            <div  class="col-xl-4">
-                                <div style=""class="form-group mb-3">
-                                    <input type="text" style="border-radius:15px;" Placeholder="Search Users"
-                                        name="search" class="form-control" value="{{ @$search }}">
-                                </div>
-                            </div>
 
 
-                            <div class="col-xl-2">
-                                <div class="form-group mb-3">
-                                    <select name="limit" style="border-radius:15px;" class="form-control">
-                                        <option value="10">10</option>
-                                        <option value="25">25</option>
-                                        <option value="50">50</option>
-                                        <option value="100">100</option>
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group mb-3">
-                                    <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
-                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
-                                        value="Search" />
-                                </div>
-                            </div>
-                            <div class="col-3">
-                                <div class="form-group mb-3">
-                                    <a href="{{ route('user.referral-team') }}" style="padding: 0.6rem 2rem;"
-                                        name="reset"
-                                        class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
-                                        value="Reset">Reset</a>
-                                </div>
-                            </div>
 
-
+                <form style="    width: 100%;">
+                    <div class="row">
+                        <div class="col-xl-4">
+                            <div style="" class="form-group mb-3">
+                                <input type="text" style="border-radius:15px;" Placeholder="Search Users" name="search"
+                                    class="form-control" value="{{ @$search }}">
+                            </div>
                         </div>
-                    </form>
-             
 
-                    <div class="table-responsive form-white-curved table-main-wrap">
-                        <table class="table table-bordered">
+
+                        <div class="col-xl-2">
+                            <div class="form-group mb-3">
+                                <select name="limit" style="border-radius:15px;" class="form-control">
+                                    <option value="10">10</option>
+                                    <option value="25">25</option>
+                                    <option value="50">50</option>
+                                    <option value="100">100</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group mb-3">
+                                <input type="submit" style="padding: 0.6rem 2rem;" name="submit"
+                                    class="btn btn-outline-theme btn-lg d-block w-100 btn-primary" value="Search" />
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="form-group mb-3">
+                                <a href="{{ route('user.referral-team') }}"
+                                    style="padding: 0.6rem 2rem;" name="reset"
+                                    class="btn btn-outline-theme btn-lg d-block w-100 btn-primary"
+                                    value="Reset">Reset</a>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </form>
+
+
+                <div class="table-responsive form-white-curved table-main-wrap">
+                    <table class="table table-bordered">
+                    @if($transactions->isEmpty())
+                            <p>No transactions found.</p>
+                        @else
                             <thead class="gradient-yellow table-head-wrap">
                                 <tr>
                                     <th>TXID</th>
                                     <th>Operator</th>
-                                    <th>Number</th>
-                                    <th>Amount</th>
-                                 
-                                    <th>Status</th>
+
                                     <th>Operator Id</th>
-                                    <th>Rechage By</th>
-                                        <!--<th>Point</th>-->
+                                    <th>Amount</th>
+                                    <th>Number</th>
+                                    <th>Status</th>
                                     <th>Date Time</th>
-                                
+
                                 </tr>
                             </thead>
                             <tbody>
-                            
-                            
-                                    <tr>
-                                        <td>4</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>2</td>
-                                  
-                                        <td>3</td>
-                                        <td>32</td>
-                                        <td>3</td>
-                               
 
-                                        <td>
-                                    </td>
+                            @foreach($transactions as $transaction)
+                                <tr>
+                                    <td>{{ $transaction->transaction_id }}</td>
+                                    <td>{{ $transaction->user_id}}</td>
+                                    <td>{{ $transaction->operatorcode}}</td>
+                                    <td>{{ $transaction->amount }}</td>
 
+                                    <td>{{ $transaction->number }}</td>
+                                    <td>{{ $transaction->status }}</td>
+                                    <td>{{ $transaction->created_at}}</td>
+                                </tr>
+                                @endforeach
+                            </tbody>
+                            @endif
+                    </table>
+                    <br>
 
-                                    </tr>
-                            
-
-                           
-                        </tbody>
-                        </table>
-                        <br>
-                    
-                        <div id="datarowsremaining" style='text-align:center'>
-                        </div>
+                    <div id="datarowsremaining" style='text-align:center'>
                     </div>
-               
+                </div>
+
             </div>
         </div>
     </div>
