@@ -113,7 +113,6 @@
     <div class="form-group mt-2 mb-3 text-left">
         <label for="investfromwallet">GAS Provider</label>
         <select name="operatorcode" class="form-control" required>
-            <option value="">Select Provider </option>
             <option value="AG">Adani Gas</option>
             <option value="GG">Gujarat Gas</option>
             <option value="HPCLGC">Hindustan Petroleum Corporation Ltd</option>
@@ -420,41 +419,34 @@
 
                     <div class="table-responsive form-white-curved table-main-wrap">
                         <table class="table table-bordered">
-                            <thead class="gradient-yellow table-head-wrap">
-                                <tr>
-                                    <th>TXID</th>
-                                    <th>Operator</th>
-                                    <th>Number</th>
-                                    <th>Amount</th>
-                                 
-                                    <th>Status</th>
-                                    <th>Operator Id</th>
-                                    <th>Rechage By</th>
-                                        <!--<th>Point</th>-->
-                                    <th>Date Time</th>
-                                
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                            
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                  
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
-                                        <td></td>
+             
+                        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Operator Code</th>
+                <th>Amount</th>
+                <th>Number</th>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($transactions as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->operatorcode }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->transaction_id }}</td>
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->created_at }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+            @endforeach
+        </tbody>
 
-
-                                    </tr>
-                            
-
-                           
-                        </tbody>
                         </table>
                         <br>
                     

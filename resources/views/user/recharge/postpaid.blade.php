@@ -73,6 +73,7 @@
             <form  method="post"
                 action="{{route('user.postpaidrecharge')}}">
                 {{ csrf_field() }}
+                
 
                 <div class="col-12">
                 </div>
@@ -109,7 +110,7 @@
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype"> Please Enter Postpaid Number </label>
                                         <input type="number" name="number"  id="PACKAGE_AMT" class="form-control"
-                                            placeholder="Please Enter DTH Number" value="">
+                                            placeholder="Please Enter Postpaid Number" value="">
                                     </div>
 
                                 </div>
@@ -120,7 +121,6 @@
                                         <label for="investfromwallet">Select Operator</label>
                                         <select name="operatorcode" class="form-control check_sponsor_exist"
                                             data-response="sponsor_res" required>
-                                            <option value="">Select Operator</option>
                                             <option value="LAT">Airtel Landline</option>
                                             <option value="PAT">Airtel Postpaid</option>
                                             <option value="LBS">BSNL Landline</option>
@@ -138,7 +138,7 @@
 
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">Mobile Number</label>
+                                        <label for="investfromwallet">Amount</label>
                                         <input type="text" name="amount" class="form-control" autocomplete="off"
                                             placeholder="Amount" required value="">
                                     </div>
@@ -336,41 +336,33 @@
 
                 <div class="table-responsive form-white-curved table-main-wrap">
                     <table class="table table-bordered">
-                        <thead class="gradient-yellow table-head-wrap">
-                            <tr>
-                                <th>TXID</th>
-                                <th>Operator</th>
-                                <th>Number</th>
-                                <th>Amount</th>
-
-                                <th>Status</th>
-                                <th>Operator Id</th>
-                                <th>Date Time</th>
-
-                            </tr>
-                        </thead>
-                        <tbody>
-
-
-                            <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td></td>
-                                <td></td>
-                                <td></td>
-
-                                <td>
-                                </td>
-
-
-                            </tr>
-
-
-
-                        </tbody>
+                        
+                    <thead>
+            <tr>
+                <th>Id</th>
+                <th>Operator Code</th>
+                <th>Amount</th>
+                <th>Number</th>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($transactions as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->operatorcode }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->transaction_id }}</td>
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->created_at }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+            @endforeach
+        </tbody>
                     </table>
                     <br>
 

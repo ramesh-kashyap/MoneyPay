@@ -106,12 +106,6 @@ Route::get('/DepositHistory', [App\Http\Controllers\UserPanel\Invest::class, 'in
 
 
 //mobile recharge
-// Route::get('/mobile', [App\Http\Controllers\UserPanel\Invest::class, 'mobile'])->name('user.mobile');
-Route::get('/dth', [App\Http\Controllers\UserPanel\Invest::class, 'dth'])->name('user.dth');
-Route::get('/postpaid', [App\Http\Controllers\UserPanel\Invest::class, 'postpaid'])->name('user.postpaid');
-Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Invest::class, 'elecrticity'])->name('user.elecrticity');
-Route::get('/gas', [App\Http\Controllers\UserPanel\Invest::class, 'gas'])->name('user.gas');
-Route::get('/newpan', [App\Http\Controllers\UserPanel\Invest::class, 'newpan'])->name('user.newpan');
 Route::get('/pancard', [App\Http\Controllers\UserPanel\Invest::class, 'pancard'])->name('user.pancard');
 Route::get('/pantable', [App\Http\Controllers\UserPanel\Invest::class, 'pantable'])->name('user.pantable');
 Route::post('/recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'processRecharge'])->name('recharge.process');
@@ -122,10 +116,12 @@ Route::get('/elecrticity', [App\Http\Controllers\UserPanel\Recharge::class, 'ele
 
 Route::post('/dth_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'DthRecharge'])->name('user.dthrecharge');
 Route::get('/dth', [App\Http\Controllers\UserPanel\Recharge::class, 'dth_Transactions'])->name('user.dth');
+Route::get('/postpaid', [App\Http\Controllers\UserPanel\Recharge::class, 'post_Transactions'])->name('user.postpaid');
 Route::post('/postpaid_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'post_recharge'])->name('user.postpaidrecharge');
+Route::get('/gas', [App\Http\Controllers\UserPanel\Recharge::class, 'gas_Transactions'])->name('user.gas');
 Route::post('/gas_recharge', [App\Http\Controllers\UserPanel\Recharge::class, 'gas_post_recharge'])->name('user.gasrecharge');
-
-
+Route::post('/newpanc', [App\Http\Controllers\UserPanel\Recharge::class, 'newPanc'])->name('user.newpanc');
+Route::get('/newpan', [App\Http\Controllers\UserPanel\Recharge::class, 'newpan_Transactions'])->name('user.newpan');
 
 
 

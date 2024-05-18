@@ -85,7 +85,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="optinvesttype">  Customer Mobile No: </label>
-                                        <input type="number" name="amount" min="1000" id="PACKAGE_AMT" class="form-control"
+                                        <input type="number" name="number" min="10" id="PACKAGE_AMT" class="form-control"
                                             placeholder="Please Enter Mobile Number" 
                                                value="">
                                     </div>
@@ -96,10 +96,9 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Transaction Type</label>
-                                        <select name="user_id" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-                                              <option value="">Select Operator</option>
-                                              <option value="JIO">NSDL EKYC PAN</option>
-                                              <option value="Airtel">NSDL ESIGN PAN</option>
+                                        <select name="user_id" name="operatorcode" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
+                                              <option value="211">NSDL EKYC PAN</option>
+                                              <option value="212">NSDL ESIGN PAN</option>
                                               <!-- <option value="VI">VI</option>
                                              <option value="BSNL-STV">BSNL-STV</option>
                                               <option value="BSNL-TOPUP">BSNL-TOPUP</option> -->
@@ -305,44 +304,32 @@
 
                     <div class="table-responsive form-white-curved table-main-wrap">
                         <table class="table table-bordered">
-                            <thead class="gradient-yellow table-head-wrap">
-                                <tr>
-                                    <th>TXID</th>
-                                    <th>Operator</th>
-                                    <th>Number</th>
-                                    <th>Amount</th>
-                                 
-                                    <th>Status</th>
-                                    <th>Operator Id</th>
-                                    <th>Rechage By</th>
-                                        <!--<th>Point</th>-->
-                                    <th>Date Time</th>
-                                
-                                </tr>
-                            </thead>
-                            <tbody>
-                            
-                            
-                                    <tr>
-                                        <td>4</td>
-                                        <td>3</td>
-                                        <td>2</td>
-                                        <td>2</td>
-                                  
-                                        <td>3</td>
-                                        <td>32</td>
-                                        <td>3</td>
-                               
-
-                                        <td>
-                                    </td>
-
-
-                                    </tr>
-                            
-
-                           
-                        </tbody>
+                        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Operator Code</th>
+                <th>Amount</th>
+                <th>Number</th>
+                <th>Transaction Id</th>
+                <th>Status</th>
+                <th>Date</th>
+                <!-- Add other columns as needed -->
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($transactions as $item)
+            <tr>
+                <td>{{ $item->id }}</td>
+                <td>{{ $item->operatorcode }}</td>
+                <td>{{ $item->amount }}</td>
+                <td>{{ $item->number }}</td>
+                <td>{{ $item->transaction_id }}</td>
+                <td>{{ $item->status }}</td>
+                <td>{{ $item->created_at }}</td>
+                <!-- Add other columns as needed -->
+            </tr>
+            @endforeach
+        </tbody>
                         </table>
                         <br>
                     

@@ -37,50 +37,24 @@ class Recharge extends Controller
             if ($balance < $request->amount) {
                 return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
             }
-
+    $orderid = uniqid(rand(100000, 999999), true);
             $data = [
                 'amount' => $request->amount,
                 'user_id' => Auth::user()->id,
                 'operatorcode' => $request->input('operatorcode'),
                 'number' => $request->input('number'),
                 'walletType'=> $request->input('walletType'),
-                'status'=>'Success',
-                'transaction_id' => Auth::user()->username,                
+                'status'=>'Pending',
+                'transaction_id' =>$orderid,                
             ];
+             $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+             //api work start
 
-            //submitting data into database 
-            $inserted = DB::table('mobile_recharge')->insert($data);
-            // dd($inserted);
+        //   api process
+        
+           $client = new \GuzzleHttp\Client();
 
-            if ($inserted) {
-                // Flash a success message to the session and redirect to a specific route
-                return redirect()->route('user.mobile')->with('success', 'Transaction inserted successfully!');
-            } else {
-                // Flash an error message to the session and redirect back
-                return redirect()->back()->with('error', 'Failed to insert transaction');
-            }
-            
-            
-            //api work start
-
-            $apiResult = $this->saveRecharge($data);
-            if ($apiResult['success']) {
-                return back()->with('success', 'Recharge successful!');
-            } else {
-                return back()->withErrors(['error' => $apiResult['message']]);
-            }
-        } catch (\Exception $e) {
-            Log::error('Error processing recharge: ' . $e->getMessage());
-            return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
-        }
-    }
-
-    private function saveRecharge($data)
-    {
-        $client = new \GuzzleHttp\Client();
-
-        try {
-            $orderid = uniqid(rand(100000, 999999), true);
+           
             $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
             &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
                 'query' => [
@@ -98,25 +72,32 @@ class Recharge extends Controller
             $responseBody = json_decode($response->getBody()->getContents(), true);
 
             // dd($responseBody);
-            if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
-                return [
-                    'success' => true,
-                    'transaction_id' => $responseBody['txid'],
-                    'message' => 'Recharge successful'
-                ];
+            if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+             
+             
+             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+               
+            $notify[] = ['success','Recharged successfully'];
+    
+            return redirect()->back()->withNotify($notify);
+           
+                
             } else {
-                return [
-                    'success' => false,
-                    'message' => $responseBody['message'] ?? 'Failed to complete recharge'
-                ];
+             
+                 
+             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+             
+                  return Redirect::back()->withErrors(array('Recharge Failed'));
             }
+            
+           
         } catch (\Exception $e) {
-            return [
-                'success' => false,
-                'message' => "API call failed: " . $e->getMessage()
-            ];
+            Log::error('Error processing recharge: ' . $e->getMessage());
+            return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
         }
     }
+
+    
 
 
     //fatch data from database
@@ -141,7 +122,7 @@ public function electricitycharge(Request $request)
     {
         try {
             $validation = Validator::make($request->all(), [
-                'number' => 'required|digits:10',
+                'number' => 'required',
                 'amount' => 'required|numeric',
                 'operatorcode' => 'required',
                 'walletType' => 'required|in:1,2',
@@ -163,47 +144,24 @@ public function electricitycharge(Request $request)
                 return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
             }
 
+            $orderid = uniqid(rand(100000, 999999), true);
             $data = [
                 'amount' => $request->amount,
                 'user_id' => Auth::user()->id,
                 'operatorcode' => $request->input('operatorcode'),
                 'number' => $request->input('number'),
                 'walletType'=> $request->input('walletType'),
-                'status'=>'Success',
-                'transaction_id' => Auth::user()->username,                
+                'status'=>'Pending',
+                'transaction_id' =>$orderid,                
             ];
-            $inserted = DB::table('mobile_recharge')->insert($data);
-            // dd($data);
-            
-            // dd($apiResult);
-            //submitting data into database 
-            // dd($inserted);
-            if ($inserted) {
-                return redirect()->route('user.mobile')->with('success', 'Transaction inserted successfully!');
-            } else {
-                return redirect()->back()->with('error', 'Failed to insert transaction');
-            }
-                        
-            //api work start
-            $apiResult = $this->eleRecharge($data);
-            if ($apiResult['success']) {
-                return back()->with('success', 'Recharge successful!');
-            } else {
-                return back()->withErrors(['error' => $apiResult['message']]);
-            }
+             $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+             //api work start
+
+        //   api process
+        
+           $client = new \GuzzleHttp\Client();
+
            
-        } catch (\Exception $e) {
-            Log::error('Error processing recharge: ' . $e->getMessage());
-            return redirect()->route('user.elecrticity')->withErrors('An unexpected error occurred. Please try again.');
-        }
-    }
-
-    private function eleRecharge($data)
-    {
-        $client = new \GuzzleHttp\Client();
-
-        try {
-            $orderid = uniqid(rand(100000, 999999), true);
             $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
             &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
                 'query' => [
@@ -220,24 +178,29 @@ public function electricitycharge(Request $request)
 
             $responseBody = json_decode($response->getBody()->getContents(), true);
 
-            dd($responseBody);
-            if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
-                return [
-                    'success' => true,
-                    'transaction_id' => $responseBody['txid'],
-                    'message' => 'Recharge successful'
-                ];
+            // dd($responseBody);
+            if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+             
+             
+             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+               
+            $notify[] = ['success','Recharged successfully'];
+    
+            return redirect()->back()->withNotify($notify);
+           
+                
             } else {
-                return [
-                    'success' => false,
-                    'message' => $responseBody['message'] ?? 'Failed to complete recharge'
-                ];
+             
+                 
+             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+             
+                  return Redirect::back()->withErrors(array('Recharge Failed'));
             }
+            
+           
         } catch (\Exception $e) {
-            return [
-                'success' => false,
-                'message' => "API call failed: " . $e->getMessage()
-            ];
+            Log::error('Error processing recharge: ' . $e->getMessage());
+            return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
         }
     }
 
@@ -257,18 +220,12 @@ public function electricitycharge(Request $request)
 
 
 
-
-
-
-
-
-
-
+//Dish recarge
 public function DthRecharge(Request $request)
 {
     try {
         $validation = Validator::make($request->all(), [
-            'number' => 'required|digits:10',
+            'number' => 'required',
             'amount' => 'required|numeric',
             'operatorcode' => 'required',
             'walletType' => 'required|in:1,2',
@@ -290,56 +247,29 @@ public function DthRecharge(Request $request)
             return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
         }
 
+        $orderid = uniqid(rand(100000, 999999), true);
         $data = [
             'amount' => $request->amount,
             'user_id' => Auth::user()->id,
             'operatorcode' => $request->input('operatorcode'),
             'number' => $request->input('number'),
             'walletType'=> $request->input('walletType'),
-            'status'=>'Success',
-            'transaction_id' => Auth::user()->username,               
+            'status'=>'Pending',
+            'transaction_id' =>$orderid,                
         ];
+         $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+         //api work start
 
-        //submitting data into database 
-        $inserted = DB::table('mobile_recharge')->insert($data);
-        // dd($inserted);
-        
+    //   api process
+    
+       $client = new \GuzzleHttp\Client();
 
-        if ($inserted) {
-            // Flash a success message to the session and redirect to a specific route
-            return redirect()->route('user.dth')->with('success', 'Transaction inserted successfully!');
-        } else {
-            // Flash an error message to the session and redirect back
-            return redirect()->back()->with('error', 'Failed to insert transaction');
-        }
-        
-        
-        //api work start
-
-        
-        $apiResult = $this->D_Recharge($data);
-        if ($apiResult['success']) {
-            return back()->with('success', 'Recharge successful!');
-        } else {
-            return back()->withErrors(['error' => $apiResult['message']]);
-        }
-    } catch (\Exception $e) {
-        Log::error('Error processing recharge: ' . $e->getMessage());
-        return redirect()->route('user.dth')->withErrors('An unexpected error occurred. Please try again.');
-    }
-}
-
-private function D_Recharge($data)
-{
-    $client = new \GuzzleHttp\Client();
-
-    try {
-        $orderid = uniqid(rand(100000, 999999), true);
+       
         $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
         &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
             'query' => [
                 'username' => 502939,  // Using environment variable
-                'pwd' => 884257,  
+                'pwd' => 884257,  // Using environment variable
                 'circlecode' => $data['circlecode'] ?? 'default',
                 'operatorcode' => $data['operatorcode'],
                 'number' => $data['number'],
@@ -352,27 +282,42 @@ private function D_Recharge($data)
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
         // dd($responseBody);
-        if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
-            return [
-                'success' => true,
-                'transaction_id' => $responseBody['txid'],
-                'message' => 'Recharge successful'
-            ];
+        if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+         
+         
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+           
+        $notify[] = ['success','Recharged successfully'];
+
+        return redirect()->back()->withNotify($notify);
+       
+            
         } else {
-            return [
-                'success' => false,
-                'message' => $responseBody['message'] ?? 'Failed to complete recharge'
-            ];
+         
+             
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+         
+              return Redirect::back()->withErrors(array('Recharge Failed'));
         }
+        
+       
     } catch (\Exception $e) {
-        return [
-            'success' => false,
-            'message' => "API call failed: " . $e->getMessage()
-        ];
+        Log::error('Error processing recharge: ' . $e->getMessage());
+        return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
     }
 }
 
-
+public function dth_Transactions()
+    {
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+    
+    // Pass the transactions to the view
+    return view('user.recharge.dth', ['transactions' => $transactions]);
+    }
 
 // post paid recharge
 
@@ -380,7 +325,7 @@ public function post_recharge(Request $request)
 {
     try {
         $validation = Validator::make($request->all(), [
-            'number' => 'required|digits:10',
+            'number' => 'required',
             'amount' => 'required|numeric',
             'operatorcode' => 'required',
             'walletType' => 'required|in:1,2',
@@ -402,55 +347,29 @@ public function post_recharge(Request $request)
             return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
         }
 
+        $orderid = uniqid(rand(100000, 999999), true);
         $data = [
             'amount' => $request->amount,
             'user_id' => Auth::user()->id,
             'operatorcode' => $request->input('operatorcode'),
             'number' => $request->input('number'),
             'walletType'=> $request->input('walletType'),
-            'status'=>'Success',
-            'transaction_id' => Auth::user()->username,                
+            'status'=>'Pending',
+            'transaction_id' =>$orderid,                
         ];
+         $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+         //api work start
 
-        //submitting data into database 
-        $inserted = DB::table('mobile_recharge')->insert($data);
-        // dd($inserted);
-        $apiResult = $this->post_paid_Recharge($data);
-        if ($apiResult['success']) {
-            return back()->with('success', 'Recharge successful!');
-        } else {
-            return back()->withErrors(['error' => $apiResult['message']]);
-        }
-        if ($inserted) {
-            // Flash a success message to the session and redirect to a specific route
-            return redirect()->route('user.postpaid')->with('success', 'Transaction inserted successfully!');
-        } else {
-            // Flash an error message to the session and redirect back
-            return redirect()->back()->with('error', 'Failed to insert transaction');
-        }
-        
-        
-        //api work start
+    //   api process
+    
+       $client = new \GuzzleHttp\Client();
 
        
-    } catch (\Exception $e) {
-        Log::error('Error processing recharge: ' . $e->getMessage());
-        return redirect()->route('user.postpaid')->withErrors('An unexpected error occurred. Please try again.');
-    }
-}
-
-<<<<<<< HEAD
-private function post_paid_Recharge($data)
-{
-    $client = new \GuzzleHttp\Client();
-
-    try {
-        $orderid = uniqid(rand(100000, 999999), true);
         $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
         &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
             'query' => [
                 'username' => 502939,  // Using environment variable
-                'pwd' => 884257,  
+                'pwd' => 884257,  // Using environment variable
                 'circlecode' => $data['circlecode'] ?? 'default',
                 'operatorcode' => $data['operatorcode'],
                 'number' => $data['number'],
@@ -462,28 +381,44 @@ private function post_paid_Recharge($data)
 
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
-        dd($responseBody);
-        if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
-            return [
-                'success' => true,
-                'transaction_id' => $responseBody['txid'],
-                'message' => 'Recharge successful'
-            ];
+        // dd($responseBody);
+        if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+         
+         
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+           
+        $notify[] = ['success','Recharged successfully'];
+
+        return redirect()->back()->withNotify($notify);
+       
+            
         } else {
-            return [
-                'success' => false,
-                'message' => $responseBody['message'] ?? 'Failed to complete recharge'
-            ];
+         
+             
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+         
+              return Redirect::back()->withErrors(array('Recharge Failed'));
         }
+        
+       
     } catch (\Exception $e) {
-        return [
-            'success' => false,
-            'message' => "API call failed: " . $e->getMessage()
-        ];
+        Log::error('Error processing recharge: ' . $e->getMessage());
+        return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
     }
 }
 
 
+public function post_Transactions()
+    {
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+    
+    // Pass the transactions to the view
+    return view('user.recharge.postpaid', ['transactions' => $transactions]);
+    }
 // gas recharge
 
 public function gas_post_recharge(Request $request)
@@ -512,56 +447,129 @@ public function gas_post_recharge(Request $request)
             return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
         }
 
+        $orderid = uniqid(rand(100000, 999999), true);
         $data = [
             'amount' => $request->amount,
             'user_id' => Auth::user()->id,
             'operatorcode' => $request->input('operatorcode'),
             'number' => $request->input('number'),
             'walletType'=> $request->input('walletType'),
-            'status'=>'Success',
-            'transaction_id' => Auth::user()->username,                
+            'status'=>'Pending',
+            'transaction_id' =>$orderid,                
         ];
+         $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+         //api work start
 
-        //submitting data into database 
-        $inserted = DB::table('mobile_recharge')->insert($data);
-        // dd($inserted);
-        $apiResult = $this->gas_api_Recharge($data);
-        if ($apiResult['success']) {
-            return back()->with('success', 'Recharge successful!');
-        } else {
-            return back()->withErrors(['error' => $apiResult['message']]);
-        }
-
-        
-        if ($inserted) {
-            // Flash a success message to the session and redirect to a specific route
-            return redirect()->route('user.postpaid')->with('success', 'Transaction inserted successfully!');
-        } else {
-            // Flash an error message to the session and redirect back
-            return redirect()->back()->with('error', 'Failed to insert transaction');
-        }
-        
-        
-        //api work start
+    //   api process
+    
+       $client = new \GuzzleHttp\Client();
 
        
-    } catch (\Exception $e) {
-        Log::error('Error processing recharge: ' . $e->getMessage());
-        return redirect()->route('user.postpaid')->withErrors('An unexpected error occurred. Please try again.');
-    }
-}
-
-private function gas_api_Recharge($data)
-{
-    $client = new \GuzzleHttp\Client();
-
-    try {
-        $orderid = uniqid(rand(100000, 999999), true);
         $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
         &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
             'query' => [
                 'username' => 502939,  // Using environment variable
-                'pwd' => 884257,  
+                'pwd' => 884257,  // Using environment variable
+                'circlecode' => $data['circlecode'] ?? 'default',
+                'operatorcode' => $data['operatorcode'],
+                'number' => $data['number'],
+                'amount' => $data['amount'],
+                'orderid' => $orderid,
+                'format' => 'json'
+            ]
+        ]);
+
+        $responseBody = json_decode($response->getBody()->getContents(), true);
+
+        // dd($responseBody);
+        if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+         
+         
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+           
+        $notify[] = ['success','Recharged successfully'];
+
+        return redirect()->back()->withNotify($notify);
+       
+            
+        } else {
+         
+             
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+         
+              return Redirect::back()->withErrors(array('Recharge Failed'));
+        }
+        
+       
+    } catch (\Exception $e) {
+        Log::error('Error processing recharge: ' . $e->getMessage());
+        return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
+    }
+}
+
+public function gas_Transactions()
+    {
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+    
+    // Pass the transactions to the view
+    return view('user.recharge.gas', ['transactions' => $transactions]);
+    }
+    
+    
+    //pancard section
+        public function newPanc_recharge(Request $request)
+{
+    try {
+        $validation = Validator::make($request->all(), [
+            'number' => 'required|digits:10',
+            // 'amount' => 'required|numeric',
+            'operatorcode' => 'required',
+            'walletType' => 'required|in:1,2',
+        ]);
+
+        if ($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+            return Redirect::back()->withErrors($validation->getMessageBag())->withInput();
+        }
+
+        $balance = 0;
+        if ($request->walletType == '1') {
+            $balance = round(Auth::user()->FundBalance(), 2);
+        } elseif ($request->walletType == '2') {
+            $balance = round(Auth::user()->available_balance(), 2);
+        }
+
+        if ($balance < $request->amount) {
+            return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
+        }
+
+        $orderid = uniqid(rand(100000, 999999), true);
+        $data = [
+            'amount' => $request->amount,
+            'user_id' => Auth::user()->id,
+            'operatorcode' => $request->input('operatorcode'),
+            // 'number' => $request->input('number'),
+            'walletType'=> $request->input('walletType'),
+            'status'=>'Pending',
+            'transaction_id' =>$orderid,                
+        ];
+         $insertedId = DB::table('mobile_recharge')->insertGetId($data);
+         //api work start
+
+    //   api process
+    
+       $client = new \GuzzleHttp\Client();
+
+       
+        $response = $client->request('POST', 'https://business.a1topup.com/recharge/api?username=502939
+        &pwd=884257&circlecode=20&operatorcode='.$data['operatorcode'].'&number='.$data['number'].'&amount='.$data['amount'].'&orderid='.$orderid.'', [
+            'query' => [
+                'username' => 502939,  // Using environment variable
+                'pwd' => 884257,  // Using environment variable
                 'circlecode' => $data['circlecode'] ?? 'default',
                 'operatorcode' => $data['operatorcode'],
                 'number' => $data['number'],
@@ -574,29 +582,42 @@ private function gas_api_Recharge($data)
         $responseBody = json_decode($response->getBody()->getContents(), true);
 
         dd($responseBody);
-        if (isset($responseBody['status']) && $responseBody['status'] === 'Success') {
-            return [
-                'success' => true,
-                'transaction_id' => $responseBody['txid'],
-                'message' => 'Recharge successful'
-            ];
+        if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+         
+         
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
+           
+        $notify[] = ['success','Recharged successfully'];
+
+        return redirect()->back()->withNotify($notify);
+       
+            
         } else {
-            return [
-                'success' => false,
-                'message' => $responseBody['message'] ?? 'Failed to complete recharge'
-            ];
+         
+             
+         \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+         
+              return Redirect::back()->withErrors(array('Recharge Failed'));
         }
+        
+       
     } catch (\Exception $e) {
-        return [
-            'success' => false,
-            'message' => "API call failed: " . $e->getMessage()
-        ];
+        Log::error('Error processing recharge: ' . $e->getMessage());
+        return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
     }
 }
 
+public function newpan_Transactions()
+    {
+    // Assuming there's a 'transactions' table with a 'user_id' column
+    $transactions = DB::table('mobile_recharge')
+                        ->where('user_id', Auth::user()->id)
+                        ->orderBy('created_at', 'desc')
+                        ->get();
+    return view('user.recharge.newpan', ['transactions' => $transactions]);
+    }
+    
+    
 
 
-
-=======
->>>>>>> 6cf00b88edf15f4ebe37652eed14572c50290176
 }

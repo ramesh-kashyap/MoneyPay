@@ -36,6 +36,28 @@
     });
 
 </script>
+<script>
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+function filterFunction() {
+  const input = document.getElementById("myInput");
+  const filter = input.value.toUpperCase();
+  const div = document.getElementById("myDropdown");
+  const a = div.getElementsByTagName("a");
+  for (let i = 0; i < a.length; i++) {
+    txtValue = a[i].textContent || a[i].innerText;
+    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+      a[i].style.display = "";
+    } else {
+      a[i].style.display = "none";
+    }
+  }
+}
+</script>
 <!-- Main Body -->
 
 <!--begin::Content-->
@@ -118,7 +140,8 @@
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Provider</label>
                                         <select name="operatorcode" class="form-control check_sponsor_exist"
-                                            data-response="sponsor_res" required>                                            
+                                            data-response="sponsor_res" required> 
+                                            <input type="text" placeholder="Search.." id="myInput" onkeyup="filterFunction()">                                           
                                             <option value="AEML">Adani power</option>
                                             <option value="APDCLR">Assam Power Distribution Company Ltd (RAPDR)</option>
                                             <option value="AJV">Ajmer Vidyut Vitran

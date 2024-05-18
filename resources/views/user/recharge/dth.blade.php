@@ -128,16 +128,6 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-<<<<<<< HEAD
-                                             <select name="operatorcode" class="form-control check_sponsor_exist" data-response="sponsor_res" required>
-    
-    <option value="ATV">Airtel Digital DTH TV</option>
-    <option value="DTV">Dish TV</option>
-    <option value="STV">Sundirect DTH TV</option>
-    <option value="TTV">tatasky DTH TV</option>
-    <option value="VTV">videocon DTH TV</option>
-</select>
-=======
                                              <select name="operatorcode" class="form-control check_sponsor_exist"
                                                  data-response="sponsor_res" required>
                                                  <option value="ATV">Airtel Digital DTH TV</option>
@@ -146,8 +136,6 @@
                                                  <option value="TTV">TATASKY DTH TV</option>
                                                  <option value="VTV">Videocon DTH TV</option>
                                              </select>
->>>>>>> 6cf00b88edf15f4ebe37652eed14572c50290176
-
                                              <span id="sponsor_res"></span>
                                     </div>
                                 </div>
@@ -356,10 +344,7 @@
                 <div class="table-responsive form-white-curved table-main-wrap">
                     
                     <table class="table table-bordered">
-<<<<<<< HEAD
-                       
-=======
->>>>>>> 6cf00b88edf15f4ebe37652eed14572c50290176
+
                     <thead>
             <tr>
                 <th>Id</th>
@@ -386,10 +371,7 @@
             </tr>
             @endforeach
         </tbody>
-<<<<<<< HEAD
-=======
 
->>>>>>> 6cf00b88edf15f4ebe37652eed14572c50290176
                     </table>
                     
                     <br>
