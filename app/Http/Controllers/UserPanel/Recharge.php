@@ -415,7 +415,7 @@ public function post_recharge(Request $request)
         //submitting data into database 
         $inserted = DB::table('mobile_recharge')->insert($data);
         // dd($inserted);
-        $apiResult = $this->post_paid_Recharge($data);
+        $apiResult = $this->paid_Recharge($data);
         if ($apiResult['success']) {
             return back()->with('success', 'Recharge successful!');
         } else {
@@ -439,8 +439,8 @@ public function post_recharge(Request $request)
     }
 }
 
-<<<<<<< HEAD
-private function post_paid_Recharge($data)
+
+private function paid_Recharge($data)
 {
     $client = new \GuzzleHttp\Client();
 
@@ -597,6 +597,5 @@ private function gas_api_Recharge($data)
 
 
 
-=======
->>>>>>> 6cf00b88edf15f4ebe37652eed14572c50290176
+
 }

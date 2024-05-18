@@ -112,7 +112,8 @@
                                 <div class="col-lg-12">
     <div class="form-group mt-2 mb-3 text-left">
         <label for="investfromwallet">GAS Provider</label>
-        <select name="operatorcode" class="form-control" required>
+      
+        <select name="operatorcode" id="provider-select" class="form-control" required>
             <option value="">Select Provider </option>
             <option value="AG">Adani Gas</option>
             <option value="GG">Gujarat Gas</option>
@@ -123,6 +124,8 @@
         </select>
     </div>
 </div>
+
+
 
 
 
