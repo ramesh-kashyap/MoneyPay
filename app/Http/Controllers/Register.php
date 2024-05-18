@@ -150,6 +150,9 @@ class Register extends Controller
           
     }
    
+
+    //geting name of sponsor code
+    
     public function find_position($snode,$pos)
     {
         $q=User::select('id')->where('Parentid',$snode)->where('position',$pos)->first();

@@ -502,7 +502,6 @@
                                     <td>{{ $transaction->user_id}}</td>
                                     <td>{{ $transaction->operatorcode}}</td>
                                     <td>{{ $transaction->amount }}</td>
-
                                     <td>{{ $transaction->number }}</td>
                                     <td>{{ $transaction->status }}</td>
                                     <td>{{ $transaction->created_at}}</td>

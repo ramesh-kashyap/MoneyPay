@@ -423,7 +423,7 @@
                                         <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.reward-bonus')}}" class="menu-link">
-                                                <span class="menu-text">Lelevel</span>
+                                                <span class="menu-text">Level</span>
                                             </a>
                                         </li>
 

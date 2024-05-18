@@ -187,7 +187,7 @@ public function SubmitBuyFund(Request $request)
         $validation =  Validator::make($request->all(), [
             'amount' => 'required|numeric|min:0',
             'transaction_hash' => 'required',
-            // 'icon_image'=>'max:4096|mimes:jpeg,png,jpg,svg',
+            'icon_image'=>'required|max:4096|mimes:jpeg,png,jpg,svg',
         ]);
 
         if($validation->fails()) {
@@ -197,9 +197,9 @@ public function SubmitBuyFund(Request $request)
         }
 
 
-        // $icon_image = $request->file('icon_image');
-        // $imageName = time().'.'.$icon_image->extension();
-        // $request->icon_image->move(public_path('slip/'),$imageName);
+        $icon_image = $request->file('icon_image');
+        $imageName = time().'.'.$icon_image->extension();
+        $request->icon_image->move(public_path('slip/'),$imageName);
 
         $user=Auth::user();
 
@@ -208,7 +208,7 @@ public function SubmitBuyFund(Request $request)
                     'user_id' => $user->id,
                     'user_id_fk' => $user->username,
                     'amount' => $request->amount,
-                    // 'slip' => 'public/slip/'.$imageName,
+                    'slip' => 'public/slip/'.$imageName,
                     'type' => 'USDT',
                     'bdate' => Date("Y-m-d"),
 

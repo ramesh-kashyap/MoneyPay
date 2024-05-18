@@ -9,6 +9,24 @@
     <link rel="stylesheet" href="{{ asset('') }}assets/css/swiper.min.css" />
     <link rel="stylesheet" href="{{ asset('') }}assets/css/animate.min.css" />
   <script defer src="index.js"></script><link href="{{ asset('') }}assets/css/style.css" rel="stylesheet"></head>
+  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Function to get query parameter by name
+            function getQueryParam(param) {
+                let urlParams = new URLSearchParams(window.location.search);
+                return urlParams.get(param);
+            }
+
+            // Get the sponsor code from the URL
+            let sponsorCode = getQueryParam('ref');
+
+            // Set the sponsor code in the input field if available
+            if (sponsorCode) {
+                document.getElementById('clipboardleft').value = sponsorCode;
+            }
+        });
+    </script>
+    
   <body>
     <main>
       <section
@@ -136,8 +154,8 @@
             <div class="col-span-2 sm:col-span-1">
               <input
               type="text" name="sponsor" value=""   placeholder="Enter Sponsor Username " required
-                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"
-              />
+                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none" name="link" readonly="" id="clipboardleft" value=""/>
+
             </div>
             <div class="col-span-2 sm:col-span-1">
               <input
