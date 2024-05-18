@@ -141,7 +141,7 @@
 
                             <div class="button-container al-center">
     <button type="submit" class="btn btn-primary report-btn submit-btn">Recharge <span class="thin-arrow">→</span></button>
-    <button type="submit" class="btn btn-primary report-btn submit-btn">Search Plan <span class="thin-arrow">→</span></button>
+   
 </div>
 
                         </div>
