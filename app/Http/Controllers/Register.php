@@ -85,7 +85,7 @@ class Register extends Controller
             $totalID++;
             $username =substr(time(),4).$totalID;
              $username =substr(rand(),-2).substr(time(),-3).substr(mt_rand(),-2);
-            
+             $password =substr(time(),-2).substr(rand(),-2).substr(mt_rand(),-2);
            $tpassword =substr(time(),-2).substr(rand(),-2).substr(mt_rand(),-1);
             $post_array  = $request->all();
                 //  
@@ -97,9 +97,9 @@ class Register extends Controller
 
             $data['username'] = $username;
             $data['email'] = $post_array['email'];
-            // $data['password'] =   Hash::make($post_array['password']);
-            $data['tpassword'] =   Hash::make($tpassword);
-            // $data['PSR'] =  $post_array['password'];
+            $data['password'] = Hash::make($password);
+            $data['tpassword'] = Hash::make($tpassword);
+            $data['PSR'] = $password;
             $data['adhar'] =  $post_array['adhar'];
             $data['pan'] =  $post_array['pan'];
             $data['nominee_name'] =  $post_array['nominee_name'];
@@ -152,7 +152,12 @@ class Register extends Controller
    
 
     //geting name of sponsor code
-    
+    function search($username){
+     return User::where("username", $username)->get();
+    }
+
+
+
     public function find_position($snode,$pos)
     {
         $q=User::select('id')->where('Parentid',$snode)->where('position',$pos)->first();

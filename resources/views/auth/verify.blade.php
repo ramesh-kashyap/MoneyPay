@@ -94,6 +94,12 @@
             class="flex justify-between items-center font-medium pt-6 pb-6 border-b mb-8"
           >
             <p>Password</p>
+            <p>{{$user_details->PSR}}</p>
+          </div>
+          <div
+            class="flex justify-between items-center font-medium pt-6 pb-6 border-b mb-8"
+          >
+            <p>Transaction Password</p>
             <p>{{$user_details->TPSR}}</p>
           </div>
           <div

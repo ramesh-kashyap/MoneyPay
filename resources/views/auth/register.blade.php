@@ -26,7 +26,8 @@
             }
         });
     </script>
-    
+
+
   <body>
     <main>
       <section
@@ -154,8 +155,8 @@
             <div class="col-span-2 sm:col-span-1">
               <input
               type="text" name="sponsor" value=""   placeholder="Enter Sponsor Username " required
-                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none" name="link" readonly="" id="clipboardleft" value=""/>
-
+                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none" name="link"  id="clipboardleft" value=""/>
+           
             </div>
             <div class="col-span-2 sm:col-span-1">
               <input

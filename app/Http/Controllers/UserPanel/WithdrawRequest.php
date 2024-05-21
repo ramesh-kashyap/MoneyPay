@@ -69,6 +69,8 @@ class WithdrawRequest extends Controller
         $password= $request->transaction_password;
         $balance=Auth::user()->available_balance();
 
+        $bank = Bank::where('user_id', $user->id)->get();        
+        
 
         if ($balance>=$request->amount)
         {
@@ -81,12 +83,19 @@ class WithdrawRequest extends Controller
          else
          {
 
-            if(empty($user->trx_addres))
+            if(empty($bank))
             {
-              return Redirect::back()->withErrors(array('Update Your wallet Address')); 
-
+              return Redirect::back()->withErrors(array('Your bank id is not Found')); 
             }
 
+            if ($bank->isNotEmpty()) {
+              foreach ($bank as $bank) {
+                  echo "Bank Name: " . $bank->account_no;
+              }
+          } else {
+              echo "No bank records found for the user.";
+          }
+           
               if (Hash::check($password, $user->tpassword))
                {
            
@@ -95,8 +104,8 @@ class WithdrawRequest extends Controller
                         'user_id' => $user->id,
                         'user_id_fk' => $user->username,
                         'amount' => $request->amount,
-                        'account' => $user->trx_addres,
-                        'payment_mode' => 'USDT',
+                        'account' => Hash::make($bank->account_no),
+                        'payment_mode' => 'INR',
                         'status' => 'Pending',
                         'walletType' =>1,
                         'wdate' => Date("Y-m-d"),
