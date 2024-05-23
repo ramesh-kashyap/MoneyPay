@@ -324,9 +324,9 @@
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Referral Income</span>
+                                                 <span>Total Level Income</span>
                                                  <p>{{ currency() }}
-                                                     {{ number_format(Auth::user()->binary_bonus->sum('comm'), 2) }}
+                                                     {{ number_format(Auth::user()->level_bonus->sum('comm'), 2) }}
                                                  </p>
                                              </div>
                                              <div class="dc-right">
@@ -341,7 +341,7 @@
                                      <div class="col-lg-4 mt-3 mb-3">
                                          <div class="dark-card-one">
                                              <div class="dc-left">
-                                                 <span>Total Level Income</span>
+                                                 <span>Total Referral Income</span>
                                                  <p>{{ currency() }}
                                                      {{ number_format(Auth::user()->sponsor_bonus->sum('comm'), 2) }}
                                                  </p>
@@ -382,9 +382,7 @@
                                              <div class="dc-right">
                                                  <i class="bi bi-file-earmark-binary-fill"></i>
                                              </div>
-
-
-                                         </div>
+                                    </div>
 
                                      </div>
 

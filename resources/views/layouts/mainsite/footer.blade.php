@@ -6,7 +6,7 @@
       class="col-span-12 min-[450px]:col-span-6 lg:col-span-3 flex flex-col gap-6 lg:gap-8"
     >
       <a href="index.html">
-        <img src="{{asset('')}}assets/images/logo_white.png" alt="image" />
+        <img src="{{asset('')}}assets/images/logo-white.png" alt="image" style="height:90px; width : auto"/>
       </a>
       <p class="">
         Your trusted partner in accounting and payroll solutions. We deliver

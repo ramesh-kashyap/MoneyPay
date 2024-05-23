@@ -52,13 +52,7 @@
               >Services</a
             >
           </li>
-          <li class="">
-            <a
-              href=""
-              class="menu hover:header_menu_shadow duration-700 px-2 py-3 rounded-lg"
-              >Opportunity</a
-            >
-          </li>
+          
           <li class="">
             <a
               href="{{route('bank')}}"

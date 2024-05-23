@@ -481,7 +481,7 @@
                                                 <span class="menu-text">Electricity</span>
                                             </a>
                                         </li>                                        
-                                        <li class="menu-item menu-item-submenu" aria-haspopup="true"
+                                        <!-- <li class="menu-item menu-item-submenu" aria-haspopup="true"
                                             data-menu-toggle="hover">
                                             <a href="{{route('user.newpan')}}" class="menu-link">
                                                 <span class="menu-text">New Pan</span>
@@ -498,7 +498,7 @@
                                             <a href="{{route('user.pantable')}}" class="menu-link">
                                                 <span class="menu-text">Incomplete Pan Card Details</span>
                                             </a>
-                                        </li> 
+                                        </li>  -->
                                     </ul>
                                 </div>
                             </li>

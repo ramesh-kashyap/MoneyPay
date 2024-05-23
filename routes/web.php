@@ -50,7 +50,7 @@ Route::get('/register_sucess', [App\Http\Controllers\Register::class, 'index'])-
 Route::get('/user-kyc', [App\Http\Controllers\Register::class, 'user_kyc'])->name('user-kyc');
 Route::post('/submit-kyc', [App\Http\Controllers\Register::class, 'kyc_with_register'])->name('submit-kyc');
 
-Route::get('/Index', [App\Http\Controllers\FrontController::class, 'index'])->name('Index');
+Route::get('', [App\Http\Controllers\FrontController::class, 'index'])->name('Index');
 Route::get('/about-us', [App\Http\Controllers\FrontController::class, 'about_us'])->name('about-us');
 Route::get('/services', [App\Http\Controllers\FrontController::class, 'services'])->name('services');
 Route::get('/faq', [App\Http\Controllers\FrontController::class, 'faq'])->name('faq');

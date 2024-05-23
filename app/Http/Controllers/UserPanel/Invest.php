@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Investment;
 use App\Models\Income;
+use App\Models\coupon;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Auth;
 use Log;
@@ -110,9 +111,12 @@ try{
                 'created_at' =>Date('Y-m-d H:i:s'),
 
             ];
-            $payment =  Investment::insert($data);
+            $payment =  Investment::insert($data);            
             add_direct_income($user_detail->id,$request->amount);
             add_level_income($user_detail->id,$request->amount);
+
+
+
             if ($user_detail->active_status=="Pending")
             {
              $user_update=array('active_status'=>'Active','adate'=>Date("Y-m-d H:i:s"),'package'=>$request->amount);
@@ -125,7 +129,8 @@ try{
               User::where('id',$user_detail->id)->update($user_update);
             }
      
-         
+         // Call the coupon function here
+         $this->coupon();
 
 
 
@@ -156,6 +161,26 @@ try{
 
 
         }
+
+
+
+
+        public function coupon(){         
+
+          $coupon =substr(rand(),-2).substr(time(),-3).substr(mt_rand(),-2);
+          
+          for($data=1;$data<=30;$data++){
+          $data = [
+          'user_id' => Auth::user()->id,   
+          'status' => '0',
+          'coupon_id'=> $coupon,
+          'amt'=>100
+          ];      
+         coupon::create($data);
+        }
+        return redirect()->back()->with('message', 'Congratulations! You get a 3000 rupees coupon');  
+          }
+        
 
 
 
