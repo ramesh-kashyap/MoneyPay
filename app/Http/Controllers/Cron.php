@@ -79,7 +79,7 @@ if ($allResult)
         $data['user_id_fk'] = $userDetails->username;
         $data['user_id']=$userDetails->id; 
       $income = Income::firstOrCreate(['remarks' => 'Roi Bonus','ttime'=>date("Y-m-d"),'user_id'=>$userID,'invest_id'=>$value->id],$data);
-       
+     
       }
       else
       {

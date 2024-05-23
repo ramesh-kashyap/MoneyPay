@@ -142,7 +142,7 @@ class Register extends Controller
             Log::info('error here');
             Log::info($e->getMessage());
             print_r($e->getMessage());
-            die("hi");
+            // die("hi");
             return back()->withErrors('error', $e->getMessage())->withInput();
            
         }

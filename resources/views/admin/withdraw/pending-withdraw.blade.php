@@ -69,7 +69,7 @@
 
 
                                                  <td><?= $cnt += 1 ?></td>
-                                                 <td>{{ $value->user->name }}</td>
+                                                 <td>{{ $value->name }}</td>
                                                  <td>{{ $value->user_id_fk }}</td>
      
                                                  <td>{{currency()}} {{ $value->amount }} </td>
