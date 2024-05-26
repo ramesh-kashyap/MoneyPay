@@ -51,9 +51,9 @@ class Recharge extends Controller
                 ->whereMonth('rdate', date('m'))
                 ->exists();
 
-            // if ($couponUsedThisMonth) {
-            //     return Redirect::back()->withErrors(array('You have already used a coupon this month!'));
-            // }
+            if ($couponUsedThisMonth) {
+                return Redirect::back()->withErrors(array('You have already used a coupon this month!'));
+            }
 
             // Subtract Rs 100 from the wallet for using the coupon
             $amount_to_deduct = $recharge_amount - 100;
