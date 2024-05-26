@@ -98,21 +98,18 @@
                             <div class="row">
                                 <!-- <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
-                                        <label for="investfromwallet">ACTIVATION WALLET</label>
-                                        <input type="text" name="" class="form-control check_sponsor_exist"
-                                         value="" disabled>
-                                        
+                                        <label for="investfromwallet">Coupon ID</label>
+                                        <input type="text" name="coupon_id" class="form-control"
+                                         value="" placeholder="Coupon ID" >                                        
                                     </div>
                                 </div> -->
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Wallet</label>
-                                        <select name="walletType" class="form-control check_sponsor_exist"
-                                            data-response="sponsor_res" required>
+                                        <select name="walletType" class="form-control " required>
                                             <option value="1">ACTIVATION WALLET</option>
                                             <option value="2">ACCOUNT BALANCE</option>
                                         </select>
-                                        <span id="sponsor_res"></span>
                                     </div>
                                 </div>
 
@@ -130,7 +127,7 @@
                                 <div class="col-lg-12">
                                     <div class="form-group mt-2 mb-3 text-left">
                                         <label for="investfromwallet">Select Operator</label>
-                                        <select name="operatorcode" class="form-control check_sponsor_exist"
+                                        <select name="operatorcode" class="form-control "
                                             data-response="sponsor_res" required>
                                             <option value="RC">JIO</option>
                                             <option value="A">Airtel</option>
@@ -149,6 +146,13 @@
                                             required value="">
                                     </div>
                                 </div>
+                                <div class="col-lg-12">
+                                    <div class="form-group mt-2 mb-3 text-left">
+                                        <label for="investfromwallet">Coupon (Optional)</label>
+                                        <input type="text" name="coupon_id" class="form-control"
+                                         value="" placeholder="Coupon" >                                        
+                                    </div>
+                                </div>
 
 
                             </div>
@@ -157,8 +161,7 @@
 
                             <div class="al-center">
                                 <button type="submit" class="btn btn-primary report-btn submit-btn">Recharge
-                                    <span class="thin-arrow">→</span>
-                                </button>
+                                    <span class="thin-arrow">→</span></button>
                             </div>
                         </div>
                         <div class="bronze-main-wrap mt-5 mb-4" style="display: none;">
@@ -240,7 +243,7 @@
 
 
 
-    $('.check_sponsor_exist').keyup(function (e) {
+    $('.').keyup(function (e) {
         var ths = $(this);
         var res_area = $(ths).attr('data-response');
         var sponsor = $(this).val();

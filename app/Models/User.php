@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class User extends Authenticatable
 {
@@ -55,7 +56,7 @@ class User extends Authenticatable
 
     public function FundBalance()
     {
-    $balance = (Auth::user()->buy_fundAmt->sum('amount')+Auth::user()->fundTransferCredit->sum('netAmt'))-(Auth::user()->buy_packageAmt());
+    $balance = (Auth::user()->buy_fundAmt->sum('amount')+Auth::user()->fundTransferCredit->sum('netAmt'))-(Auth::user()->buy_packageAmt()+Auth::user()->rechargeDebit(1));
     return $balance;
     } 
 
@@ -93,8 +94,6 @@ class User extends Authenticatable
 
         return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Direct Income');
 
-        return $this->hasMany('App\Models\Income','user_id','id')->where('remarks','Referral Income');
-
     } 
 
     public function payout()
@@ -125,7 +124,7 @@ class User extends Authenticatable
     
     public function available_balance()
     {
-    $balance = Auth::user()->users_incomes->sum('comm')- (Auth::user()->withdraw()+Auth::user()->fundTransfer->sum('amount'));
+    $balance = Auth::user()->users_incomes->sum('comm')- (Auth::user()->withdraw()+Auth::user()->fundTransfer->sum('amount')+Auth::user()->rechargeDebit(2));
     return $balance;
     } 
 
@@ -139,6 +138,11 @@ class User extends Authenticatable
     {
         return  Withdraw::where('user_id',Auth::user()->id)->where('status','!=','Failed')->sum('amount');
     } 
+
+    public function rechargeDebit($walletType){
+        $data = \DB::table('mobile_recharge')->where('user_id',Auth::user()->id)->where('walletType',$walletType)->where('status','!=','Failed')->sum('debit_amt');
+        return $data;
+    }
 
 
     public function investment(){

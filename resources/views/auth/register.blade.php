@@ -154,11 +154,9 @@
           <div class="grid grid-cols-2 gap-6">
             <div class="col-span-2 sm:col-span-1">
               <input
-              type="text" name="sponsoruser" id="sponsor" value=""   placeholder="Enter Sponsor Username " required
+              type="text" name="sponsor" id="sponsor" value=""   placeholder="Enter Sponsor Username " required
                 class="placeholder:text-bodyText py-4 px-8 border w-full outline-none"
               />
-              type="text" name="sponsor" value=""   placeholder="Enter Sponsor Username " required
-                class="placeholder:text-bodyText py-4 px-8 border w-full outline-none" name="link"  id="clipboardleft" value=""/>
            
             </div>
             <div class="col-span-2 sm:col-span-1">

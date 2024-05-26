@@ -96,7 +96,7 @@ try{
             
             if ($balance>=$request->amount)
              {
-          
+              
            $data = [
                 'plan' => 1,
                 'transaction_id' =>md5(uniqid(rand(), true)),
@@ -114,8 +114,8 @@ try{
             $payment =  Investment::insert($data);            
             add_direct_income($user_detail->id,$request->amount);
             add_level_income($user_detail->id,$request->amount);
-
-
+            $this->coupon();
+             
 
             if ($user_detail->active_status=="Pending")
             {
@@ -128,15 +128,14 @@ try{
               $user_update=array('active_status'=>'Active','package'=>$request->amount);
               User::where('id',$user_detail->id)->update($user_update);
             }
-     
-         // Call the coupon function here
-         $this->coupon();
 
-
+          
+      
 
       $notify[] = ['success', $user_detail->username.' User Activation  Submited successfully'];
       return redirect()->back()->withNotify($notify);
- 
+       
+      
       }
       else
       {
@@ -154,7 +153,7 @@ try{
     Log::info('error here');
     Log::info($e->getMessage());
     print_r($e->getMessage());
-    die("hi");
+    die("hi Catch Exception");
     return  redirect()->route('user.invest')->withErrors('error', $e->getMessage())->withInput();
       }
 
@@ -166,10 +165,9 @@ try{
 
 
         public function coupon(){         
-
-          $coupon =substr(rand(),-2).substr(time(),-3).substr(mt_rand(),-2);
           
-          for($data=1;$data<=30;$data++){
+          for($i=1;$i<=30; $i++){
+            $coupon =substr(rand(),-2).substr(time(),-3).substr(mt_rand(),-2);
           $data = [
           'user_id' => Auth::user()->id,   
           'status' => '0',

@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\DB;
+use App\Models\coupon;
 
 class Recharge extends Controller
 {
@@ -20,23 +21,71 @@ class Recharge extends Controller
                 'amount' => 'required|numeric',
                 'operatorcode' => 'required',
                 'walletType' => 'required|in:1,2',
+                'coupon_id' => 'nullable',
             ]);
 
-            if ($validation->fails()) {
-                Log::info($validation->getMessageBag()->first());
-                return Redirect::back()->withErrors($validation->getMessageBag())->withInput();
+            
+        if ($validation->fails()) {
+            Log::info($validation->getMessageBag()->first());
+            return Redirect::back()->withErrors($validation->getMessageBag())->withInput();
+        }
+
+        $user = Auth::user();
+        $recharge_amount = $request->amount;
+        $coupon_id = $request->coupon_id;
+
+        if (isset($coupon_id)) {
+     
+            $couponUsed = 1;
+            // Check if the coupon is valid
+            $coupon = Coupon::where('user_id',$user->id)->where('coupon_id', $coupon_id)->where('status', '0')->first();
+            // dd($coupon);
+            if (!$coupon) {
+                return Redirect::back()->withErrors(array('No valid coupon found!'));
             }
 
-            $balance = 0;
-            if ($request->walletType == '1') {
-                $balance = round(Auth::user()->FundBalance(), 2);
-            } elseif ($request->walletType == '2') {
-                $balance = round(Auth::user()->available_balance(), 2);
-            }
+            // Check if the user has used a coupon in the current month
+            $couponUsedThisMonth = DB::table('mobile_recharge')
+                ->where('user_id', $user->id)->where('cstatus',1)                
+                ->whereYear('rdate', date('Y'))
+                ->whereMonth('rdate', date('m'))
+                ->exists();
 
-            if ($balance < $request->amount) {
-                return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
-            }
+            // if ($couponUsedThisMonth) {
+            //     return Redirect::back()->withErrors(array('You have already used a coupon this month!'));
+            // }
+
+            // Subtract Rs 100 from the wallet for using the coupon
+            $amount_to_deduct = $recharge_amount - 100;
+            // Update coupon status
+              coupon::where('id', $coupon->id)->where('status', 0)->update(['status' =>1]);
+
+             
+        } else {
+            $amount_to_deduct = $recharge_amount;
+            $couponUsed = 0;
+        }
+
+   
+        // Get user balance based  the wallet type
+        if ($request->walletType == '1') {
+            $balance = round($user->FundBalance(), 2);
+        } elseif ($request->walletType == '2') {
+            $balance = round($user->available_balance(), 2);
+        }
+
+        if ($balance < $amount_to_deduct) {
+            return back()->withErrors(['error' => 'Insufficient balance to complete this transaction.']);
+        }
+
+     
+             // Mark the coupon as used
+            //  coupon::where('coupon_id', $request->coupon_id)
+            //  ->where('status', '0')
+            //  ->update(['status' => '1']);
+
+      
+           
     $orderid = uniqid(rand(100000, 999999), true);
             $data = [
                 'amount' => $request->amount,
@@ -45,13 +94,15 @@ class Recharge extends Controller
                 'number' => $request->input('number'),
                 'walletType'=> $request->input('walletType'),
                 'status'=>'Pending',
-                'transaction_id' =>$orderid,                
+                'transaction_id' =>$orderid, 
+                'cstatus' => $couponUsed,               
+                'rdate' => date("Y-m-d"),               
+                'debit_amt' => $amount_to_deduct,               
             ];
              $insertedId = DB::table('mobile_recharge')->insertGetId($data);
              //api work start
-
-        //   api process
-        
+              //   api process   
+                   
            $client = new \GuzzleHttp\Client();
 
            
@@ -72,7 +123,8 @@ class Recharge extends Controller
             $responseBody = json_decode($response->getBody()->getContents(), true);
 
             // dd($responseBody);
-            if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+
+            // if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
              
              
              \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
@@ -82,18 +134,24 @@ class Recharge extends Controller
             return redirect()->back()->withNotify($notify);
            
                 
-            } else {
+            // }
+            //  else {
              
                  
-             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+            //  \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
              
-                  return Redirect::back()->withErrors(array('Recharge Failed'));
-            }
+            //       return Redirect::back()->withErrors(array('Recharge Failed'));
+            // }
             
            
         } catch (\Exception $e) {
             Log::error('Error processing recharge: ' . $e->getMessage());
-            return redirect()->route('user.invest')->withErrors('An unexpected error occurred. Please try again.');
+            Log::info('error here');
+            Log::info($e->getMessage());
+            print_r($e->getMessage());
+
+            // dd("hi");
+            return redirect()->back()->withErrors('An unexpected error occurred. Please try again.');
         }
     }
 
