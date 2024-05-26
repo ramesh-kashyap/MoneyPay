@@ -68,10 +68,33 @@
 
     </script>
     <script src="{{asset('')}}upnl/js/jquery.js"></script>
+
+    <script>
+window.onload = function() {
+  var sidebar = document.getElementById('sidebar');
+  
+  sidebar.addEventListener('wheel', function(event) {
+    if (event.ctrlKey) {
+      var deltaY = event.deltaY;
+      event.preventDefault();
+      sidebar.scrollBy(0, deltaY);
+    }
+  });
+};
+</script>
 </head>
 <!--end::Head-->
 <!--begin::Body-->
 <style>
+  .aside-menu-wrapper {
+ 
+    overflow-x: auto;
+             
+  }
+
+
+
+
     .menu-nav>.menu-item:not(.menu-item-parent):not(.menu-item-open):not(.menu-item-here):not(.menu-item-active):hover>.menu-link {
         background: #1e1f29 !important;
         border-left: 5px double #2dbddd !important;
@@ -102,15 +125,13 @@
     <div id="kt_header_mobile" class="header-mobile align-items-center header-mobile-fixed">
         <!--begin::Logo-->
         <a href="/">
-<<<<<<< HEAD
-<<<<<<< HEAD
+
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png" />
-=======
+
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png"/>
->>>>>>> 1720704374cc6e0a11b66a1978bc7700da2eacd3
-=======
+
             <img alt="Logo" src="{{asset('')}}assets/images/newlogo.png"/>
->>>>>>> 41e32d65d4b22e9b50e6d4c55b91f5f2ca0aa528
+
         </a>
         <!--end::Logo-->
         <!--begin::Toolbar-->
@@ -183,6 +204,8 @@
 
                 <!--end::Brand-->
                 <!--begin::Aside Menu-->
+               
+
                 <div class="aside-menu-wrapper flex-column-fluid" id="kt_aside_menu_wrapper">
                     <div class="sidebar">
                         <div class="profile">
@@ -569,6 +592,7 @@
                 </div>
                 <!--end::Aside Menu-->
             </div>
+                        
             <!--end::Aside-->
             <div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
                 <!--begin::Header-->
