@@ -124,7 +124,7 @@ class Recharge extends Controller
 
             // dd($responseBody);
 
-            // if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
+            if (isset($responseBody['status']) && $responseBody['status'] == 'Success') {
              
              
              \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Success']);
@@ -134,14 +134,14 @@ class Recharge extends Controller
             return redirect()->back()->withNotify($notify);
            
                 
-            // }
-            //  else {
+            }
+             else {
              
                  
-            //  \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
+             \DB::table('mobile_recharge')->where('id',$insertedId)->update(['status'=>'Failed']);
              
-            //       return Redirect::back()->withErrors(array('Recharge Failed'));
-            // }
+                  return Redirect::back()->withErrors(array('Recharge Failed'));
+            }
             
            
         } catch (\Exception $e) {
