@@ -19,10 +19,10 @@ class Profile extends Controller
     {
     $user=Auth::user();
     $profile_data = User::where('id',$user->id)->orderBy('id','desc')->first();
-    $this->data['profile_data'] =$profile_data;
-    $this->data['page'] = 'user.profile.profile-setting';
-    return $this->dashboard_layout();
-
+    // $this->data['profile_data'] =$profile_data;
+    // $this->data['page'] = 'user.profile.profile-setting';
+    // return $this->dashboard_layout();
+   return view(user,profile)->with('profile_data',$profile_data);
     }
    
 
